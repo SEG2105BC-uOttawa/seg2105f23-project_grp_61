@@ -6,8 +6,8 @@ class TestValidation {
     String email = "g61f23seg2105c@example.com";
     String pass = "}l92$2,FL(qV";
 
-    String badEmail = "notanemail.address";
-    String badPass = "password123";
+    String badEmail = "notan.email";
+    String badPass = null;
 
     System.out.println("Email " + email + " " + validateEmailWithRegex(email));
     System.out.println("Password " + pass + " " + validatePass(pass));
@@ -21,6 +21,9 @@ class TestValidation {
    * @return true if the password is minimum 8 characters length, at least 1 upper and lowercase letter, and 1 number
    */
   public static boolean validatePass(String password){
+    if(password == null){
+      return false;
+    }
     boolean longEnough = false;
     boolean oneUpper = false;
     boolean oneLower = false;
@@ -69,6 +72,10 @@ class TestValidation {
    * @return true if emailAddress follows the appropriate pattern
    */
   public static boolean validateEmailWithRegex(String emailAddress){
+
+    if(emailAddress == null){
+      return false;
+    }
     
     Pattern pattern = Pattern.compile("^[\\w\\-\\.]+@([\\w-]+\\.)+[\\w-]{2,}$");
     Matcher matcher = pattern.matcher(emailAddress);
