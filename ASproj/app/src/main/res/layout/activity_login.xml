@@ -29,15 +29,17 @@
             android:inputType="textPassword" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onLoginRequest"
             android:text="log in" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onRegisterRequest"
             android:text="register" />
 
     </LinearLayout>

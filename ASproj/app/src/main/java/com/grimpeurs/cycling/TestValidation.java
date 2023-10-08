@@ -1,19 +1,9 @@
+package com.grimpeurs.cycling;
+
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 class TestValidation {
-  public static void main(String[] args){
-    String email = "g61f23seg2105c@example.com";
-    String pass = "}l92$2,FL(qV";
-
-    String badEmail = "notan.email";
-    String badPass = null;
-
-    System.out.println("Email " + email + " " + validateEmailWithRegex(email));
-    System.out.println("Password " + pass + " " + validatePass(pass));
-    System.out.println("Email " + badEmail + " " + validateEmailWithRegex(badEmail));
-    System.out.println("Password " + badPass + " " + validatePass(badPass));
-  }
 
   /**
    * 
