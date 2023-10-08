@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -52,8 +52,7 @@ public class LoginActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
                         Log.d(TAG, "createUserWithEmail:success");
-                        FirebaseUser user = mAuth.getCurrentUser();
-                        updateUI(user);
+                        registrationInformationUI();
                     } else {
                         Log.w(TAG, "createUserWithEmail:failure", task.getException());
                         updateUI(null);
@@ -104,5 +103,35 @@ public class LoginActivity extends AppCompatActivity {
             AppUser serialUser = new AppUser(user);
             startActivityForResult (intent.putExtra("USER_INFO", serialUser),0);
         }
+    }
+
+    public void registrationInformationUI(){
+        Intent intent=new Intent(getApplicationContext(),RegistrationInformation.class);
+        startActivityForResult(intent, 0);
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_CANCELED) return;
+        int complete = data.getIntExtra("registerID", R.id.complete);
+        int roleID = data.getIntExtra("buttonID", R.id.Role_00);
+        String userName=data.getStringExtra("username");
+        String role="";
+
+        if(roleID == R.id.Role_00){
+            role="Admin";
+        }
+        else if(roleID == R.id.Role_01){
+            role="Cycle Club";
+        }
+        else if(roleID == R.id.Role_02){
+            role="Participant";
+        }
+
+        if (complete == R.id.complete) {
+            FirebaseUser user = mAuth.getCurrentUser();
+            updateUI(user);
+        }
+
     }
 }
