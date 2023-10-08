@@ -14,6 +14,7 @@ class TestValidation {
     if(password == null){
       return false;
     }
+
     boolean longEnough = false;
     boolean oneUpper = false;
     boolean oneLower = false;

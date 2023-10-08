@@ -4,10 +4,12 @@ import static android.content.ContentValues.TAG;
 import static com.grimpeurs.cycling.TestValidation.validateEmailWithRegex;
 import static com.grimpeurs.cycling.TestValidation.validatePass;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -38,6 +40,12 @@ public class LoginActivity extends AppCompatActivity {
         String email = eTextEmail.getText().toString();
         String pass = eTextPass.getText().toString();
 
+        if (email == "admin" && pass == "admin") {
+            // More secure solution to be implemented once further app functionality established.
+            email = "g61f23seg2105c@gmail.com";
+            pass = "Adminadmin12!";
+        }
+
         if (validatePass(pass) && validateEmailWithRegex(email)) {
             mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
@@ -63,6 +71,12 @@ public class LoginActivity extends AppCompatActivity {
         String email = eTextEmail.getText().toString();
         String pass = eTextPass.getText().toString();
 
+        if (email.equals("admin") && pass.equals("admin")) {
+            // More secure solution to be implemented once further app functionality established.
+            email = "g61f23seg2105c@gmail.com";
+            pass = "Adminadmin12!";
+        }
+
         if (validatePass(pass) && validateEmailWithRegex(email)) {
             mAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
@@ -82,11 +96,13 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void updateUI(FirebaseUser user) {
-        // use this function to update the UI following a successful login.
+        Intent intent = new Intent(getApplicationContext(), RegisteredActivity.class);
         if (user == null) {
-            System.out.println("Didn't work...");
+            Toast toast = Toast.makeText(this, "Login failed...", Toast.LENGTH_SHORT);
+            toast.show();
         } else {
-            System.out.println("Worked!");
+            AppUser serialUser = new AppUser(user);
+            startActivityForResult (intent.putExtra("USER_INFO", serialUser),0);
         }
     }
 }
