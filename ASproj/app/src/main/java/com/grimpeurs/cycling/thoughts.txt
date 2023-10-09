@@ -1,0 +1,13 @@
+app launches on login screen, can log in of course
+
+click register to go to a registration screen
+
+on registration screen:
+- input email(validate)
+- input username (check if not null)
+- input role with radio button or something
+- input password(validate)
+
+depending on radio input constructs new OrganizerUser() or ParticipantUser()
+
+
