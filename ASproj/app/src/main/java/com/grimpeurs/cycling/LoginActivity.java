@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -40,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         String email = eTextEmail.getText().toString();
         String pass = eTextPass.getText().toString();
 
-        if (email == "admin" && pass == "admin") {
+        if (email.equals("admin") && pass.equals("admin")) {
             // More secure solution to be implemented once further app functionality established.
             email = "g61f23seg2105c@gmail.com";
             pass = "Adminadmin12!";
@@ -116,7 +117,7 @@ public class LoginActivity extends AppCompatActivity {
         int complete = data.getIntExtra("registerID", R.id.complete);
         int roleID = data.getIntExtra("buttonID", R.id.Role_00);
         String userName=data.getStringExtra("username");
-        String role="";
+        String role;
 
         if(roleID == R.id.Role_00){
             role="Admin";
@@ -130,6 +131,15 @@ public class LoginActivity extends AppCompatActivity {
 
         if (complete == R.id.complete) {
             FirebaseUser user = mAuth.getCurrentUser();
+
+            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder().setDisplayName(userName).build();
+
+            user.updateProfile(profileUpdates).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    Log.d(TAG, "User profile updated.");
+                }
+            });
+
             updateUI(user);
         }
 

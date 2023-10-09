@@ -13,10 +13,14 @@ import java.io.Serializable;
 public class AppUser implements Serializable {
 
     private String email;
+    private String displayName;
+    private String userUID;
 
     public  AppUser (FirebaseUser user) {
 
         this.email = user.getEmail();
+        this.displayName = user.getDisplayName();
+        this.userUID = user.getUid();
 
     }
 
@@ -24,9 +28,11 @@ public class AppUser implements Serializable {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public String getDisplayName() {
+        return displayName;
     }
 
-
+    public String getUserUID() {
+        return userUID;
+    }
 }

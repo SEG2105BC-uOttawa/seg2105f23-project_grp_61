@@ -23,7 +23,7 @@ public class RegisteredActivity extends AppCompatActivity {
         if (user == null) {
             eText.setText("Login failed ):");
         } else {
-            eText.setText("Welcome " + user.getEmail() + "! You are logged in as 'role'.");
+            eText.setText("Welcome " + user.getDisplayName() + "! You are logged in as 'role'.");
         }
 
     }
