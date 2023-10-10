@@ -1,8 +1,12 @@
 package com.grimpeurs.cycling;
-
+import org.junit.*;
 import static android.content.ContentValues.TAG;
 import static com.grimpeurs.cycling.TestValidation.validateEmailWithRegex;
 import static com.grimpeurs.cycling.TestValidation.validatePass;
+
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +15,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+
+
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -95,14 +102,16 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public void updateUI(FirebaseUser user) {
+    public boolean updateUI(FirebaseUser user) {
         Intent intent = new Intent(getApplicationContext(), RegisteredActivity.class);
         if (user == null) {
             Toast toast = Toast.makeText(this, "Login failed...", Toast.LENGTH_SHORT);
             toast.show();
+            return false;
         } else {
             AppUser serialUser = new AppUser(user);
             startActivityForResult (intent.putExtra("USER_INFO", serialUser),0);
+            return true;
         }
     }
 }
