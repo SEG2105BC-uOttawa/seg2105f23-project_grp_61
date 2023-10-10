@@ -7,8 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -26,14 +30,42 @@ public class LoginActivity extends AppCompatActivity {
 
         String username = eTextEmail.getText().toString();
         String pass = eTextPass.getText().toString();
+        String path = "users/"+username +"/password";
+        DatabaseReference passwordRef = db.getReference(path);
 
-        DatabaseReference passwordRef = db.getReference("users/"+username +"password");
+        ValueEventListener passListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Get Post object and use the values to update the UI
+                String testpass = dataSnapshot.getValue(String.class);
+                // ..
+                if(pass.equals(testpass)){
+                    Intent intent = new Intent(getApplicationContext(), LandingPageActivity.class);
+                    startActivity(intent);
+                }
+            }
 
-        String checkPassword = passwordRef
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+            }
+        };
+        passwordRef.addValueEventListener(passListener);
+
+
+
+//        if(pass == testpass){
+//            Intent intent = new Intent(getApplicationContext(), LandingPageActivity.class);
+//            startActivityForResult(intent, 0);
+//        }
+
+
 
 
 
     }
+
 
 
 
