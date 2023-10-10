@@ -30,7 +30,30 @@ public class LoginActivity extends AppCompatActivity {
         String username = eTextEmail.getText().toString();
         String pass = eTextPass.getText().toString();
 
+        if(username.contains(".")){
+            eTextEmail.setText("");
+            username = null;
+        }
+        else if(username.contains("#")){
+            eTextEmail.setText("");
+            username = null;
 
+        }
+        else if(username.contains("$")){
+            eTextEmail.setText("");
+            username = null;
+
+        }
+        else if(username.contains("[")){
+            eTextEmail.setText("");
+            username = null;
+
+        }
+        else if(username.contains("]")){
+            eTextEmail.setText("");
+            username = null;
+
+        }
 
 
         if (username != null && pass != null) {
