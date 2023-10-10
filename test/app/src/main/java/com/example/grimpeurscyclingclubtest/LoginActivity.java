@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
         String username = eTextEmail.getText().toString();
         String pass = eTextPass.getText().toString();
 
-        DatabaseReference passwordRef = db.getReference("users/"+username +"password/");
+        DatabaseReference passwordRef = db.getReference("users/"+username +"/password");
 
         //String checkPassword = passwordRef
 
