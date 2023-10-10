@@ -39,6 +39,14 @@ public class LandingPageActivity extends AppCompatActivity {
 
                 textView.setText("Welcome " + uname + ", you are logged in as " + role);
 
+                if (role == "admin"){
+                    AdminAccount userAccount = new AdminAccount(uname);
+                } else if (role == "organizer"){
+                    OrganizerAccount userAccount = new OrganizerAccount(uname);
+                } else {
+                    ParticipantAccount userAccount = new ParticipantAccount(uname);
+                }
+
 
             }
 
@@ -49,6 +57,8 @@ public class LandingPageActivity extends AppCompatActivity {
             }
         };
         roleRef.addValueEventListener(roleListener);
+
+
 
 
 

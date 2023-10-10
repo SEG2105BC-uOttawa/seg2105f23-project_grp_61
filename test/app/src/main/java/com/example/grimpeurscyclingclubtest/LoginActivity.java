@@ -51,7 +51,12 @@ public class LoginActivity extends AppCompatActivity {
                 //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
             }
         };
-        passwordRef.addValueEventListener(passListener);
+
+        if (username != null && pass != null) {
+            passwordRef.addValueEventListener(passListener);
+        }
+
+
 
 
 

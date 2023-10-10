@@ -7,4 +7,5 @@
     <string name="registerUnameInputHint">Username</string>
     <string name="registerRadioParticipant">Participant</string>
     <string name="registerRadioOrganizer">Organizer</string>
+    <string name="registerPaswordReqs">Password must be at least 8 characters, have at least 1 uppercase, lowercase, and number</string>
 </resources>

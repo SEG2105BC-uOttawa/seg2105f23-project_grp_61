@@ -52,6 +52,12 @@
             android:hint="@string/loginPasswordHint"
             android:inputType="textPassword" />
 
+        <TextView
+            android:id="@+id/registerPasswordReqsInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/registerPaswordReqs" />
+
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
