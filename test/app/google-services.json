@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "829697469623",
+    "project_id": "grimpeurscyclingclubtest",
+    "storage_bucket": "grimpeurscyclingclubtest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829697469623:android:761158f06568789acaf132",
+        "android_client_info": {
+          "package_name": "com.example.grimpeurscyclingclubtest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD777HEI0CqrbNY3k4MZATE91gpnSdjhc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

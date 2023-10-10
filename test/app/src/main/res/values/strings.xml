@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Grimpeurs Cycling Club Test</string>
+    <string name="loginEmailHint">E-mail</string>
+    <string name="loginPasswordHint">Password</string>
+    <string name="loginLoginButton">Sign In</string>
+    <string name="loginRegisterButton"> Register</string>
+    <string name="registerUnameInputHint">Username</string>
+    <string name="registerRadioParticipant">Participant</string>
+    <string name="registerRadioOrganizer">Organizer</string>
+</resources>
