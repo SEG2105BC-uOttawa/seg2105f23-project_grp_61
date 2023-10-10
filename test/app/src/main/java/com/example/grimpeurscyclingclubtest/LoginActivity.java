@@ -23,37 +23,18 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void OnClickLogin(View view){
-        FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
 
         EditText eTextEmail = (EditText) findViewById(R.id.loginUsernameInput);
         EditText eTextPass = (EditText) findViewById(R.id.loginPaswordInput);
 
         String username = eTextEmail.getText().toString();
         String pass = eTextPass.getText().toString();
-        String path = "users/"+username +"/password";
-        DatabaseReference passwordRef = db.getReference(path);
 
-        ValueEventListener passListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                String testpass = dataSnapshot.getValue(String.class);
-                // ..
-                if(pass.equals(testpass)){
-                    Intent intent = new Intent(getApplicationContext(), LandingPageActivity.class);
-                    intent.putExtra("uname", username);
-                    startActivity(intent);
-                }
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-            }
-        };
+
 
         if (username != null && pass != null) {
-            passwordRef.addValueEventListener(passListener);
+            login(username, pass);
         }
 
 
@@ -68,6 +49,33 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
+
+    }
+
+    public void login(String username, String pass){
+        FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
+        String path = "users/"+username +"/password";
+        DatabaseReference passwordRef = db.getReference(path);
+        ValueEventListener passListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String testpass = dataSnapshot.getValue(String.class);
+                // ..
+                if(pass.equals(testpass)){
+
+                    Intent intent = new Intent(getApplicationContext(), LandingPageActivity.class);
+                    intent.putExtra("uname", username);
+                    startActivity(intent);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+            }
+        };
+        passwordRef.addValueEventListener(passListener);
 
     }
 
