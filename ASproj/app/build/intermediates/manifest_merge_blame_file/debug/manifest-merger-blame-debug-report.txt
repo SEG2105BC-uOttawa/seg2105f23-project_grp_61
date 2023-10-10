@@ -1,0 +1,264 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.grimpeurs.cycling"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="33" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:25:5-67
+11-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:25:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:26:5-79
+12-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:26:22-76
+13    <uses-permission android:name="android.permission.WAKE_LOCK" />
+13-->[com.google.android.gms:play-services-measurement-api:21.3.0] C:\Users\togoo\.gradle\caches\transforms-3\43e6357f54dcaf9a5068e430049505cf\transformed\play-services-measurement-api-21.3.0\AndroidManifest.xml:24:5-68
+13-->[com.google.android.gms:play-services-measurement-api:21.3.0] C:\Users\togoo\.gradle\caches\transforms-3\43e6357f54dcaf9a5068e430049505cf\transformed\play-services-measurement-api-21.3.0\AndroidManifest.xml:24:22-65
+14    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+14-->[com.google.android.gms:play-services-measurement-api:21.3.0] C:\Users\togoo\.gradle\caches\transforms-3\43e6357f54dcaf9a5068e430049505cf\transformed\play-services-measurement-api-21.3.0\AndroidManifest.xml:25:5-79
+14-->[com.google.android.gms:play-services-measurement-api:21.3.0] C:\Users\togoo\.gradle\caches\transforms-3\43e6357f54dcaf9a5068e430049505cf\transformed\play-services-measurement-api-21.3.0\AndroidManifest.xml:25:22-76
+15    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+15-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\togoo\.gradle\caches\transforms-3\32d62a141b5ec5c6aba21697a34775ac\transformed\play-services-measurement-21.3.0\AndroidManifest.xml:26:5-110
+15-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\togoo\.gradle\caches\transforms-3\32d62a141b5ec5c6aba21697a34775ac\transformed\play-services-measurement-21.3.0\AndroidManifest.xml:26:22-107
+16
+17    <permission
+17-->[androidx.core:core:1.9.0] C:\Users\togoo\.gradle\caches\transforms-3\1df8309b805a93ff02379334e35b56da\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+18        android:name="com.grimpeurs.cycling.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+18-->[androidx.core:core:1.9.0] C:\Users\togoo\.gradle\caches\transforms-3\1df8309b805a93ff02379334e35b56da\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+19        android:protectionLevel="signature" />
+19-->[androidx.core:core:1.9.0] C:\Users\togoo\.gradle\caches\transforms-3\1df8309b805a93ff02379334e35b56da\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+20
+21    <uses-permission android:name="com.grimpeurs.cycling.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+21-->[androidx.core:core:1.9.0] C:\Users\togoo\.gradle\caches\transforms-3\1df8309b805a93ff02379334e35b56da\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+21-->[androidx.core:core:1.9.0] C:\Users\togoo\.gradle\caches\transforms-3\1df8309b805a93ff02379334e35b56da\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+22
+23    <application
+23-->C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\src\main\AndroidManifest.xml:5:5-27:19
+24        android:allowBackup="true"
+24-->C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\src\main\AndroidManifest.xml:6:9-35
+25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+25-->[androidx.core:core:1.9.0] C:\Users\togoo\.gradle\caches\transforms-3\1df8309b805a93ff02379334e35b56da\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+26        android:dataExtractionRules="@xml/data_extraction_rules"
+26-->C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\src\main\AndroidManifest.xml:7:9-65
+27        android:debuggable="true"
+28        android:extractNativeLibs="false"
+29        android:fullBackupContent="@xml/backup_rules"
+29-->C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\src\main\AndroidManifest.xml:8:9-54
+30        android:icon="@mipmap/ic_launcher"
+30-->C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\src\main\AndroidManifest.xml:9:9-43
+31        android:label="@string/app_name"
+31-->C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\src\main\AndroidManifest.xml:10:9-41
+32        android:roundIcon="@mipmap/ic_launcher_round"
+32-->C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\src\main\AndroidManifest.xml:11:9-54
+33        android:supportsRtl="true"
+33-->C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\src\main\AndroidManifest.xml:12:9-35
+34        android:testOnly="true"
+35        android:theme="@style/Theme.GrimpeursCyclingClub" >
+35-->C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\src\main\AndroidManifest.xml:13:9-58
+36        <activity
+36-->C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\src\main\AndroidManifest.xml:15:9-17:40
+37            android:name="com.grimpeurs.cycling.RegisteredActivity"
+37-->C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\src\main\AndroidManifest.xml:16:13-47
+38            android:exported="false" />
+38-->C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\src\main\AndroidManifest.xml:17:13-37
+39        <activity
+39-->C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\src\main\AndroidManifest.xml:18:9-26:20
+40            android:name="com.grimpeurs.cycling.LoginActivity"
+40-->C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\src\main\AndroidManifest.xml:19:13-42
+41            android:exported="true" >
+41-->C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\src\main\AndroidManifest.xml:20:13-36
+42            <intent-filter>
+42-->C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\src\main\AndroidManifest.xml:21:13-25:29
+43                <action android:name="android.intent.action.MAIN" />
+43-->C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\src\main\AndroidManifest.xml:22:17-69
+43-->C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\src\main\AndroidManifest.xml:22:25-66
+44
+45                <category android:name="android.intent.category.LAUNCHER" />
+45-->C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\src\main\AndroidManifest.xml:24:17-77
+45-->C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\src\main\AndroidManifest.xml:24:27-74
+46            </intent-filter>
+47        </activity>
+48        <activity
+48-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:29:9-46:20
+49            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+49-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:30:13-80
+50            android:excludeFromRecents="true"
+50-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:31:13-46
+51            android:exported="true"
+51-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:32:13-36
+52            android:launchMode="singleTask"
+52-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:33:13-44
+53            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+53-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:34:13-72
+54            <intent-filter>
+54-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:35:13-45:29
+55                <action android:name="android.intent.action.VIEW" />
+55-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:36:17-69
+55-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:36:25-66
+56
+57                <category android:name="android.intent.category.DEFAULT" />
+57-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:38:17-76
+57-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:38:27-73
+58                <category android:name="android.intent.category.BROWSABLE" />
+58-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:39:17-78
+58-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:39:27-75
+59
+60                <data
+60-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:41:17-44:51
+61                    android:host="firebase.auth"
+61-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:42:21-49
+62                    android:path="/"
+62-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:43:21-37
+63                    android:scheme="genericidp" />
+63-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:44:21-48
+64            </intent-filter>
+65        </activity>
+66        <activity
+66-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:47:9-64:20
+67            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+67-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:48:13-79
+68            android:excludeFromRecents="true"
+68-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:49:13-46
+69            android:exported="true"
+69-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:50:13-36
+70            android:launchMode="singleTask"
+70-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:51:13-44
+71            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+71-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:52:13-72
+72            <intent-filter>
+72-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:53:13-63:29
+73                <action android:name="android.intent.action.VIEW" />
+73-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:36:17-69
+73-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:36:25-66
+74
+75                <category android:name="android.intent.category.DEFAULT" />
+75-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:38:17-76
+75-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:38:27-73
+76                <category android:name="android.intent.category.BROWSABLE" />
+76-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:39:17-78
+76-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:39:27-75
+77
+78                <data
+78-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:41:17-44:51
+79                    android:host="firebase.auth"
+79-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:42:21-49
+80                    android:path="/"
+80-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:43:21-37
+81                    android:scheme="recaptcha" />
+81-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:44:21-48
+82            </intent-filter>
+83        </activity>
+84
+85        <service
+85-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:66:9-72:19
+86            android:name="com.google.firebase.components.ComponentDiscoveryService"
+86-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:67:13-84
+87            android:directBootAware="true"
+87-->[com.google.firebase:firebase-common:20.3.3] C:\Users\togoo\.gradle\caches\transforms-3\40ff01aa6e5447d97d3bab5ab04f29d2\transformed\firebase-common-20.3.3\AndroidManifest.xml:34:13-43
+88            android:exported="false" >
+88-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:68:13-37
+89            <meta-data
+89-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:69:13-71:85
+90                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+90-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:70:17-109
+91                android:value="com.google.firebase.components.ComponentRegistrar" />
+91-->[com.google.firebase:firebase-auth:22.1.2] C:\Users\togoo\.gradle\caches\transforms-3\8e508f481281029f5b5a44fe3af0604d\transformed\firebase-auth-22.1.2\AndroidManifest.xml:71:17-82
+92            <meta-data
+92-->[com.google.android.gms:play-services-measurement-api:21.3.0] C:\Users\togoo\.gradle\caches\transforms-3\43e6357f54dcaf9a5068e430049505cf\transformed\play-services-measurement-api-21.3.0\AndroidManifest.xml:31:13-33:85
+93                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+93-->[com.google.android.gms:play-services-measurement-api:21.3.0] C:\Users\togoo\.gradle\caches\transforms-3\43e6357f54dcaf9a5068e430049505cf\transformed\play-services-measurement-api-21.3.0\AndroidManifest.xml:32:17-139
+94                android:value="com.google.firebase.components.ComponentRegistrar" />
+94-->[com.google.android.gms:play-services-measurement-api:21.3.0] C:\Users\togoo\.gradle\caches\transforms-3\43e6357f54dcaf9a5068e430049505cf\transformed\play-services-measurement-api-21.3.0\AndroidManifest.xml:33:17-82
+95            <meta-data
+95-->[com.google.firebase:firebase-installations:17.1.4] C:\Users\togoo\.gradle\caches\transforms-3\09f23a9f935a6871d7364dc8f1324b48\transformed\firebase-installations-17.1.4\AndroidManifest.xml:15:13-17:85
+96                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+96-->[com.google.firebase:firebase-installations:17.1.4] C:\Users\togoo\.gradle\caches\transforms-3\09f23a9f935a6871d7364dc8f1324b48\transformed\firebase-installations-17.1.4\AndroidManifest.xml:16:17-127
+97                android:value="com.google.firebase.components.ComponentRegistrar" />
+97-->[com.google.firebase:firebase-installations:17.1.4] C:\Users\togoo\.gradle\caches\transforms-3\09f23a9f935a6871d7364dc8f1324b48\transformed\firebase-installations-17.1.4\AndroidManifest.xml:17:17-82
+98        </service>
+99
+100        <provider
+100-->[com.google.firebase:firebase-common:20.3.3] C:\Users\togoo\.gradle\caches\transforms-3\40ff01aa6e5447d97d3bab5ab04f29d2\transformed\firebase-common-20.3.3\AndroidManifest.xml:25:9-30:39
+101            android:name="com.google.firebase.provider.FirebaseInitProvider"
+101-->[com.google.firebase:firebase-common:20.3.3] C:\Users\togoo\.gradle\caches\transforms-3\40ff01aa6e5447d97d3bab5ab04f29d2\transformed\firebase-common-20.3.3\AndroidManifest.xml:26:13-77
+102            android:authorities="com.grimpeurs.cycling.firebaseinitprovider"
+102-->[com.google.firebase:firebase-common:20.3.3] C:\Users\togoo\.gradle\caches\transforms-3\40ff01aa6e5447d97d3bab5ab04f29d2\transformed\firebase-common-20.3.3\AndroidManifest.xml:27:13-72
+103            android:directBootAware="true"
+103-->[com.google.firebase:firebase-common:20.3.3] C:\Users\togoo\.gradle\caches\transforms-3\40ff01aa6e5447d97d3bab5ab04f29d2\transformed\firebase-common-20.3.3\AndroidManifest.xml:28:13-43
+104            android:exported="false"
+104-->[com.google.firebase:firebase-common:20.3.3] C:\Users\togoo\.gradle\caches\transforms-3\40ff01aa6e5447d97d3bab5ab04f29d2\transformed\firebase-common-20.3.3\AndroidManifest.xml:29:13-37
+105            android:initOrder="100" />
+105-->[com.google.firebase:firebase-common:20.3.3] C:\Users\togoo\.gradle\caches\transforms-3\40ff01aa6e5447d97d3bab5ab04f29d2\transformed\firebase-common-20.3.3\AndroidManifest.xml:30:13-36
+106
+107        <receiver
+107-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\togoo\.gradle\caches\transforms-3\32d62a141b5ec5c6aba21697a34775ac\transformed\play-services-measurement-21.3.0\AndroidManifest.xml:29:9-33:20
+108            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+108-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\togoo\.gradle\caches\transforms-3\32d62a141b5ec5c6aba21697a34775ac\transformed\play-services-measurement-21.3.0\AndroidManifest.xml:30:13-85
+109            android:enabled="true"
+109-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\togoo\.gradle\caches\transforms-3\32d62a141b5ec5c6aba21697a34775ac\transformed\play-services-measurement-21.3.0\AndroidManifest.xml:31:13-35
+110            android:exported="false" >
+110-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\togoo\.gradle\caches\transforms-3\32d62a141b5ec5c6aba21697a34775ac\transformed\play-services-measurement-21.3.0\AndroidManifest.xml:32:13-37
+111        </receiver>
+112
+113        <service
+113-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\togoo\.gradle\caches\transforms-3\32d62a141b5ec5c6aba21697a34775ac\transformed\play-services-measurement-21.3.0\AndroidManifest.xml:35:9-38:40
+114            android:name="com.google.android.gms.measurement.AppMeasurementService"
+114-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\togoo\.gradle\caches\transforms-3\32d62a141b5ec5c6aba21697a34775ac\transformed\play-services-measurement-21.3.0\AndroidManifest.xml:36:13-84
+115            android:enabled="true"
+115-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\togoo\.gradle\caches\transforms-3\32d62a141b5ec5c6aba21697a34775ac\transformed\play-services-measurement-21.3.0\AndroidManifest.xml:37:13-35
+116            android:exported="false" />
+116-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\togoo\.gradle\caches\transforms-3\32d62a141b5ec5c6aba21697a34775ac\transformed\play-services-measurement-21.3.0\AndroidManifest.xml:38:13-37
+117        <service
+117-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\togoo\.gradle\caches\transforms-3\32d62a141b5ec5c6aba21697a34775ac\transformed\play-services-measurement-21.3.0\AndroidManifest.xml:39:9-43:72
+118            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+118-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\togoo\.gradle\caches\transforms-3\32d62a141b5ec5c6aba21697a34775ac\transformed\play-services-measurement-21.3.0\AndroidManifest.xml:40:13-87
+119            android:enabled="true"
+119-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\togoo\.gradle\caches\transforms-3\32d62a141b5ec5c6aba21697a34775ac\transformed\play-services-measurement-21.3.0\AndroidManifest.xml:41:13-35
+120            android:exported="false"
+120-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\togoo\.gradle\caches\transforms-3\32d62a141b5ec5c6aba21697a34775ac\transformed\play-services-measurement-21.3.0\AndroidManifest.xml:42:13-37
+121            android:permission="android.permission.BIND_JOB_SERVICE" />
+121-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\togoo\.gradle\caches\transforms-3\32d62a141b5ec5c6aba21697a34775ac\transformed\play-services-measurement-21.3.0\AndroidManifest.xml:43:13-69
+122
+123        <activity
+123-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\togoo\.gradle\caches\transforms-3\5816e764a3537d281ec6dc836aee9694\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+124            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+124-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\togoo\.gradle\caches\transforms-3\5816e764a3537d281ec6dc836aee9694\transformed\play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+125            android:exported="false"
+125-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\togoo\.gradle\caches\transforms-3\5816e764a3537d281ec6dc836aee9694\transformed\play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+126            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+126-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\togoo\.gradle\caches\transforms-3\5816e764a3537d281ec6dc836aee9694\transformed\play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+127
+128        <meta-data
+128-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\togoo\.gradle\caches\transforms-3\b6c1661f8b1ccf0f812c9bd25935eaf5\transformed\play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+129            android:name="com.google.android.gms.version"
+129-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\togoo\.gradle\caches\transforms-3\b6c1661f8b1ccf0f812c9bd25935eaf5\transformed\play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+130            android:value="@integer/google_play_services_version" />
+130-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\togoo\.gradle\caches\transforms-3\b6c1661f8b1ccf0f812c9bd25935eaf5\transformed\play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+131
+132        <provider
+132-->[androidx.emoji2:emoji2:1.2.0] C:\Users\togoo\.gradle\caches\transforms-3\d9992e7d00bf1ea405fef4ee8fbd85ec\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+133            android:name="androidx.startup.InitializationProvider"
+133-->[androidx.emoji2:emoji2:1.2.0] C:\Users\togoo\.gradle\caches\transforms-3\d9992e7d00bf1ea405fef4ee8fbd85ec\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+134            android:authorities="com.grimpeurs.cycling.androidx-startup"
+134-->[androidx.emoji2:emoji2:1.2.0] C:\Users\togoo\.gradle\caches\transforms-3\d9992e7d00bf1ea405fef4ee8fbd85ec\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+135            android:exported="false" >
+135-->[androidx.emoji2:emoji2:1.2.0] C:\Users\togoo\.gradle\caches\transforms-3\d9992e7d00bf1ea405fef4ee8fbd85ec\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+136            <meta-data
+136-->[androidx.emoji2:emoji2:1.2.0] C:\Users\togoo\.gradle\caches\transforms-3\d9992e7d00bf1ea405fef4ee8fbd85ec\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+137                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+137-->[androidx.emoji2:emoji2:1.2.0] C:\Users\togoo\.gradle\caches\transforms-3\d9992e7d00bf1ea405fef4ee8fbd85ec\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+138                android:value="androidx.startup" />
+138-->[androidx.emoji2:emoji2:1.2.0] C:\Users\togoo\.gradle\caches\transforms-3\d9992e7d00bf1ea405fef4ee8fbd85ec\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+139            <meta-data
+139-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\togoo\.gradle\caches\transforms-3\94f6e2b6cd726a5163ca7d934a9fdc88\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+140                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+140-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\togoo\.gradle\caches\transforms-3\94f6e2b6cd726a5163ca7d934a9fdc88\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+141                android:value="androidx.startup" />
+141-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\togoo\.gradle\caches\transforms-3\94f6e2b6cd726a5163ca7d934a9fdc88\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+142        </provider>
+143    </application>
+144
+145</manifest>

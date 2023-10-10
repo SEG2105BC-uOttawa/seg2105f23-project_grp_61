@@ -1,0 +1,36 @@
+com.grimpeurs.cycling.app-browser-1.4.0-0 C:\Users\togoo\.gradle\caches\transforms-3\00211898ae1e9e70270371096d95239c\transformed\browser-1.4.0\res
+com.grimpeurs.cycling.app-coordinatorlayout-1.1.0-1 C:\Users\togoo\.gradle\caches\transforms-3\00e449d8f6c67a8e49e54bf32195cd4f\transformed\coordinatorlayout-1.1.0\res
+com.grimpeurs.cycling.app-constraintlayout-2.1.4-2 C:\Users\togoo\.gradle\caches\transforms-3\137d9f1a4b4ef4d29901da76bc020df6\transformed\constraintlayout-2.1.4\res
+com.grimpeurs.cycling.app-core-1.9.0-3 C:\Users\togoo\.gradle\caches\transforms-3\1df8309b805a93ff02379334e35b56da\transformed\core-1.9.0\res
+com.grimpeurs.cycling.app-viewpager2-1.0.0-4 C:\Users\togoo\.gradle\caches\transforms-3\2484c9bc3c8e861b91c3dd64fd23d0ff\transformed\viewpager2-1.0.0\res
+com.grimpeurs.cycling.app-lifecycle-viewmodel-2.5.1-5 C:\Users\togoo\.gradle\caches\transforms-3\29bdd3a3059fe3a111f1c173f504f781\transformed\lifecycle-viewmodel-2.5.1\res
+com.grimpeurs.cycling.app-recyclerview-1.1.0-6 C:\Users\togoo\.gradle\caches\transforms-3\32f19bf1e52f4eac8ea126f12c4670ee\transformed\recyclerview-1.1.0\res
+com.grimpeurs.cycling.app-firebase-common-20.3.3-7 C:\Users\togoo\.gradle\caches\transforms-3\40ff01aa6e5447d97d3bab5ab04f29d2\transformed\firebase-common-20.3.3\res
+com.grimpeurs.cycling.app-cardview-1.0.0-8 C:\Users\togoo\.gradle\caches\transforms-3\4da2aad4b2df9f19227d4ea09a5e61a5\transformed\cardview-1.0.0\res
+com.grimpeurs.cycling.app-play-services-base-18.0.1-9 C:\Users\togoo\.gradle\caches\transforms-3\5816e764a3537d281ec6dc836aee9694\transformed\play-services-base-18.0.1\res
+com.grimpeurs.cycling.app-lifecycle-livedata-core-2.5.1-10 C:\Users\togoo\.gradle\caches\transforms-3\5f2d434f12d234a5ddc724db7c96c4fe\transformed\lifecycle-livedata-core-2.5.1\res
+com.grimpeurs.cycling.app-emoji2-views-helper-1.2.0-11 C:\Users\togoo\.gradle\caches\transforms-3\6867bb116e0049747603f5540a82efad\transformed\emoji2-views-helper-1.2.0\res
+com.grimpeurs.cycling.app-startup-runtime-1.1.1-12 C:\Users\togoo\.gradle\caches\transforms-3\8b951a433de4a71cba06286ef3130e3d\transformed\startup-runtime-1.1.1\res
+com.grimpeurs.cycling.app-lifecycle-runtime-2.5.1-13 C:\Users\togoo\.gradle\caches\transforms-3\8ef60d7ec54268ea695ed46eba6d064f\transformed\lifecycle-runtime-2.5.1\res
+com.grimpeurs.cycling.app-lifecycle-process-2.4.1-14 C:\Users\togoo\.gradle\caches\transforms-3\94f6e2b6cd726a5163ca7d934a9fdc88\transformed\lifecycle-process-2.4.1\res
+com.grimpeurs.cycling.app-drawerlayout-1.1.1-15 C:\Users\togoo\.gradle\caches\transforms-3\954423f8a95d73a91ef009df7a156193\transformed\drawerlayout-1.1.1\res
+com.grimpeurs.cycling.app-material-1.9.0-16 C:\Users\togoo\.gradle\caches\transforms-3\96ade247e77a48d4f91f340eacc70207\transformed\material-1.9.0\res
+com.grimpeurs.cycling.app-savedstate-1.2.0-17 C:\Users\togoo\.gradle\caches\transforms-3\a083d2807cb5d5eb2918a5eac2ec9321\transformed\savedstate-1.2.0\res
+com.grimpeurs.cycling.app-activity-1.6.0-18 C:\Users\togoo\.gradle\caches\transforms-3\a95d83f253a1fc75c0bb59f18110c9ef\transformed\activity-1.6.0\res
+com.grimpeurs.cycling.app-play-services-basement-18.1.0-19 C:\Users\togoo\.gradle\caches\transforms-3\b6c1661f8b1ccf0f812c9bd25935eaf5\transformed\play-services-basement-18.1.0\res
+com.grimpeurs.cycling.app-transition-1.2.0-20 C:\Users\togoo\.gradle\caches\transforms-3\b932849752b9bc90f0c45d5807980953\transformed\transition-1.2.0\res
+com.grimpeurs.cycling.app-lifecycle-viewmodel-savedstate-2.5.1-21 C:\Users\togoo\.gradle\caches\transforms-3\c70539bf61fee07fb64bae2e3edfa93a\transformed\lifecycle-viewmodel-savedstate-2.5.1\res
+com.grimpeurs.cycling.app-appcompat-1.6.1-22 C:\Users\togoo\.gradle\caches\transforms-3\c9c2a74f123cdebcaf6465c79cf99e7f\transformed\appcompat-1.6.1\res
+com.grimpeurs.cycling.app-fragment-1.3.6-23 C:\Users\togoo\.gradle\caches\transforms-3\d0016934eb755d37bc42115ecf781ba0\transformed\fragment-1.3.6\res
+com.grimpeurs.cycling.app-core-ktx-1.9.0-24 C:\Users\togoo\.gradle\caches\transforms-3\d49631c19703fd8581b485f14f76c333\transformed\core-ktx-1.9.0\res
+com.grimpeurs.cycling.app-appcompat-resources-1.6.1-25 C:\Users\togoo\.gradle\caches\transforms-3\d5b05911fb28af268e25059c913819bb\transformed\appcompat-resources-1.6.1\res
+com.grimpeurs.cycling.app-emoji2-1.2.0-26 C:\Users\togoo\.gradle\caches\transforms-3\d9992e7d00bf1ea405fef4ee8fbd85ec\transformed\emoji2-1.2.0\res
+com.grimpeurs.cycling.app-annotation-experimental-1.3.0-27 C:\Users\togoo\.gradle\caches\transforms-3\ee5fec6a9c96b576c1293f0321442622\transformed\annotation-experimental-1.3.0\res
+com.grimpeurs.cycling.app-pngs-28 C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\build\generated\res\pngs\debug
+com.grimpeurs.cycling.app-res-29 C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\build\generated\res\processDebugGoogleServices
+com.grimpeurs.cycling.app-resValues-30 C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\build\generated\res\resValues\debug
+com.grimpeurs.cycling.app-packageDebugResources-31 C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.grimpeurs.cycling.app-packageDebugResources-32 C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.grimpeurs.cycling.app-merged_res-33 C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\build\intermediates\merged_res\debug
+com.grimpeurs.cycling.app-debug-34 C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\src\debug\res
+com.grimpeurs.cycling.app-main-35 C:\Users\togoo\Desktop\SEG_2105\Project 1\seg2105f23-project_grp_61\ASproj\app\src\main\res

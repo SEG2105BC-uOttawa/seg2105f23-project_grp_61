@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">Grimpeurs Cycling Club</string>
+    <string name="gcm_defaultSenderId" translatable="false">670806040869</string>
+    <string name="google_api_key" translatable="false">AIzaSyC9VdFjWrGxp_vyWolQ6X7cfg2xqYsEmH8</string>
+    <string name="google_app_id" translatable="false">1:670806040869:android:17cc676950ecaf9d033acc</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC9VdFjWrGxp_vyWolQ6X7cfg2xqYsEmH8</string>
+    <string name="google_storage_bucket" translatable="false">project-48eaa.appspot.com</string>
+    <string name="project_id" translatable="false">project-48eaa</string>
+    <style name="Base.Theme.GrimpeursCyclingClub" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.GrimpeursCyclingClub" parent="Base.Theme.GrimpeursCyclingClub"/>
+</resources>
