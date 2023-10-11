@@ -9,7 +9,7 @@ public class TextInputValidation {
      * @param password string of password to be validated
      * @return true if the password is minimum 8 characters length, at least 1 upper and lowercase letter, and 1 number
      */
-    public static boolean validatePass(String password){
+    public static boolean validatePass(String password){// to be used for unit testing later, as well as all "boolean" functions that don't need to be booleans
         if(password == null){
             return false;
         }
