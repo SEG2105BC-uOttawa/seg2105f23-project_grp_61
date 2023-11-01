@@ -19,14 +19,14 @@ public class LandingPageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_landing_page);
 
         Bundle bundle = getIntent().getExtras();
-        String uname = bundle.getString("uname");
+        String uid = bundle.getString("uid");
 
         TextView textView = findViewById(R.id.landingPageTextVIew);
 
-        textView.setText(uname);
+        textView.setText(uid);
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference roleRef = db.getReference("users/"+uname + "/role");
+        DatabaseReference roleRef = db.getReference("usersTest/"+uid + "/role");
 
 
 
@@ -37,15 +37,18 @@ public class LandingPageActivity extends AppCompatActivity {
                 String role = dataSnapshot.getValue(String.class);
                 // ..
 
-                textView.setText("Welcome " + uname + ", you are logged in as " + role);
+                textView.setText("Welcome " + uid + ", you are logged in as " + role);
 
+                /*
                 if (role == "admin"){
-                    AdminAccount userAccount = new AdminAccount(uname);
+                    AdminAccount userAccount = new AdminAccount(uid);
                 } else if (role == "organizer"){
-                    OrganizerAccount userAccount = new OrganizerAccount(uname);
+                    OrganizerAccount userAccount = new OrganizerAccount(uid);
                 } else {
-                    ParticipantAccount userAccount = new ParticipantAccount(uname);
+                    ParticipantAccount userAccount = new ParticipantAccount(uid);
                 }
+
+                 */
 
 
             }

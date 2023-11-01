@@ -1,7 +1,13 @@
 package com.example.grimpeurscyclingclubtest;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
 
@@ -21,7 +27,11 @@ public class RegistrationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+
+
     }
+
+
 
 
     public void OnClickRegister(View view){
@@ -57,14 +67,30 @@ public class RegistrationActivity extends AppCompatActivity {
 
 
     public void register(String username, String password, String email, String role){
-        FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference newUserRoleRef = db.getReference("users/"+username+"/role");
-        DatabaseReference newUserEmailRef = db.getReference("users/"+username + "/email");
-        DatabaseReference newUserPasswordRef = db.getReference("users/"+username + "/password");
 
-        newUserRoleRef.setValue(role);
-        newUserEmailRef.setValue(email);
-        newUserPasswordRef.setValue(password);
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
+        FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
+        DatabaseReference mdb = db.getReference();
+
+
+        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    mdb.child("login").child(username).child("email").setValue(email);
+
+                    mdb.child("usersTest").child(user.getUid()).child("email").setValue(email);
+                    mdb.child("usersTest").child(user.getUid()).child("role").setValue(role);
+                    mdb.child("usersTest").child(user.getUid()).child("uname").setValue(username);
+
+                }
+            }
+        });
+
+        //newUserRoleRef.setValue(role);
+        //newUserPasswordRef.setValue(password);
 
 
         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);

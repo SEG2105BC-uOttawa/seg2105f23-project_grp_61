@@ -1,5 +1,6 @@
 package com.example.grimpeurscyclingclubtest;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,7 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -77,6 +82,37 @@ public class LoginActivity extends AppCompatActivity {
 
     public void login(String username, String pass){
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        DatabaseReference mDb = db.getReference("login/"+username+"/email");
+
+        ValueEventListener emailListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String email = snapshot.getValue(String.class);
+                mAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            Intent intent = new Intent(getApplicationContext(), LandingPageActivity.class);
+                            intent.putExtra("uid", user.getUid());
+                            startActivity(intent);
+                        }
+                    }
+                });
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        };
+
+
+
+
+        /*
+        FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
         String path = "users/"+username +"/password";
         DatabaseReference passwordRef = db.getReference(path);
         ValueEventListener passListener = new ValueEventListener() {
@@ -99,6 +135,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
         passwordRef.addValueEventListener(passListener);
+
+         */
 
     }
 
