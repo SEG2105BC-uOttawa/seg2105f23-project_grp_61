@@ -4,6 +4,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class TextInputValidation {
+
+    /**
+     *
+     * @param str string to be validated
+     * @return true if str is not "" or null
+     */
+    public static boolean validateString(String str){
+        return str != null && str != "";
+    }
     /**
      *
      * @param password string of password to be validated
