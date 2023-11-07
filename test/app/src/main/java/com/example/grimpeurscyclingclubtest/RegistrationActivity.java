@@ -81,6 +81,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     FirebaseUser user = mAuth.getCurrentUser();
                     mdb.child("login").child(username).child("email").setValue(email);
 
+
                     mdb.child("usersTest").child(user.getUid()).child("email").setValue(email);
                     mdb.child("usersTest").child(user.getUid()).child("role").setValue(role);
                     mdb.child("usersTest").child(user.getUid()).child("uname").setValue(username);
