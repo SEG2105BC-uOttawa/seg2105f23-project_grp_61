@@ -8,7 +8,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.io.Serializable;
 
-public class Account {
+public class Account{
 
 
 
