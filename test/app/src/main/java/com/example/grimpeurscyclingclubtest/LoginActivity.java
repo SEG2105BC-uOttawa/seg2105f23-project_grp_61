@@ -22,7 +22,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void OnClickLogin(View view){
-
         EditText eTextEmail = (EditText) findViewById(R.id.loginUsernameInput);
         EditText eTextPass = (EditText) findViewById(R.id.loginPaswordInput);
 
