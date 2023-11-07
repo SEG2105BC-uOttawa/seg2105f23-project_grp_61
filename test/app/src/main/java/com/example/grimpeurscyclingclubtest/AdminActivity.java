@@ -2,7 +2,9 @@ package com.example.grimpeurscyclingclubtest;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -45,9 +47,16 @@ public class AdminActivity extends AppCompatActivity {
         };
         roleRef.addValueEventListener(roleListener);
 
-
-
-
-
     }
+
+    public void onClickUser(View view) {
+        Intent intent = new Intent(getApplicationContext(), UserManagementActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClickEvent(View view) {
+        Intent intent = new Intent(getApplicationContext(), EventManagementActivity.class);
+        startActivity(intent);
+    }
+
 }

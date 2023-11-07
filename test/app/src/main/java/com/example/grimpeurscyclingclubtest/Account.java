@@ -16,6 +16,10 @@ public class Account{
     String username;
     String role;
 
+    public Account() {
+
+    }
+
     public Account(String username){
         this.username = username;
 
