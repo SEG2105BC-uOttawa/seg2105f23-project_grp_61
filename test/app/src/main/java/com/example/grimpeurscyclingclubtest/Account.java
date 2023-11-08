@@ -8,13 +8,17 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.io.Serializable;
 
-public class Account {
+public class Account{
 
 
 
     String email;
     String username;
     String role;
+
+    public Account() {
+
+    }
 
     public Account(String username){
         this.username = username;

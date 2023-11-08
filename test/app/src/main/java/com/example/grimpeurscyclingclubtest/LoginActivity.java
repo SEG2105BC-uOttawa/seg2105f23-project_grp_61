@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -86,9 +85,8 @@ public class LoginActivity extends AppCompatActivity {
                 // ..
                 if(pass.equals(testpass)){
 
-                    Intent intent = new Intent(getApplicationContext(), LandingPageActivity.class);
-                    intent.putExtra("uname", username);
-                    startActivity(intent);
+                    userRouter(username);
+
                 }
             }
 
@@ -99,6 +97,49 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
         passwordRef.addValueEventListener(passListener);
+
+    }
+
+    private void userRouter(String uname) {
+
+        FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
+        DatabaseReference roleRef = db.getReference("users/"+uname + "/role");
+
+        ValueEventListener roleListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Get Post object and use the values to update the UI
+                String role = dataSnapshot.getValue(String.class);
+
+                if (role.equals("admin")) {
+                    Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
+                    intent.putExtra("uname", uname);
+                    startActivity(intent);
+                } else if (role.equals("organizer")) {
+                    Intent intent = new Intent(getApplicationContext(), OrganizerActivity.class);
+                    intent.putExtra("uname", uname);
+                    startActivity(intent);
+                } else if (role.equals("participant")) {
+                    Intent intent = new Intent(getApplicationContext(), ParticipantActivity.class);
+                    intent.putExtra("uname", uname);
+                    startActivity(intent);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+            }
+        };
+        roleRef.addValueEventListener(roleListener);
+
+        //Intent intent = new Intent(getApplicationContext(), RoutingActivity.class);
+        //intent.putExtra("uname", uname);
+        //startActivity(intent);
+
+
 
     }
 
