@@ -17,7 +17,7 @@ public class Account{
     String role;
 
     public Account() {
-
+        // Account objects constructed from Firebase will have a null username value, this will need to be fixed in the future.
     }
 
     public Account(String username){

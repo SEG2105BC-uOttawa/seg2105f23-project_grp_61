@@ -23,7 +23,7 @@
             android:text="Please search for a user below." />
 
         <EditText
-            android:id="@+id/usernameText"
+            android:id="@+id/eventText"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:ems="10"

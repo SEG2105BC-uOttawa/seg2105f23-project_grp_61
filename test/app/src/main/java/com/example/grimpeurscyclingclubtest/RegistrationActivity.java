@@ -66,7 +66,7 @@ public class RegistrationActivity extends AppCompatActivity {
         final Toast[] toast = {Toast.makeText(getApplication().getBaseContext(), "Username taken!", Toast.LENGTH_SHORT)};
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference roleRef = db.getReference("users/"+username);
+        DatabaseReference userRef = db.getReference("users/"+username);
 
         ValueEventListener userListener = new ValueEventListener() {
             @Override
@@ -97,7 +97,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
             }
         };
-        roleRef.addValueEventListener(userListener);
+        userRef.addValueEventListener(userListener);
 
     }
 }

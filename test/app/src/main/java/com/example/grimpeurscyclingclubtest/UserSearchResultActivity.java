@@ -24,7 +24,7 @@ public class UserSearchResultActivity extends AppCompatActivity {
         String uname = bundle.getString("uname");
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference roleRef = db.getReference("users/"+uname);
+        DatabaseReference userRef = db.getReference("users/"+uname);
 
         ValueEventListener userListener = new ValueEventListener() {
             @Override
@@ -53,7 +53,7 @@ public class UserSearchResultActivity extends AppCompatActivity {
                 //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
             }
         };
-        roleRef.addValueEventListener(userListener);
+        userRef.addValueEventListener(userListener);
 
     }
 
@@ -62,9 +62,9 @@ public class UserSearchResultActivity extends AppCompatActivity {
         String uname = bundle.getString("uname");
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference roleRef = db.getReference("users/"+uname);
+        DatabaseReference userRef = db.getReference("users/"+uname);
 
-        roleRef.removeValue();
+        userRef.removeValue();
         Toast toast = Toast.makeText(getApplication().getBaseContext(), "User deleted!", Toast.LENGTH_SHORT);
         toast.show();
 

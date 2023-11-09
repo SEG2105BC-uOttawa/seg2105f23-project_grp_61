@@ -4,6 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="20px"
     tools:context=".EventManagementActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|top"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Please search for an event below, or enter an event name to create." />
+
+        <EditText
+            android:id="@+id/eventText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/searchBTN"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:onClick="onSearchClick"
+            android:text="Search" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

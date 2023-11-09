@@ -16,7 +16,7 @@ public class UserManagementActivity extends AppCompatActivity {
     }
 
     public void onSearchClick(View view) {
-        EditText eTextSearch = (EditText) findViewById(R.id.usernameText);
+        EditText eTextSearch = (EditText) findViewById(R.id.eventText);
         String username = eTextSearch.getText().toString();
 
         if (username.equals("")) {
