@@ -13,13 +13,13 @@
         android:theme="@style/Theme.GrimpeursCyclingClubTest"
         tools:targetApi="31">
         <activity
-            android:name=".EventSearchResultActivity"
+            android:name=".EventTypeSearchResultActivity"
             android:exported="false" />
         <activity
             android:name=".UserSearchResultActivity"
             android:exported="false" />
         <activity
-            android:name=".EventManagementActivity"
+            android:name=".EventTypeManagementActivity"
             android:exported="false" />
         <activity
             android:name=".UserManagementActivity"
