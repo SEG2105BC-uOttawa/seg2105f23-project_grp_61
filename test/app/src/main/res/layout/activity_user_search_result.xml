@@ -34,7 +34,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onClickDelete"
-            android:text="Delete Account"
-            android:theme="@android:style/Holo.ButtonBar" />
+            android:text="Delete Account" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

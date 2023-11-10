@@ -41,9 +41,7 @@
                 android:layout_weight="1"
                 android:onClick="onClickUser"
                 android:text="Manage User Accounts" />
-
         </LinearLayout>
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
