@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         if (username != null && pass != null) {
-            login(username, pass);
+            login(username.toLowerCase(), pass);
         }
 
 
