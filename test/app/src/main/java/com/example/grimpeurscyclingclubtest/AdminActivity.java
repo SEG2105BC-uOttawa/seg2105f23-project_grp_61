@@ -54,8 +54,8 @@ public class AdminActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onClickEvent(View view) {
-        Intent intent = new Intent(getApplicationContext(), EventManagementActivity.class);
+    public void onClickEventType(View view) {
+        Intent intent = new Intent(getApplicationContext(), EventTypeManagementActivity.class);
         startActivity(intent);
     }
 

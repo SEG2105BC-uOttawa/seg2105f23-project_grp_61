@@ -15,7 +15,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class EventSearchResultActivity extends AppCompatActivity {
+public class EventTypeSearchResultActivity extends AppCompatActivity {
 
     String ename;
     boolean recentDelete = false;
@@ -23,7 +23,7 @@ public class EventSearchResultActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_event_search_result);
+        setContentView(R.layout.activity_event_type_search_result);
         Bundle bundle = getIntent().getExtras();
         ename = bundle.getString("ename");
 
@@ -35,7 +35,7 @@ public class EventSearchResultActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // Get Post object and use the values to update the UI
-                Event event = dataSnapshot.getValue(Event.class);
+                EventType event = dataSnapshot.getValue(EventType.class);
                 EditText labelText = (EditText) findViewById(R.id.labelEditText);
                 labelText.setText(ename);
 
@@ -114,7 +114,7 @@ public class EventSearchResultActivity extends AppCompatActivity {
                 if (account == null || ename.equals(labelText.getText().toString())) { // added check if event name is taken
 
 
-                    Event event = new Event(ageEdit.getText().toString(), paceEdit.getText().toString(), levelEdit.getText().toString(), labelText.getText().toString(), descEdit.getText().toString());
+                    EventType event = new EventType(ageEdit.getText().toString(), paceEdit.getText().toString(), levelEdit.getText().toString(), labelText.getText().toString(), descEdit.getText().toString());
 
                     if (recentDelete) {
                         recentDelete = false;

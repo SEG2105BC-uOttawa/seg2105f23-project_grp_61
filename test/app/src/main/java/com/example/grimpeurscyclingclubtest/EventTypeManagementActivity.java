@@ -20,17 +20,17 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EventManagementActivity extends AppCompatActivity {
+public class EventTypeManagementActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_event_management);
+        setContentView(R.layout.activity_event_type_management);
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
         DatabaseReference eventRef = db.getReference("events/");
         List<String> eventList = new ArrayList<String>();
-        EventManagementActivity context = this;
+        EventTypeManagementActivity context = this;
         ListView listView = (ListView) findViewById(R.id.eventList);
 
 
@@ -62,7 +62,7 @@ public class EventManagementActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String event = eventList.get(position);
-                Intent intent = new Intent(getApplicationContext(), EventSearchResultActivity.class);
+                Intent intent = new Intent(getApplicationContext(), EventTypeSearchResultActivity.class);
                 intent.putExtra("ename", event);
                 startActivityForResult(intent, 0);
             }
@@ -79,7 +79,7 @@ public class EventManagementActivity extends AppCompatActivity {
         if (event.equals("")) {
             return;
         } else {
-            Intent intent = new Intent(getApplicationContext(), EventSearchResultActivity.class);
+            Intent intent = new Intent(getApplicationContext(), EventTypeSearchResultActivity.class);
             intent.putExtra("ename", event);
             startActivityForResult(intent, 0);
         }

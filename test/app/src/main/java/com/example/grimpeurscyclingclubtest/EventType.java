@@ -2,7 +2,7 @@ package com.example.grimpeurscyclingclubtest;
 
 import static java.lang.Integer.parseInt;
 
-public class Event { // This object will be related to (generalized from?) specifically scheduled events that have info on route and datetime in the future.
+public class EventType { // This object will be related to (generalized from?) specifically scheduled events that have info on route and datetime in the future.
 
     private Integer ageReq;
     private Double paceReq;
@@ -10,9 +10,9 @@ public class Event { // This object will be related to (generalized from?) speci
     private String title;
     private String description;
 
-    public Event() {}
+    public EventType() {}
 
-    public Event(int ageReq, double paceReq, int levelReq, String title, String description) {
+    public EventType(int ageReq, double paceReq, int levelReq, String title, String description) {
         this.ageReq = ageReq;
         this.paceReq = paceReq;
         this.levelReq = levelReq;
@@ -20,7 +20,7 @@ public class Event { // This object will be related to (generalized from?) speci
         this.description = description;
     }
 
-    public Event(String ageReq, String paceReq, String levelReq, String title, String description) {
+    public EventType(String ageReq, String paceReq, String levelReq, String title, String description) {
         if (ageReq.equals("") || paceReq.equals("") || levelReq.equals("") || title.equals("") || description.equals("")) {
             return;
         }
