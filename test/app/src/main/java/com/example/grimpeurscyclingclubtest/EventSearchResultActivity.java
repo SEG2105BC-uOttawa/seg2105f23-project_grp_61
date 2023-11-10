@@ -3,11 +3,10 @@ package com.example.grimpeurscyclingclubtest;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -19,6 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 public class EventSearchResultActivity extends AppCompatActivity {
 
     String ename;
+    boolean recentDelete = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,7 @@ public class EventSearchResultActivity extends AppCompatActivity {
         DatabaseReference eventRef = db.getReference("events/"+ename);
 
         ValueEventListener eventListener = new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // Get Post object and use the values to update the UI
@@ -59,7 +60,7 @@ public class EventSearchResultActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
+            public void onCancelled(@NonNull DatabaseError databaseError) {
                 // Getting Post failed, log a message
                 //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
             }
@@ -69,6 +70,8 @@ public class EventSearchResultActivity extends AppCompatActivity {
     }
 
     public void onClickDelete(View view) {
+
+        recentDelete = true;
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
         DatabaseReference eventRef = db.getReference("events/"+ename);
@@ -112,6 +115,11 @@ public class EventSearchResultActivity extends AppCompatActivity {
 
 
                     Event event = new Event(ageEdit.getText().toString(), paceEdit.getText().toString(), levelEdit.getText().toString(), labelText.getText().toString(), descEdit.getText().toString());
+
+                    if (recentDelete) {
+                        recentDelete = false;
+                        return;
+                    }
 
                     if (!event.isEmpty()) {
                         eventRef.setValue(event);
