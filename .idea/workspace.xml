@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ada6cace-9f99-44df-a138-1fadb1c9c194" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/8.0/kotlin-dsl/scripts/22fbcbf2778b97e5d0f6bd9906d29963/classes/META-INF/buildscript.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/8.0/kotlin-dsl/scripts/f73051150ee2e69cc1abfaf84107a4fc/classes/Program.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/8.0/scripts/2tg8tv4vczid2b3vuyxihvuy9/cp_init/_BuildScript_.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/8.0/scripts/55xg0pokxwcazmeuswn4nqze/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/8.0/scripts/9ca2t53743a1cw8mpuf0r4x2y/9ca2t53743a1cw8mpuf0r4x2y.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/8.0/scripts/9ca2t53743a1cw8mpuf0r4x2y/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/8.0/scripts/9ca2t53743a1cw8mpuf0r4x2y/init/_BuildScript_$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/8.0/scripts/ent42o3lff4us9uojzs6buv5v/init/_BuildScript_.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/00237c2711a73f455f5989ea5f4c1bbf/tracker-31.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/01bd0caef559fe1ead659b771134ea52/asm-tree-9.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/03c7e73e8978e4d7f91fe64237a104be/sdklib-31.1.1.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/040c718806452a50edc7ff1fa87b3d64/xercesImpl-2.12.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/0584e58e1f65c6b1f8fcef5e8f6bc31e/bundletool-1.14.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/11b8a42260e9f24257c8a648dc3ca701/jna-platform-5.6.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/11b8a42260e9f24257c8a648dc3ca701/jna-platform-5.6.0.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/12076d28bccf4b6f8e1fd201e7258c07/builder-8.1.1.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/15c7182e46785d18eb599ef86c28f7ad/android-test-plugin-host-additional-test-output-proto-31.1.1.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/15c7182e46785d18eb599ef86c28f7ad/android-test-plugin-host-additional-test-output-proto-31.1.1.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/19849e05ca2b70142e04c703c164f74e/external-system-rt.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/1c9d61b4c20c29cedf6f63451d3f4235/google-services-4.4.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/1e03c3ad9fb2c881b04e7f2c7176a1e4/bcpkix-jdk15on-1.67.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/1f76bcf10ea46724eae62950b70c568a/asm-util-9.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/228ec1c93610868ab58fc20d9c96405c/grpc-stub-1.45.1.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/2598d2abb0ba5a6f13d65c20615197a7/netty-codec-socks-4.1.72.Final.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/2661c951b70aeb503c3d1de51165b214/perfmark-api-0.23.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/2d10c46f0b39da63d09327a1e8406c5f/jetifier-processor-1.0.0-beta10.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/2f8b3a12414bb24479ef41cbf5a07478/jopt-simple-4.9.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/313d79820180b831bc262dd4f2d38cce/txw2-2.3.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/33f139e25607f0ffa7c589937938199b/builder-test-api-8.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/33f139e25607f0ffa7c589937938199b/builder-test-api-8.1.1.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/34ce61303b7e88750a72707be45a63e6/bcprov-jdk15on-1.67.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/386485a061b4eb4deaab83fc4a65196d/jdom2-2.0.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/386485a061b4eb4deaab83fc4a65196d/jdom2-2.0.6.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/41171ab81a6ad0a9f14781360fef75c5/android-test-plugin-result-listener-gradle-proto-31.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/4651f3d414e2432d23b63f1da17de65e/netty-resolver-4.1.72.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/4651f3d414e2432d23b63f1da17de65e/netty-resolver-4.1.72.Final.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/468498d408aa1c79f88c77247d38df81/builder-model-8.1.1.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/48e99acaddabb6748fb0161a0e8629bd/classes.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/4d466509d034e15421d8e2fcd139dabe/crash-31.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/4e103fc14f3fa21678c90229cfdcc3ab/httpcore-4.4.15.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/4f0a8afae3ac388813460878f4d88d69/animal-sniffer-annotations-1.19.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/5caee0d9d8296be96c67e92daf7213da/jakarta.activation-api-1.2.1.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/601d13c630ac0291f3842d2f2124e53d/jetifier-core-1.0.0-beta10.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/6112fbed09dc85da6e7007bb4d0ff4b3/gradle-api-impldep-7.5.1.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/6438c8aed3b0928cbba163b8004e3456/flatbuffers-java-1.12.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/6438c8aed3b0928cbba163b8004e3456/flatbuffers-java-1.12.0.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/69edfba7ccee8c7b0df8c8aed92c7f29/aaptcompiler-8.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/6baf07bda90b047a993bad58bf3d62e9/android-test-plugin-host-apk-installer-proto-31.1.1.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/706e2e9b0eba0c3f49373d2e4dc9e9e4/slf4j-api-1.7.30.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/754674ef24651f94551af318a6898c61/javax.inject-1.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/7ef0d39569f821e816244021747c2445/asm-analysis-9.2.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/7f0f4cd9cf5661a706d09ad01b7fbb48/classes.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/8200c06095732b537befc3483888ac03/grpc-netty-1.45.1.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/83e685ae4aa6f27246df50d9983ab568/netty-handler-proxy-4.1.72.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/83e685ae4aa6f27246df50d9983ab568/netty-handler-proxy-4.1.72.Final.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/85a6f49a9bc679cc08083274acbac078/gson-2.8.9.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/894cbf77ea5d76cf3b9bb9899ed38469/jakarta.xml.bind-api-2.3.2.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/8ccda836d1db40f1ea227ce2c7ab7901/android-test-plugin-host-emulator-control-proto-31.1.1.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/8d3d6ece0873a444e889d3a59b5091a1/classes.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/92a67c32af7dd7ee893c78725bf9baad/core-proto-0.0.8-alpha08.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/961ded6cf249749a02e810d61d78800e/netty-handler-4.1.72.Final.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/98e08642ddd93e3a9a206734e742fc2c/databinding-common-8.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/98e08642ddd93e3a9a206734e742fc2c/databinding-common-8.1.1.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/98e08642ddd93e3a9a206734e742fc2c/databinding-common-8.1.1.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/9cc65fec27544bab5aa800746e13fa33/grpc-api-1.45.1.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/a0d57b912d14b651dd3e54c150aead8e/layoutlib-api-31.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/a15b65279b8544324a3e86f5278ef55d/jaxb-runtime-2.3.2.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/a15b65279b8544324a3e86f5278ef55d/jaxb-runtime-2.3.2.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/a5c9d480584e4abd205259ee2e275f62/signflinger-8.1.1.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/a6f2bc56dceee5a88026d602dca5e1dc/httpmime-4.5.6.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/a6f2bc56dceee5a88026d602dca5e1dc/httpmime-4.5.6.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/a7030b5b3bd0ee52c35d77a1a73ee708/jna-5.6.0.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/a7030b5b3bd0ee52c35d77a1a73ee708/jna-5.6.0.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/ab4259bda29a4734586154a72f178c4d/cp_init.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/ac9eb61c749616fd8a4ddbb70cfcebff/javax.annotation-api-1.3.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/ae1f7029fea79ca5533835b3e8dda0c3/asm-9.2.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/afcbecff312fa97a1b539a3cded7a0ab/jsr305-3.0.2.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/b08284065fa5a9398a94458d07763926/tink-1.7.0.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/bbe982e07c01638ae2877e55ab794063/android-test-plugin-host-coverage-proto-31.1.1.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/c0a9a986160b3aec74f90424b1fa4d97/gradle-settings-api-8.1.1.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/c0f62e798aa22ca97afcfb3a2a0ef4d0/javapoet-1.10.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/c0f62e798aa22ca97afcfb3a2a0ef4d0/javapoet-1.10.0.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/c1011467fb85a4ac798e2e11cc5ef0e6/guava-31.1-jre.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/c3eb5a1634b246112e356714d168eae4/android-device-provider-ddmlib-proto-31.1.1.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/d40e98ed87c31924000bb0ba422162f7/baseLibrary-8.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/d40e98ed87c31924000bb0ba422162f7/baseLibrary-8.1.1.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/d443f1281e28a8e1795f9b8adc8d0a5f/javawriter-2.5.0.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/dc8714ad53a8b63c6ebfd9483ea43132/netty-codec-http-4.1.72.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/e31cc4d5de3b3e44436fffafe4245487/init.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/e9947e5d4771b4a232aac1457f6b9041/stax-ex-1.8.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/ebfba940214513c4c797fa124564fd52/gradle-8.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/ec33ef42a8a10c5f2eab7472258e1d16/android-gradle.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/f06322a15b4db88d88d6e62e9c3d3a06/apkzlib-8.1.1.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/f1585e4804b2a7d78ce64fe29ce536e1/istack-commons-runtime-3.0.8.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/f1585e4804b2a7d78ce64fe29ce536e1/istack-commons-runtime-3.0.8.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/fa3ce8f4eca213c1190b17514c7f6786/grpc-context-1.45.1.jar.lock.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/fecfa1b2c78b2145d1a6251e1fbf7d73/error_prone_annotations-2.11.0.jar.receipt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/o_23f13399f377fa95ac8ba2625122d50c/kotlin-gradle-tooling.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/o_95bee18d5d6ecaa09e1fd59303715efc/groovy.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/o_9849885cdad841533ff03a7d4c5e7eb8/util_rt.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/jars-9/o_a8fb5754b0a80e7d3c499327581f5db0/libversion.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/modules-2/metadata-2.100/descriptors/androidx.documentfile/documentfile/1.0.0/11cd36a7dcab7d14d0c14c5e6c7582e3/descriptor.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/modules-2/metadata-2.100/descriptors/com.google.guava/guava-parent/27.0.1-jre/a8be1fe3b3911d3d3425fe720cf42835/descriptor.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/0393617a113b43073d243ad42b6ce2d6/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/07616b3a8b3b0c5941133f32264274d1/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/0dbedf3f1b0fbe688d383cfd93d801e9/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/100033f10a611896a6171501bea35f93/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/1168a3c164b31d0ad5ee2b336405e701/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/1abc9f61955824d5cddcf519238b8986/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/203e69234576a5e63a24caa92d3cce82/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/26f2f9fa7da7383a1144e05ce58b5aa1/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/28253f5bdb33868c7725ba406233c6ea/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/3022cd9abacb96c91ed26ed069844313/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/36eb2d3ce30922d642207e4052269ddf/transformed/lifecycle-process-2.6.1/META-INF/com/android/build/gradle/aar-metadata.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/36eb2d3ce30922d642207e4052269ddf/transformed/lifecycle-process-2.6.1/proguard.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/3b3e5843143600eb445b486fd0051a07/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/3c9ae17b27416d0a637f4a0df4ae7400/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/3d55997d44247f642056fcec6450559b/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/453eb9c88ef27d9ec2a3c5ccc06a0707/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/453eb9c88ef27d9ec2a3c5ccc06a0707/transformed/profileinstaller-1.3.0/annotations.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/453eb9c88ef27d9ec2a3c5ccc06a0707/transformed/profileinstaller-1.3.0/jars/classes.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/590a0891487f969d9e5136d84d6369f5/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/59fe8228b436aaa7af03fd9c50bce9e7/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/5b2d7e22f944f39043840bd7ea2885b7/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/5f44923ea44b8e66144313dfb9a98618/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/63d238dd6e5b603548c6209ef4b60885/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/63df930ecc983e2dbcbef328b4eebef8/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/646d2cb9ce3dc66cf852f3eb2db0a6b0/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/681ccba2c28d827d9108c8917dede7e6/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/69f9bb0e6da4f7382ab793f5b0ba2f2d/transformed/D8BackportedDesugaredMethods.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/75c9c464668861d8b1ae70d4aef502ca/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/781f9ed0521d2ec8daebca6963e51fa9/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/781f9ed0521d2ec8daebca6963e51fa9/transformed/emoji2-views-helper-1.2.0/META-INF/com/android/build/gradle/aar-metadata.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/781f9ed0521d2ec8daebca6963e51fa9/transformed/emoji2-views-helper-1.2.0/public.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/8631effba03925e6bc0fc59bbea7fa8f/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/8d6e805fb3c6c5bd0b1b27e104483289/transformed/material-1.10.0/res/color/m3_tabs_ripple_color.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/92368bbd03fa3b5d1b61dfd79892c8fa/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/96c33ebf7843720ee1e48b0b364aafa0/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/9b9abbafcef136cbbb496ab14519a67a/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/a012adb466761cf4a9bf5a6748a650f2/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/a20986474e613a87ca4fdd07c7579ebb/transformed/play-services-base-18.1.0/res/values-es/values.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/a24f737d9531639d64aec9228e4c6bdc/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/a2572403851b1ecd093f0d4db65316ba/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/a4bba03fcfa90ff5c89ec331c41ff109/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/a63437cf21cb56635e241c05ead5b39d/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/aa0fcf4e36096cf5b37bdd36c0355c55/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/b6fd5cf5e25cff2964fb6e0e3bc5388c/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/b753a4b1aa10cccc570124a22817f49f/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/bc0689a2d6048ef76c23ed0858268d96/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/bc0689a2d6048ef76c23ed0858268d96/transformed/emoji2-1.2.0/META-INF/com/android/build/gradle/aar-metadata.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/bc0689a2d6048ef76c23ed0858268d96/transformed/emoji2-1.2.0/public.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/c7d4e3036c13403d531c6f424d0e78bc/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/cabc546f9237ec7a3cfa8cd8d5639a16/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/d1aae968f56f420cbbaa5ba55ffb20fc/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/d688d9d5f545f3ebdb96337036ddf41e/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/dcd375835ad3d7db9ac53b899cfc752c/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/e460651b95a025c94517e29e2b3d9cda/transformed/unzipped-distribution/gradle-8.0/gradle/shared-with-buildSrc/mirrors.settings.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/e460651b95a025c94517e29e2b3d9cda/transformed/unzipped-distribution/gradle-8.0/subprojects/core-api/src/main/java/org/gradle/api/provider/Provider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/e460651b95a025c94517e29e2b3d9cda/transformed/unzipped-distribution/gradle-8.0/subprojects/core-api/src/main/java/org/gradle/api/tasks/PathSensitive.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/e460651b95a025c94517e29e2b3d9cda/transformed/unzipped-distribution/gradle-8.0/subprojects/docs/src/docs/dsl/org.gradle.api.tasks.javadoc.Groovydoc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/e460651b95a025c94517e29e2b3d9cda/transformed/unzipped-distribution/gradle-8.0/subprojects/docs/src/docs/dsl/org.gradle.plugins.ide.idea.model.IdeaModule.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/e53ece91628784374d95c0d8726363c3/transformed/startup-runtime-1.1.1/jars/classes.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/f11b1d5757157d6dd2a75ec0e24b1909/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/caches/transforms-3/fbe2b398d00c1cc4cdb5e778d2c38a73/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/native/68d5fa5c4cc2d200863cafc0d521ce42e7d3e7ee720ec0a83991735586a16f82/windows-amd64/native-platform.dll.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/native/e376f236ea51e6404a007f0833ffe2c6e607c4080706a723a18a27aeea778392/windows-amd64/native-platform-file-events.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0-bin.zip.lck" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/bin/gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/asm-9.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/file-events-0.22-milestone-24.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/gradle-bootstrap-8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/gradle-build-cache-8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/gradle-build-cache-packaging-8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/gradle-build-events-8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/gradle-core-api-8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/gradle-file-temp-8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/gradle-model-groovy-8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/gradle-persistent-cache-8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/gradle-runtime-api-info-8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/gradle-snapshots-8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/gradle-worker-processes-8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/gradle-wrapper-shared-8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/groovy-astbuilder-3.0.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/groovy-datetime-3.0.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/groovy-groovydoc-3.0.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/groovy-test-3.0.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/groovy-xml-3.0.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/guava-31.1-jre.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/jansi-1.18.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/javaparser-core-3.17.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/kotlin-scripting-compiler-embeddable-1.8.10.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/kotlin-scripting-jvm-1.8.10.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/kotlin-scripting-jvm-host-1.8.10.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/native-platform-osx-amd64-0.22-milestone-24.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/native-platform-windows-i386-0.22-milestone-24.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/plugins/aws-java-sdk-core-1.12.365.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/plugins/bcprov-jdk15on-1.68.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/plugins/capsule-0.6.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/plugins/gradle-configuration-cache-8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/plugins/gradle-diagnostics-8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/plugins/gradle-ear-8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ASproj/.gradle/wrapper/dists/gradle-8.0-bin/ca5e32bp14vu59qr306oxotwh/gradle-8.0/lib/plugins/gradle-java-compiler-plugin-8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/app/src/main/res/layout/activity_user_search_result.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/app/src/main/res/layout/activity_user_search_result.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2XyBsZkuwZUt84xS9IQ3FXvneaS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "C:/Users/togoo/Desktop/SEG_2105/Project 1/seg2105f23-project_grp_61/test"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ada6cace-9f99-44df-a138-1fadb1c9c194" name="Changes" comment="" />
+      <created>1699591651611</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699591651611</updated>
+    </task>
+    <servers />
+  </component>
+</project>
