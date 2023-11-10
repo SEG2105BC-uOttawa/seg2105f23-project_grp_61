@@ -1,9 +1,13 @@
 package com.example.grimpeurscyclingclubtest;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 import static com.example.grimpeurscyclingclubtest.TextInputValidation.*;
 
@@ -14,6 +18,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -57,17 +62,42 @@ public class RegistrationActivity extends AppCompatActivity {
 
 
     public void register(String username, String password, String email, String role){
+
+        final Toast[] toast = {Toast.makeText(getApplication().getBaseContext(), "Username taken!", Toast.LENGTH_SHORT)};
+
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference newUserRoleRef = db.getReference("users/"+username+"/role");
-        DatabaseReference newUserEmailRef = db.getReference("users/"+username + "/email");
-        DatabaseReference newUserPasswordRef = db.getReference("users/"+username + "/password");
+        DatabaseReference userRef = db.getReference("users/"+username);
 
-        newUserRoleRef.setValue(role);
-        newUserEmailRef.setValue(email);
-        newUserPasswordRef.setValue(password);
+        ValueEventListener userListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Account account = snapshot.getValue(Account.class);
+                if (account == null) { // added check if username is taken
+                    DatabaseReference newUserRoleRef = db.getReference("users/"+username+"/role");
+                    DatabaseReference newUserEmailRef = db.getReference("users/"+username + "/email");
+                    DatabaseReference newUserPasswordRef = db.getReference("users/"+username + "/password");
+
+                    newUserRoleRef.setValue(role);
+                    newUserEmailRef.setValue(email);
+                    newUserPasswordRef.setValue(password);
 
 
-        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-        startActivityForResult(intent, 0);
+                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivityForResult(intent, 0);
+                    toast[0] = null;
+                } else {
+                    if (toast[0] != null) {
+                        toast[0].show();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        };
+        userRef.addValueEventListener(userListener);
+
     }
 }
