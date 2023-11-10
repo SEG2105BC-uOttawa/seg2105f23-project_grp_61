@@ -7,43 +7,49 @@ public class Event { // This object will be related to (generalized from?) speci
     private Integer ageReq;
     private Double paceReq;
     private Integer levelReq;
-    private Boolean isOffroad;
+    private String title;
+    private String description;
 
     public Event() {}
 
-    public Event(int ageReq, double paceReq, int levelReq, boolean isOffroad) {
+    public Event(int ageReq, double paceReq, int levelReq, String title, String description) {
         this.ageReq = ageReq;
         this.paceReq = paceReq;
         this.levelReq = levelReq;
-        this.isOffroad = isOffroad;
+        this.title = title;
+        this.description = description;
     }
 
-    public Event(String ageReq, String paceReq, String levelReq, String isOffroad) {
-        if (ageReq.equals("") || paceReq.equals("") || levelReq.equals("") || isOffroad.equals("")) {
+    public Event(String ageReq, String paceReq, String levelReq, String title, String description) {
+        if (ageReq.equals("") || paceReq.equals("") || levelReq.equals("") || title.equals("") || description.equals("")) {
             return;
         }
-        this.ageReq = parseInt(ageReq);
-        this.paceReq = Double.parseDouble(paceReq);
-        this.levelReq = parseInt(levelReq);
-
-        if (isOffroad.equals("offroad")) {
-            this.isOffroad = true;
-        } else if(isOffroad.equals("road")) {
-            this.isOffroad = false;
+        try {
+            this.ageReq = parseInt(ageReq);
+            this.paceReq = Double.parseDouble(paceReq);
+            this.levelReq = parseInt(levelReq);
+            this.title = title;
+            this.description = description;
+        } catch (Exception e) {
+            throw new IllegalArgumentException();
         }
 
     }
 
     public boolean isEmpty() {
-        return ageReq == null && paceReq == null && levelReq == null  && isOffroad == null;
+        return ageReq == null && paceReq == null && levelReq == null  && title == null && description == null;
     }
 
     public double getPaceReq() {
         return paceReq;
     }
 
-    public boolean getIsOffroad() {
-        return isOffroad;
+    public String getDescription() {
+        return description;
+    }
+
+    public String getTitle() {
+        return  title;
     }
 
     public int getAgeReq() {
@@ -62,12 +68,15 @@ public class Event { // This object will be related to (generalized from?) speci
         this.levelReq = levelReq;
     }
 
-    public void setOffroad(boolean offroad) {
-        isOffroad = offroad;
-    }
-
     public void setPaceReq(double paceReq) {
         this.paceReq = paceReq;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }

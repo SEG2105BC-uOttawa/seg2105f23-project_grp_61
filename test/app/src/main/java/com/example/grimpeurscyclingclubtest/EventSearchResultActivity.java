@@ -35,39 +35,25 @@ public class EventSearchResultActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // Get Post object and use the values to update the UI
                 Event event = dataSnapshot.getValue(Event.class);
+                EditText labelText = (EditText) findViewById(R.id.labelEditText);
+                labelText.setText(ename);
 
 
                 if (event == null) {
                     Toast toast = Toast.makeText(getApplication().getBaseContext(), "Event not found...", Toast.LENGTH_SHORT);
                     toast.show();
                 } else {
-                    /*
-                    TextView emailText = (TextView) findViewById(R.id.emailText);
-                    TextView userText = (TextView) findViewById(R.id.userText);
-                    TextView roleText = (TextView) findViewById(R.id.roleText);
-                     */
 
-                    TextView labelText = (TextView) findViewById(R.id.labelEditText);
                     EditText ageEdit = (EditText) findViewById(R.id.ageEditText);
                     EditText paceEdit = (EditText) findViewById(R.id.PaceEditText);
                     EditText levelEdit = (EditText) findViewById(R.id.levelEditText);
-                    EditText typeEdit = (EditText) findViewById(R.id.typeEditText);
+                    EditText descEdit = (EditText) findViewById(R.id.descEditText);
 
-                    /*
-                    emailText.setText(emailText.getText() + event.getEmail());
-                    userText.setText(userText.getText() + ename);
-                    roleText.setText(roleText.getText() + event.getRole());
-                     */
-
-                    labelText.setText(ename);
                     ageEdit.setText(Integer.toString(event.getAgeReq()));
                     paceEdit.setText(Double.toString(event.getPaceReq()));
                     levelEdit.setText(Integer.toString(event.getLevelReq()));
-                    if (event.getIsOffroad()) {
-                        typeEdit.setText("offroad");
-                    } else {
-                        typeEdit.setText("road");
-                    }
+                    descEdit.setText(event.getDescription());
+
 
                 }
             }
@@ -91,17 +77,17 @@ public class EventSearchResultActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(getApplication().getBaseContext(), "Event deleted!", Toast.LENGTH_SHORT);
         toast.show();
 
-        TextView labelText = (TextView) findViewById(R.id.labelEditText);
+        EditText labelText = (EditText) findViewById(R.id.labelEditText);
         EditText ageEdit = (EditText) findViewById(R.id.ageEditText);
         EditText paceEdit = (EditText) findViewById(R.id.PaceEditText);
         EditText levelEdit = (EditText) findViewById(R.id.levelEditText);
-        EditText typeEdit = (EditText) findViewById(R.id.typeEditText);
+        EditText descEdit = (EditText) findViewById(R.id.descEditText);
 
         labelText.setText("");
         ageEdit.setText("");
         paceEdit.setText("");
         levelEdit.setText("");
-        typeEdit.setText("");
+        descEdit.setText("");
 
     }
 
@@ -112,11 +98,11 @@ public class EventSearchResultActivity extends AppCompatActivity {
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
         DatabaseReference eventRef = db.getReference("events/"+ename);
 
-        TextView labelText = (TextView) findViewById(R.id.labelEditText);
+        EditText labelText = (EditText) findViewById(R.id.labelEditText);
         EditText ageEdit = (EditText) findViewById(R.id.ageEditText);
         EditText paceEdit = (EditText) findViewById(R.id.PaceEditText);
         EditText levelEdit = (EditText) findViewById(R.id.levelEditText);
-        EditText typeEdit = (EditText) findViewById(R.id.typeEditText);
+        EditText descEdit = (EditText) findViewById(R.id.descEditText);
 
         ValueEventListener userListener = new ValueEventListener() {
             @Override
@@ -125,7 +111,7 @@ public class EventSearchResultActivity extends AppCompatActivity {
                 if (account == null || ename.equals(labelText.getText().toString())) { // added check if event name is taken
 
 
-                    Event event = new Event(ageEdit.getText().toString(), paceEdit.getText().toString(), levelEdit.getText().toString(), typeEdit.getText().toString());
+                    Event event = new Event(ageEdit.getText().toString(), paceEdit.getText().toString(), levelEdit.getText().toString(), labelText.getText().toString(), descEdit.getText().toString());
 
                     if (!event.isEmpty()) {
                         eventRef.setValue(event);
