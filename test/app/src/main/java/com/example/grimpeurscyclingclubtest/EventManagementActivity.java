@@ -58,14 +58,13 @@ public class EventManagementActivity extends AppCompatActivity {
             }
         });
 
-        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String event = eventList.get(position);
                 Intent intent = new Intent(getApplicationContext(), EventSearchResultActivity.class);
                 intent.putExtra("ename", event);
                 startActivityForResult(intent, 0);
-                return true;
             }
         });
 

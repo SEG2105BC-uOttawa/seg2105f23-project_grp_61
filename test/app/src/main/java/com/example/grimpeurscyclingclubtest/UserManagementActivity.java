@@ -62,14 +62,13 @@ public class UserManagementActivity extends AppCompatActivity {
             }
         });
 
-        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                String uname = userList.get(position);
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String user = userList.get(position);
                 Intent intent = new Intent(getApplicationContext(), UserSearchResultActivity.class);
-                intent.putExtra("uname", uname);
+                intent.putExtra("uname", user);
                 startActivityForResult(intent, 0);
-                return true;
             }
         });
 
