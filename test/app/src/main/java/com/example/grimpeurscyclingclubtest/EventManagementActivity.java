@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -30,6 +31,8 @@ public class EventManagementActivity extends AppCompatActivity {
         DatabaseReference eventRef = db.getReference("events/");
         List<String> eventList = new ArrayList<String>();
         EventManagementActivity context = this;
+        ListView listView = (ListView) findViewById(R.id.eventList);
+
 
         eventRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -44,7 +47,6 @@ public class EventManagementActivity extends AppCompatActivity {
 
 
                 ArrayAdapter adapter = new ArrayAdapter<String>(context, com.google.android.material.R.layout.support_simple_spinner_dropdown_item, eventArr);
-                ListView listView = (ListView) findViewById(R.id.eventList);
                 listView.setAdapter(adapter);
             }
 
@@ -55,6 +57,20 @@ public class EventManagementActivity extends AppCompatActivity {
                 // ...
             }
         });
+
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                String event = eventList.get(position);
+                Intent intent = new Intent(getApplicationContext(), EventSearchResultActivity.class);
+                intent.putExtra("ename", event);
+                startActivityForResult(intent, 0);
+                return true;
+            }
+        });
+
+        // make events clickable
+
     }
 
     public void onSearchClick(View view) {
