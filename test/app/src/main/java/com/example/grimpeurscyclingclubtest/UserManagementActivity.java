@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -30,6 +31,8 @@ public class UserManagementActivity extends AppCompatActivity {
         DatabaseReference userRef = db.getReference("users/");
         List<String> userList = new ArrayList<String>();
         UserManagementActivity context = this;
+        ListView listView = (ListView) findViewById(R.id.userList);
+
 
         userRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -58,6 +61,19 @@ public class UserManagementActivity extends AppCompatActivity {
                 // ...
             }
         });
+
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                String uname = userList.get(position);
+                Intent intent = new Intent(getApplicationContext(), UserSearchResultActivity.class);
+                intent.putExtra("uname", uname);
+                startActivityForResult(intent, 0);
+                return true;
+            }
+        });
+
+
 
     }
 
