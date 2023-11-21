@@ -92,4 +92,20 @@ public class TextInputValidation {
 
         return matcher.find();
     }
+
+    /**
+     *
+     * @param phoneNumber string of user phone number input
+     * @return true if the input string matches the regex pattern ^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$
+     */
+    public static boolean validatePhoneNumberWithRegex(String phoneNumber){
+        if (phoneNumber == null){
+            return false;
+        }
+
+        Pattern pattern = Pattern.compile("^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$");
+        Matcher matcher = pattern.matcher(phoneNumber);
+
+        return matcher.find();
+    }
 }
