@@ -16,5 +16,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="This is the organizer activity." />
+
+        <Button
+            android:id="@+id/eventManagementBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onEventManagementClick"
+            android:text="@string/eventManagementButton" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
