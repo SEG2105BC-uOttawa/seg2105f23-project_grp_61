@@ -28,7 +28,7 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
         ename = bundle.getString("ename");
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference eventRef = db.getReference("events/"+ename);
+        DatabaseReference eventRef = db.getReference("eventtype/"+ename);
 
         ValueEventListener eventListener = new ValueEventListener() {
             @SuppressLint("SetTextI18n")
@@ -74,7 +74,7 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
         recentDelete = true;
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference eventRef = db.getReference("events/"+ename);
+        DatabaseReference eventRef = db.getReference("eventtype/"+ename);
 
         eventRef.removeValue();
         Toast toast = Toast.makeText(getApplication().getBaseContext(), "Event deleted!", Toast.LENGTH_SHORT);
@@ -99,7 +99,7 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
         final Toast[] toast = {Toast.makeText(getApplication().getBaseContext(), "Event name taken!", Toast.LENGTH_SHORT)};
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference eventRef = db.getReference("events/"+ename);
+        DatabaseReference eventRef = db.getReference("eventtype/"+ename);
 
         EditText labelText = (EditText) findViewById(R.id.labelEditText);
 //        EditText ageEdit = (EditText) findViewById(R.id.ageEditText);

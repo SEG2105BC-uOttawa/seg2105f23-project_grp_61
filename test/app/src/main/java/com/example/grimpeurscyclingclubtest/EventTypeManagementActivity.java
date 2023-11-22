@@ -28,7 +28,7 @@ public class EventTypeManagementActivity extends AppCompatActivity {
         setContentView(R.layout.activity_event_type_management);
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference eventRef = db.getReference("events/");
+        DatabaseReference eventRef = db.getReference("eventtype/");
         List<String> eventList = new ArrayList<String>();
         EventTypeManagementActivity context = this;
         ListView listView = (ListView) findViewById(R.id.eventList);
