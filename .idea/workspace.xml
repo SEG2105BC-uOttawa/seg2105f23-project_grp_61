@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b1bd5b2c-3f1b-431f-8754-f8130d84ac6e" name="Changes" comment="Made EventType into an object which no longer uses anything other than strings">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/app/src/main/java/com/example/grimpeurscyclingclubtest/EventTypeSearchResultActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/app/src/main/java/com/example/grimpeurscyclingclubtest/EventTypeSearchResultActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +29,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/togoo/Desktop/SEG_2105/Project 1/seg2105f23-project_grp_61/test&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/togoo/Desktop/SEG_2105/Project 1/seg2105f23-project_grp_61/test/app&quot;
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -49,7 +48,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700608487854</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Made EventType into an object which no longer uses anything other than strings">
+      <created>1700608769191</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700608769191</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
