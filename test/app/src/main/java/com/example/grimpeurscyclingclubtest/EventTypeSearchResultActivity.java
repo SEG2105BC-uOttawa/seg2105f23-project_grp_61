@@ -28,7 +28,7 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
         ename = bundle.getString("ename");
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference eventRef = db.getReference("events/"+ename);
+        DatabaseReference eventRef = db.getReference("eventtype/"+ename);
 
         ValueEventListener eventListener = new ValueEventListener() {
             @SuppressLint("SetTextI18n")
@@ -45,14 +45,14 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
                     toast.show();
                 } else {
 
-                    EditText ageEdit = (EditText) findViewById(R.id.ageEditText);
-                    EditText paceEdit = (EditText) findViewById(R.id.PaceEditText);
-                    EditText levelEdit = (EditText) findViewById(R.id.levelEditText);
+//                    EditText ageEdit = (EditText) findViewById(R.id.ageEditText);
+//                    EditText paceEdit = (EditText) findViewById(R.id.PaceEditText);
+//                    EditText levelEdit = (EditText) findViewById(R.id.levelEditText);
                     EditText descEdit = (EditText) findViewById(R.id.descEditText);
 
-                    ageEdit.setText(Integer.toString(event.getAgeReq()));
-                    paceEdit.setText(Double.toString(event.getPaceReq()));
-                    levelEdit.setText(Integer.toString(event.getLevelReq()));
+//                    ageEdit.setText(Integer.toString(event.getAgeReq()));
+//                    paceEdit.setText(Double.toString(event.getPaceReq()));
+//                    levelEdit.setText(Integer.toString(event.getLevelReq()));
                     descEdit.setText(event.getDescription());
 
 
@@ -74,22 +74,22 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
         recentDelete = true;
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference eventRef = db.getReference("events/"+ename);
+        DatabaseReference eventRef = db.getReference("eventtype/"+ename);
 
         eventRef.removeValue();
         Toast toast = Toast.makeText(getApplication().getBaseContext(), "Event deleted!", Toast.LENGTH_SHORT);
         toast.show();
 
         EditText labelText = (EditText) findViewById(R.id.labelEditText);
-        EditText ageEdit = (EditText) findViewById(R.id.ageEditText);
-        EditText paceEdit = (EditText) findViewById(R.id.PaceEditText);
-        EditText levelEdit = (EditText) findViewById(R.id.levelEditText);
+//        EditText ageEdit = (EditText) findViewById(R.id.ageEditText);
+//        EditText paceEdit = (EditText) findViewById(R.id.PaceEditText);
+//        EditText levelEdit = (EditText) findViewById(R.id.levelEditText);
         EditText descEdit = (EditText) findViewById(R.id.descEditText);
 
         labelText.setText("");
-        ageEdit.setText("");
-        paceEdit.setText("");
-        levelEdit.setText("");
+//        ageEdit.setText("");
+//        paceEdit.setText("");
+//        levelEdit.setText("");
         descEdit.setText("");
 
     }
@@ -99,12 +99,12 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
         final Toast[] toast = {Toast.makeText(getApplication().getBaseContext(), "Event name taken!", Toast.LENGTH_SHORT)};
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference eventRef = db.getReference("events/"+ename);
+        DatabaseReference eventRef = db.getReference("eventtype/"+ename);
 
         EditText labelText = (EditText) findViewById(R.id.labelEditText);
-        EditText ageEdit = (EditText) findViewById(R.id.ageEditText);
-        EditText paceEdit = (EditText) findViewById(R.id.PaceEditText);
-        EditText levelEdit = (EditText) findViewById(R.id.levelEditText);
+//        EditText ageEdit = (EditText) findViewById(R.id.ageEditText);
+//        EditText paceEdit = (EditText) findViewById(R.id.PaceEditText);
+//        EditText levelEdit = (EditText) findViewById(R.id.levelEditText);
         EditText descEdit = (EditText) findViewById(R.id.descEditText);
 
         ValueEventListener userListener = new ValueEventListener() {
@@ -114,7 +114,7 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
                 if (account == null || ename.equals(labelText.getText().toString())) { // added check if event name is taken
 
 
-                    EventType event = new EventType(ageEdit.getText().toString(), paceEdit.getText().toString(), levelEdit.getText().toString(), labelText.getText().toString(), descEdit.getText().toString());
+                    EventType event = new EventType(labelText.getText().toString(), descEdit.getText().toString()); //ageEdit.getText().toString(), paceEdit.getText().toString(), levelEdit.getText().toString()
 
                     if (recentDelete) {
                         recentDelete = false;
