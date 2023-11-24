@@ -6,17 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".EventManagementActivity">
 
-    <Button
-        android:id="@+id/newEventBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onNewEventClick"
-        android:text="@string/newEventButtun" />
-
-    <ListView
-        android:id="@+id/orgEventList"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        tools:layout_editor_absoluteX="79dp"
-        tools:layout_editor_absoluteY="105dp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/newEventBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onNewEventClick"
+            android:text="@string/newEventButtun" />
+
+        <ListView
+            android:id="@+id/orgEventList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </ListView>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

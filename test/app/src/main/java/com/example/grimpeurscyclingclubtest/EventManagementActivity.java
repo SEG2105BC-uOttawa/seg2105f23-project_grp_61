@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -31,7 +32,7 @@ public class EventManagementActivity extends AppCompatActivity {
         uname = bundle.getString("uname");
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference eventRef = db.getReference("users/" + uname + "events/");
+        DatabaseReference eventRef = db.getReference("users/" + uname + "/events/");//"users/" + uname +
         List<String> eventTypeList = new ArrayList<String>();
         EventManagementActivity context = this;
         ListView eventTypeListView = (ListView) findViewById(R.id.orgEventList);
@@ -61,6 +62,18 @@ public class EventManagementActivity extends AppCompatActivity {
             }
         });
 
+        eventTypeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String eventName = eventTypeList.get(position);
+                Intent intent = new Intent(getApplicationContext(), EventCreationActivity.class);
+                intent.putExtra("uname", uname);
+                intent.putExtra("ename", eventName);
+                startActivity(intent);
+            }
+        });
+
+
         //need to inflate adapter or
     }
 
@@ -68,6 +81,7 @@ public class EventManagementActivity extends AppCompatActivity {
         //open event creation activity
         Intent intent = new Intent(getApplicationContext(), EventCreationActivity.class);
         intent.putExtra("uname", uname);
+        intent.putExtra("ename", "");
         startActivity(intent);
 
     }

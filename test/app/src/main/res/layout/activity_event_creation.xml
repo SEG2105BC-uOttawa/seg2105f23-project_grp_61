@@ -25,7 +25,7 @@
                 android:text="Event Name" />
 
             <EditText
-                android:id="@+id/editTextText"
+                android:id="@+id/editTextEventName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -65,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Date (MM/DD/YY)" />
+                android:text="Date (DD/MM/YYYY)" />
 
             <EditText
                 android:id="@+id/editTextDate"
@@ -86,7 +86,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Start Time" />
+                android:text="Start Time(eg. 0900)" />
 
             <EditText
                 android:id="@+id/editTextTime"
@@ -110,7 +110,7 @@
                 android:text="Participant Limit" />
 
             <EditText
-                android:id="@+id/editTextNumber"
+                android:id="@+id/editTextParticipantLimit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -130,7 +130,7 @@
                 android:text="Registration Fee" />
 
             <EditText
-                android:id="@+id/editTextNumberDecimal"
+                android:id="@+id/editTextRegistrationFee"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -142,7 +142,21 @@
             android:id="@+id/textView19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="route planning tbd" />
+            android:text="NEED TO VALIDATE route planning tbd" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onCreateEventClick"
+            android:text="Add" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickDelete"
+            android:text="Delete" />
 
     </LinearLayout>
 

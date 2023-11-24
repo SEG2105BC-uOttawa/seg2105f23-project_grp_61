@@ -21,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
     }
 
-    public void OnClickLogin(View view){
+    public void OnClickLogin(View view){ // should move part to validation
 
         EditText eTextEmail = (EditText) findViewById(R.id.loginUsernameInput);
         EditText eTextPass = (EditText) findViewById(R.id.loginPaswordInput);

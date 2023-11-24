@@ -28,7 +28,7 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
         ename = bundle.getString("ename");
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference eventRef = db.getReference("events/"+ename);
+        DatabaseReference eventRef = db.getReference("eventtype/"+ename);
 
         ValueEventListener eventListener = new ValueEventListener() {
             @SuppressLint("SetTextI18n")
