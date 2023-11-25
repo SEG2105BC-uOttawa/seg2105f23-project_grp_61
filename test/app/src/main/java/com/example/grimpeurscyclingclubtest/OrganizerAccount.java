@@ -96,7 +96,6 @@ public class OrganizerAccount extends Account{
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-
                 ProfileImageId = dataSnapshot.getValue(String.class);
 
 

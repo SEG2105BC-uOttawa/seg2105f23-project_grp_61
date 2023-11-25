@@ -40,7 +40,13 @@ public class OrganizerActivity extends AppCompatActivity {
                 OrganizerAccount userAccount = new OrganizerAccount(uname);
 
                 String DrawableName = dataSnapshot.getValue(String.class);
-                int resID = getResources().getIdentifier(DrawableName, "drawable", getPackageName());
+                int resID;
+                if(DrawableName == null){
+                    resID = getResources().getIdentifier("ic_logo_00", "drawable", getPackageName());
+                }
+                else {
+                    resID = getResources().getIdentifier(DrawableName, "drawable", getPackageName());
+                }
                 profilePic.setImageResource(resID);
 
             }
