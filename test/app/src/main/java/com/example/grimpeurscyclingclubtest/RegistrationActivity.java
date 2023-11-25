@@ -93,7 +93,7 @@ public class RegistrationActivity extends AppCompatActivity {
         if(role.equals("organizer") && (SocialMedia.equals("") || PhoneNumber.equals(""))){
             Toast.makeText(this,"There is still unfilled information",Toast.LENGTH_LONG).show();
         }
-        else if(role.equals("organizer") && (!git validatePhoneNumberWithRegex((PhoneNumber))
+        else if(role.equals("organizer") && (!validatePhoneNumberWithRegex((PhoneNumber))
                 && (!validateSocialMedia(SocialMedia)))){
             Toast.makeText(this,"Unvalidated phone number or social link",Toast.LENGTH_LONG).show();
 
