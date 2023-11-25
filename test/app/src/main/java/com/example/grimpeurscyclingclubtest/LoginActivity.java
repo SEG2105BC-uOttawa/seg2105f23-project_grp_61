@@ -76,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void login(String username, String pass){
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        String path = "users/"+username +"/password";
+        String path = "users2/"+username +"/password";
         DatabaseReference passwordRef = db.getReference(path);
         ValueEventListener passListener = new ValueEventListener() {
             @Override
@@ -103,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
     private void userRouter(String uname) {
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference roleRef = db.getReference("users/"+uname + "/role");
+        DatabaseReference roleRef = db.getReference("users2/"+uname + "/role");
 
         ValueEventListener roleListener = new ValueEventListener() {
             @Override

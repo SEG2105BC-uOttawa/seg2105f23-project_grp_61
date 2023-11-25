@@ -25,8 +25,8 @@ public class Account {
         this.username = username;
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference emailRef = db.getReference("users" + username + "/email");
-        DatabaseReference roleRef = db.getReference("users" + username + "/role");
+        DatabaseReference emailRef = db.getReference("users2" + username + "/email");
+        DatabaseReference roleRef = db.getReference("users2" + username + "/role");
 
 
         ValueEventListener emailListener = new ValueEventListener() {
