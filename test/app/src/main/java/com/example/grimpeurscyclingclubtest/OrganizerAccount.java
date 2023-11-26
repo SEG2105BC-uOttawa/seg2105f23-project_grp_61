@@ -14,6 +14,7 @@ import java.util.Objects;
 public class OrganizerAccount extends Account{
 
     String PhoneNumber;
+    String ContactName;
     String SocialMedia;
     String WorkHours;
 //    List<EventType> joinedEvents;
@@ -32,6 +33,7 @@ public class OrganizerAccount extends Account{
         DatabaseReference socialMediaRef = db.getReference("users2" + username + "/SocialMedia");
         DatabaseReference workHoursRef = db.getReference("users2" +username + "/WorkHours");
         DatabaseReference profileImageRef = db.getReference("users2" +username + "/ProfileImageId");
+        DatabaseReference contactNameRef = db.getReference("users2" +username+ "/ContactName");
 
         //Change once list is setup for organizer
         //DatabaseReference joinedEventsRef = db.getReference("users2" + username + "/joinedEvents");
@@ -110,6 +112,25 @@ public class OrganizerAccount extends Account{
         };
         profileImageRef.addValueEventListener(valueListener4);
 
+        ValueEventListener valueListener5 = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+
+                ContactName = dataSnapshot.getValue(String.class);
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                Log.e("FirebaseError", "Data retrieval failed: " + databaseError.getMessage());
+            }
+        };
+        contactNameRef.addValueEventListener(valueListener5);
+
 
     }
 
@@ -127,4 +148,6 @@ public class OrganizerAccount extends Account{
     public String getProfileImageId() {
         return ProfileImageId;
     }
+
+    public String getContactName(){return ContactName;}
 }

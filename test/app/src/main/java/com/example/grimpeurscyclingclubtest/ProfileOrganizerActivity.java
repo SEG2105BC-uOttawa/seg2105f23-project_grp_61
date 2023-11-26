@@ -6,10 +6,13 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import static com.example.grimpeurscyclingclubtest.TextInputValidation.*;
+
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,8 +25,12 @@ public class ProfileOrganizerActivity extends AppCompatActivity {
     EditText phoneEdit;
     EditText socialEdit;
     EditText hoursEdit;
+    EditText contactEdit;
 
     ImageView profilePic;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +41,7 @@ public class ProfileOrganizerActivity extends AppCompatActivity {
         socialEdit = (EditText) findViewById(R.id.SocialMediaedit);
         hoursEdit = (EditText) findViewById(R.id.WorkHoursedit);
         profilePic = (ImageView) findViewById(R.id.profileImage);
+        contactEdit = (EditText) findViewById(R.id.ContactNameedit);
 
         Bundle bundle = getIntent().getExtras();
         String uname = bundle.getString("uname");
@@ -61,6 +69,7 @@ public class ProfileOrganizerActivity extends AppCompatActivity {
                 phoneEdit.setText(users.getPhoneNumber());
                 socialEdit.setText(users.getSocialMedia());
                 hoursEdit.setText(users.getWorkHours());
+                contactEdit.setText(users.getContactName());
 
 
             }
@@ -76,6 +85,7 @@ public class ProfileOrganizerActivity extends AppCompatActivity {
         phoneEdit.setEnabled(false);
         socialEdit.setEnabled(false);
         hoursEdit.setEnabled(false);
+        contactEdit.setEnabled(false);
 
     }
 
@@ -84,11 +94,14 @@ public class ProfileOrganizerActivity extends AppCompatActivity {
         phoneEdit = (EditText) findViewById(R.id.SocialMediaedit);
         socialEdit = (EditText) findViewById(R.id.PhoneNumberedit);
         hoursEdit = (EditText) findViewById(R.id.WorkHoursedit);
+        contactEdit = (EditText) findViewById(R.id.ContactNameedit);
+
 
         //Makes the editText editable
         phoneEdit.setEnabled(true);
         socialEdit.setEnabled(true);
         hoursEdit.setEnabled(true);
+        contactEdit.setEnabled(true);
     }
 
     //Saves information placed by user
@@ -97,29 +110,34 @@ public class ProfileOrganizerActivity extends AppCompatActivity {
         phoneEdit = (EditText) findViewById(R.id.PhoneNumberedit);
         socialEdit = (EditText) findViewById(R.id.SocialMediaedit);
         hoursEdit = (EditText) findViewById(R.id.WorkHoursedit);
+        contactEdit = (EditText) findViewById(R.id.ContactNameedit);
 
-        String phoneNumber = phoneEdit.getText().toString();
-        String socialMedia = socialEdit.getText().toString();
-        String workHours = hoursEdit.getText().toString();
+        String PhoneNumber = phoneEdit.getText().toString();
+        String SocialMedia = socialEdit.getText().toString();
+        String WorkHours = hoursEdit.getText().toString();
+        String ContactName = contactEdit.getText().toString();
 
         Bundle bundle = getIntent().getExtras();
         String uname = bundle.getString("uname");
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
         DatabaseReference infoUser = db.getReference("users2/"+uname);
-
         ValueEventListener userListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 DatabaseReference PhoneNumberRef = db.getReference("users2/" + uname + "/PhoneNumber");
                 DatabaseReference SocialMediaRef = db.getReference("users2/" + uname + "/SocialMedia");
                 DatabaseReference HoursWorkedRef = db.getReference("users2/" + uname + "/WorkHours");
+                DatabaseReference contactNameRef = db.getReference("users2/" +uname+ "/ContactName");
 
-                PhoneNumberRef.setValue(phoneNumber);
-                SocialMediaRef.setValue(socialMedia);
-                HoursWorkedRef.setValue(workHours);
+                PhoneNumberRef.setValue(PhoneNumber);
+                SocialMediaRef.setValue(SocialMedia);
+                HoursWorkedRef.setValue(WorkHours);
+                contactNameRef.setValue(ContactName);
+
 
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -128,15 +146,17 @@ public class ProfileOrganizerActivity extends AppCompatActivity {
         infoUser.addValueEventListener(userListener);
 
         //setText of editText
-        phoneEdit.setText(phoneNumber);
-        socialEdit.setText(socialMedia);
-        hoursEdit.setText(workHours);
-
+        phoneEdit.setText(PhoneNumber);
+        socialEdit.setText(SocialMedia);
+        hoursEdit.setText(WorkHours);
+        contactEdit.setText(ContactName);
 
         //Makes the editText uneditable
         phoneEdit.setEnabled(false);
         socialEdit.setEnabled(false);
         hoursEdit.setEnabled(false);
+        contactEdit.setEnabled(false);
+
     }
 
     public void onClickBack(View view){
@@ -172,20 +192,17 @@ public class ProfileOrganizerActivity extends AppCompatActivity {
         } else {
             drawableName = "ic_logo_00";
         }
-        int resID = getResources().getIdentifier(drawableName, "drawable", getPackageName());
-        avatarImage.setImageResource(resID);
 
         Bundle bundle = getIntent().getExtras();
         String uname = bundle.getString("uname");
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference infoUser = db.getReference("users2/"+uname);
+        DatabaseReference profilePictureRef = db.getReference("users2/" + uname + "/ProfileImageId");
 
         String finalDrawableName = drawableName;
         ValueEventListener userListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                DatabaseReference profilePictureRef = db.getReference("users2/" + uname + "/ProfileImageId");
 
                 profilePictureRef.setValue(finalDrawableName);
             }
@@ -194,7 +211,7 @@ public class ProfileOrganizerActivity extends AppCompatActivity {
 
             }
         };
-        infoUser.addValueEventListener(userListener);
+        profilePictureRef.addValueEventListener(userListener);
 
 
     }
