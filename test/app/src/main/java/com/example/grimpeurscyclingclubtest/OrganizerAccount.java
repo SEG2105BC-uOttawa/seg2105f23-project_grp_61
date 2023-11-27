@@ -29,14 +29,14 @@ public class OrganizerAccount extends Account{
         super(username);
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference phoneNumberRef = db.getReference("users2" + username + "/PhoneNumber");
-        DatabaseReference socialMediaRef = db.getReference("users2" + username + "/SocialMedia");
-        DatabaseReference workHoursRef = db.getReference("users2" +username + "/WorkHours");
-        DatabaseReference profileImageRef = db.getReference("users2" +username + "/ProfileImageId");
-        DatabaseReference contactNameRef = db.getReference("users2" +username+ "/ContactName");
+        DatabaseReference phoneNumberRef = db.getReference("users" + username + "/PhoneNumber");
+        DatabaseReference socialMediaRef = db.getReference("users" + username + "/SocialMedia");
+        DatabaseReference workHoursRef = db.getReference("users" +username + "/WorkHours");
+        DatabaseReference profileImageRef = db.getReference("users" +username + "/ProfileImageId");
+        DatabaseReference contactNameRef = db.getReference("users" +username+ "/ContactName");
 
         //Change once list is setup for organizer
-        //DatabaseReference joinedEventsRef = db.getReference("users2" + username + "/joinedEvents");
+        //DatabaseReference joinedEventsRef = db.getReference("users" + username + "/joinedEvents");
         ValueEventListener valueListener1 = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

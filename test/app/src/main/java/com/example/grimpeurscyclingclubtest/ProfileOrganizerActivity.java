@@ -47,7 +47,7 @@ public class ProfileOrganizerActivity extends AppCompatActivity {
         String uname = bundle.getString("uname");
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference orgRef = db.getReference("users2/" + uname);
+        DatabaseReference orgRef = db.getReference("users/" + uname);
 
         userListener = new ValueEventListener() {
             @Override
@@ -102,7 +102,7 @@ public class ProfileOrganizerActivity extends AppCompatActivity {
         String uname = bundle.getString("uname");
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference infoUser = db.getReference("users2/" + uname);
+        DatabaseReference infoUser = db.getReference("users/" + uname);
 
         if (validateWorkingHours(WorkHours) && validateSocialMedia(SocialMedia) && validatePhoneNumberWithRegex(PhoneNumber)) {
             // Remove the previous ValueEventListener before adding a new one
@@ -110,10 +110,10 @@ public class ProfileOrganizerActivity extends AppCompatActivity {
 
             infoUser.addValueEventListener(userListener);
 
-            DatabaseReference PhoneNumberRef = db.getReference("users2/" + uname + "/PhoneNumber");
-            DatabaseReference SocialMediaRef = db.getReference("users2/" + uname + "/SocialMedia");
-            DatabaseReference HoursWorkedRef = db.getReference("users2/" + uname + "/WorkHours");
-            DatabaseReference contactNameRef = db.getReference("users2/" + uname + "/ContactName");
+            DatabaseReference PhoneNumberRef = db.getReference("users/" + uname + "/PhoneNumber");
+            DatabaseReference SocialMediaRef = db.getReference("users/" + uname + "/SocialMedia");
+            DatabaseReference HoursWorkedRef = db.getReference("users/" + uname + "/WorkHours");
+            DatabaseReference contactNameRef = db.getReference("users/" + uname + "/ContactName");
 
             PhoneNumberRef.setValue(PhoneNumber);
             SocialMediaRef.setValue(SocialMedia);
@@ -167,14 +167,14 @@ public class ProfileOrganizerActivity extends AppCompatActivity {
         String uname = bundle.getString("uname");
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference infoUser = db.getReference("users2/" + uname);
+        DatabaseReference infoUser = db.getReference("users/" + uname);
 
 
         infoUser.removeEventListener(userListener);
 
         infoUser.addValueEventListener(userListener);
 
-        DatabaseReference profilePictureRef = db.getReference("users2/" + uname + "/ProfileImageId");
+        DatabaseReference profilePictureRef = db.getReference("users/" + uname + "/ProfileImageId");
         profilePictureRef.setValue(drawableName);
     }
 }

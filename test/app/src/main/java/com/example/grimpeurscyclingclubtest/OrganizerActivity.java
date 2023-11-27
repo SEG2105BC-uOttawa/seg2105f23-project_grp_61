@@ -24,7 +24,7 @@ public class OrganizerActivity extends AppCompatActivity {
         String uname = bundle.getString("uname");
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference imageRef = db.getReference("users2/"+uname+"/ProfileImageId");
+        DatabaseReference imageRef = db.getReference("users/"+uname+"/ProfileImageId");
 
 
         ImageView profilePic = (ImageView) findViewById(R.id.imageView);

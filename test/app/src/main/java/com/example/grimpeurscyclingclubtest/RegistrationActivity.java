@@ -110,7 +110,7 @@ public class RegistrationActivity extends AppCompatActivity {
         final Toast[] toast = {Toast.makeText(getApplication().getBaseContext(), "Username taken!", Toast.LENGTH_SHORT)};
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference userRef = db.getReference("users2/"+username);
+        DatabaseReference userRef = db.getReference("users/"+username);
 
         ValueEventListener userListener = new ValueEventListener() {
             @Override
@@ -118,11 +118,11 @@ public class RegistrationActivity extends AppCompatActivity {
                 Account account = snapshot.getValue(Account.class);
                 OrganizerAccount orgaccount = snapshot.getValue(OrganizerAccount.class);
                 if (account == null) { // added check if username is taken
-                    DatabaseReference newUserRoleRef = db.getReference("users2/"+username+"/role");
-                    DatabaseReference newUserEmailRef = db.getReference("users2/"+username + "/email");
-                    DatabaseReference newUserPasswordRef = db.getReference("users2/"+username + "/password");
-                    DatabaseReference newUserPhoneNumberRef = db.getReference("users2/"+username + "/PhoneNumber");
-                    DatabaseReference newUserSocialMediaRef = db.getReference("users2/"+username + "/SocialMedia");
+                    DatabaseReference newUserRoleRef = db.getReference("users/"+username+"/role");
+                    DatabaseReference newUserEmailRef = db.getReference("users/"+username + "/email");
+                    DatabaseReference newUserPasswordRef = db.getReference("users/"+username + "/password");
+                    DatabaseReference newUserPhoneNumberRef = db.getReference("users/"+username + "/PhoneNumber");
+                    DatabaseReference newUserSocialMediaRef = db.getReference("users/"+username + "/SocialMedia");
 
                     newUserRoleRef.setValue(role);
                     newUserEmailRef.setValue(email);
