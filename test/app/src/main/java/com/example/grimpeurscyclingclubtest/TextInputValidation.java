@@ -156,7 +156,7 @@ public class TextInputValidation {
      * @param key thing that becomes a part of the path
      * @return true if it wouldnt crash the app while trying to update the db
      */
-    public static boolean validateKey(String key){
+    public static boolean validateDBKey(String key){
         if(key.contains(".")){
             return false;
         }

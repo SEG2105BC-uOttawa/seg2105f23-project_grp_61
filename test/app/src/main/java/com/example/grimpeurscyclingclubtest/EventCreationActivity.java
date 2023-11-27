@@ -46,10 +46,6 @@ public class EventCreationActivity extends AppCompatActivity {
         EventCreationActivity context = this;
         Spinner eventSpinner = (Spinner) findViewById(R.id.eventTypeSpinner);
 
-        if(!ename.equals("")){
-            EditText eTextEventName = (EditText) findViewById(R.id.editTextEventName);
-            eTextEventName.setText(ename);
-        }
 
 
         eventTypeRef.addValueEventListener(new ValueEventListener() {//inflate adapter
@@ -66,6 +62,8 @@ public class EventCreationActivity extends AppCompatActivity {
 
                 ArrayAdapter adapter = new ArrayAdapter<String>(context, com.google.android.material.R.layout.support_simple_spinner_dropdown_item, eventArr);
                 eventSpinner.setAdapter(adapter);
+
+
             }
 
             @Override
@@ -75,7 +73,112 @@ public class EventCreationActivity extends AppCompatActivity {
                 // ...
             }
         });
+
+        if(!ename.equals("")){
+            EditText eTextEventName = (EditText) findViewById(R.id.editTextEventName);
+            eTextEventName.setText(ename);
+
+            //set all of the relevant fields
+
+            //set event type
+            DatabaseReference typeRef = db.getReference("users/" + uname + "/events/" + ename + "/eventtype");
+            typeRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    String type = snapshot.getValue(String.class);
+
+                    eventSpinner.setSelection(eventTypeList.indexOf(type));
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+
+
+            //set date
+
+            DatabaseReference dateRef = db.getReference("users/" + uname + "/events/" + ename + "/date");
+            dateRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    String date = snapshot.getValue(String.class);
+                    EditText editTextDate = (EditText) findViewById(R.id.editTextDate);
+                    editTextDate.setText(date);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+
+            ///set start time
+            DatabaseReference timeRef = db.getReference("users/" + uname + "/events/" + ename + "/startTime");
+            timeRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    String time = snapshot.getValue(String.class);
+                    EditText editTextTime = (EditText) findViewById(R.id.editTextTime);
+                    editTextTime.setText(time);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+
+            //set participant limit
+
+            DatabaseReference limitRef = db.getReference("users/" + uname + "/events/" + ename + "/participantLimit");
+            limitRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    String limit = snapshot.getValue(Integer.class).toString();
+                    EditText editTextLimit = (EditText) findViewById(R.id.editTextParticipantLimit);
+                    editTextLimit.setText(limit);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+            //set reg fee
+
+            DatabaseReference feeRef = db.getReference("users/" + uname + "/events/" + ename + "/fee");
+            feeRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    String fee = snapshot.getValue(String.class);
+                    EditText editTextFee = (EditText) findViewById(R.id.editTextRegistrationFee);
+                    editTextFee.setText(fee);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+
+
+
     }
+
+
+//    protected void onStart(){
+//        super.onStart();
+//
+//        //populate the information
+//    }
 
 
     public boolean onCreateEventClick(View view){
