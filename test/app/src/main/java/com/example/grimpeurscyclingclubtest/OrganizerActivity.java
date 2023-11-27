@@ -73,7 +73,7 @@ public class OrganizerActivity extends AppCompatActivity {
 
         Intent intent = new Intent(getApplicationContext(), ProfileOrganizerActivity.class);
         intent.putExtra("uname",uname);
-        startActivityForResult(intent,0);
+        startActivity(intent);
     }
 
 
