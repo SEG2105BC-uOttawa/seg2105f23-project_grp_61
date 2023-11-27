@@ -93,13 +93,10 @@ public class RegistrationActivity extends AppCompatActivity {
         if(role.equals("organizer") && (SocialMedia.equals("") || PhoneNumber.equals(""))){
             Toast.makeText(this,"There is still unfilled information",Toast.LENGTH_LONG).show();
         }
-        else if(role.equals("organizer") && (!validatePhoneNumberWithRegex((PhoneNumber))
-                && (!validateSocialMedia(SocialMedia)))){
+        else if(role.equals("organizer") && (validatePhoneNumberWithRegex(PhoneNumber)==false || validateSocialMedia(SocialMedia)==false)){
             Toast.makeText(this,"Unvalidated phone number or social link",Toast.LENGTH_LONG).show();
-
         }
-        else if(validateEmailWithRegex(email)&&validateUsernameWithRegex(username)&&validatePass(pass)&&
-                role != null){
+        else if(validateEmailWithRegex(email)&&validateUsernameWithRegex(username)&&validatePass(pass)&&role != null){
             register(username.toLowerCase(),pass,email,role,PhoneNumber,SocialMedia);
         }
 

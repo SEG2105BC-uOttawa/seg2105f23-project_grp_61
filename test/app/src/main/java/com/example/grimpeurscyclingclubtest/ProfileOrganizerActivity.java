@@ -122,40 +122,46 @@ public class ProfileOrganizerActivity extends AppCompatActivity {
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
         DatabaseReference infoUser = db.getReference("users2/"+uname);
-        ValueEventListener userListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                DatabaseReference PhoneNumberRef = db.getReference("users2/" + uname + "/PhoneNumber");
-                DatabaseReference SocialMediaRef = db.getReference("users2/" + uname + "/SocialMedia");
-                DatabaseReference HoursWorkedRef = db.getReference("users2/" + uname + "/WorkHours");
-                DatabaseReference contactNameRef = db.getReference("users2/" +uname+ "/ContactName");
 
-                PhoneNumberRef.setValue(PhoneNumber);
-                SocialMediaRef.setValue(SocialMedia);
-                HoursWorkedRef.setValue(WorkHours);
-                contactNameRef.setValue(ContactName);
+        if(validateWorkingHours(WorkHours) && validateSocialMedia(SocialMedia) && validatePhoneNumberWithRegex(PhoneNumber)) {
+            ValueEventListener userListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    DatabaseReference PhoneNumberRef = db.getReference("users2/" + uname + "/PhoneNumber");
+                    DatabaseReference SocialMediaRef = db.getReference("users2/" + uname + "/SocialMedia");
+                    DatabaseReference HoursWorkedRef = db.getReference("users2/" + uname + "/WorkHours");
+                    DatabaseReference contactNameRef = db.getReference("users2/" + uname + "/ContactName");
+
+                    PhoneNumberRef.setValue(PhoneNumber);
+                    SocialMediaRef.setValue(SocialMedia);
+                    HoursWorkedRef.setValue(WorkHours);
+                    contactNameRef.setValue(ContactName);
 
 
-            }
+                }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
-            }
-        };
-        infoUser.addValueEventListener(userListener);
+                }
+            };
+            infoUser.addValueEventListener(userListener);
 
-        //setText of editText
-        phoneEdit.setText(PhoneNumber);
-        socialEdit.setText(SocialMedia);
-        hoursEdit.setText(WorkHours);
-        contactEdit.setText(ContactName);
+            //setText of editText
+            phoneEdit.setText(PhoneNumber);
+            socialEdit.setText(SocialMedia);
+            hoursEdit.setText(WorkHours);
+            contactEdit.setText(ContactName);
 
-        //Makes the editText uneditable
-        phoneEdit.setEnabled(false);
-        socialEdit.setEnabled(false);
-        hoursEdit.setEnabled(false);
-        contactEdit.setEnabled(false);
+            //Makes the editText uneditable
+            phoneEdit.setEnabled(false);
+            socialEdit.setEnabled(false);
+            hoursEdit.setEnabled(false);
+            contactEdit.setEnabled(false);
+        }
+        else{
+            Toast.makeText(this,"Save failed, Invalid Information",Toast.LENGTH_LONG).show();
+        }
 
     }
 
