@@ -63,4 +63,10 @@ public class OrganizerActivity extends AppCompatActivity {
         intent.putExtra("uname", uname);
         startActivity(intent);
     }
+
+    public void onAssociateTypesClick(View view){
+        Intent intent = new Intent(getApplicationContext(), OrganizerAssociateEventTypesActivity.class);
+        intent.putExtra("uname", uname);
+        startActivity(intent);
+    }
 }

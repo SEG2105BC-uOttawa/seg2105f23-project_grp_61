@@ -1,12 +1,21 @@
 package com.example.grimpeurscyclingclubtest;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +23,18 @@ import java.util.List;
 public class OrganizerAssociateEventTypesActivity extends AppCompatActivity {
 
     String uname;
+
+    FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
+    DatabaseReference eventRef = db.getReference("eventtype/");
+
+    DatabaseReference clubETypeRef = db.getReference("users/" + uname + "/eventtypes");
+
+    List<String> eventTypeList = new ArrayList<String>();
+
+    List<String> associatedEventTypeList = new ArrayList<String>();
+
+    String[] eventArr;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,19 +44,95 @@ public class OrganizerAssociateEventTypesActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         uname = bundle.getString("uname");
 
-        FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference eventRef = db.getReference("events/");
-        List<String> eventTypeList = new ArrayList<String>();
         OrganizerAssociateEventTypesActivity context = this;
         ListView listView = (ListView) findViewById(R.id.eTypeList);
+        //ListView listView1 =  (ListView) findViewById(R.id.eTypeClubStatusList);
 
 
         //inflate list with event types
+
+        eventRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                eventTypeList.clear();
+                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                    eventTypeList.add(postSnapshot.getKey().toString());
+                }
+
+                eventArr = new String[eventTypeList.size()];
+                eventArr = eventTypeList.toArray(eventArr);
+
+
+                ArrayAdapter adapter = new ArrayAdapter<String>(context, com.google.android.material.R.layout.support_simple_spinner_dropdown_item, eventArr);
+                listView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                // ...
+            }
+        });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                enableProfileEventType(eventTypeList.get(position));
+            }
+        });
+
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                disableProfileEventType(eventTypeList.get(position));
+                return false;
+            }
+        });
+
+        
+
+
+
+        //populate associatedEventTypeList
+                //set textview to associated
     }
 
 
-    private void toggleProfileEventType(String eventType){
+    private void enableProfileEventType(String eventType){
+        //see if it is there
 
+        //associatedEventTypeList.add(eventType);
+
+        DatabaseReference clubEventTypesRef = db.getReference("users/" + uname + "/eventtypes/" + eventType);
+
+        clubEventTypesRef.setValue("Associated");
+
+        Toast toastUpdate = Toast.makeText(getApplication().getBaseContext(), "Associated with " + eventType, Toast.LENGTH_SHORT);
+        toastUpdate.show();
+        //see value if there
+
+        //case when true
+
+        //case when false
+    }
+
+    private void disableProfileEventType(String eventType){
+        //see if it is there
+
+        //associatedEventTypeList.remove(eventType);
+
+        DatabaseReference clubEventTypesRef = db.getReference("users/" + uname + "/eventtypes/" + eventType);
+
+        clubEventTypesRef.setValue("Dissociated");
+
+        Toast toastUpdate = Toast.makeText(getApplication().getBaseContext(), "Dissociated with " + eventType, Toast.LENGTH_SHORT);
+        toastUpdate.show();
+        //see value if there
+
+        //case when true
+
+        //case when false
     }
 
 }
