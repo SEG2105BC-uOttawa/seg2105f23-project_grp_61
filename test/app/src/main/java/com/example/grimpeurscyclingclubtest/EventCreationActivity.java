@@ -233,6 +233,8 @@ public class EventCreationActivity extends AppCompatActivity {
         String eventPath = "users/" + uname + "/events/";//"events/";//andrei
         DatabaseReference eventRef = db.getReference(eventPath);
 
+        DatabaseReference userEventTypesPath = db.getReference("users/"+ uname + "/eventtypes/"+ eventType);
+
         boolean validated = true;
 
         if(!validateString(eventName)){

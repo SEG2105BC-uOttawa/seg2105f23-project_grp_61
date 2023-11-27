@@ -21,21 +21,32 @@
             android:id="@+id/associatedEventTypes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="All Event Types:" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <ListView
                 android:id="@+id/eTypeList"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="329dp">
 
             </ListView>
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your club's event types:" />
+
+        <ListView
+            android:id="@+id/listVview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 

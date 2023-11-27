@@ -18,6 +18,8 @@ public class EventType { // This object will be related to (generalized from?) s
     private String title;
     private String description;
 
+    public EventType(){}
+
     public EventType(String title) {
         //populate from db
         this.title = title;

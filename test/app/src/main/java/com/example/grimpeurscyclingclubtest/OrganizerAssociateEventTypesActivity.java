@@ -27,7 +27,6 @@ public class OrganizerAssociateEventTypesActivity extends AppCompatActivity {
     FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
     DatabaseReference eventRef = db.getReference("eventtype/");
 
-    DatabaseReference clubETypeRef = db.getReference("users/" + uname + "/eventtypes");
 
     List<String> eventTypeList = new ArrayList<String>();
 
@@ -46,7 +45,7 @@ public class OrganizerAssociateEventTypesActivity extends AppCompatActivity {
 
         OrganizerAssociateEventTypesActivity context = this;
         ListView listView = (ListView) findViewById(R.id.eTypeList);
-        //ListView listView1 =  (ListView) findViewById(R.id.eTypeClubStatusList);
+        ListView listView1 =  (ListView) findViewById(R.id.listVview);
 
 
         //inflate list with event types
@@ -75,6 +74,31 @@ public class OrganizerAssociateEventTypesActivity extends AppCompatActivity {
             }
         });
 
+        DatabaseReference clubETypeRef = db.getReference("users/" + uname + "/eventtypes");
+
+
+        clubETypeRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                associatedEventTypeList.clear();
+                for (DataSnapshot postSnapshot: snapshot.getChildren()) {
+                    associatedEventTypeList.add(postSnapshot.getKey().toString());
+                }
+
+                eventArr = new String[associatedEventTypeList.size()];
+                eventArr = associatedEventTypeList.toArray(eventArr);
+
+
+                ArrayAdapter adapter = new ArrayAdapter<String>(context, com.google.android.material.R.layout.support_simple_spinner_dropdown_item, eventArr);
+                listView1.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -90,13 +114,25 @@ public class OrganizerAssociateEventTypesActivity extends AppCompatActivity {
             }
         });
 
-        
+        listView1.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                disableProfileEventType(eventTypeList.get(position));
+                return false;
+            }
+        });
+
+
+
+
 
 
 
         //populate associatedEventTypeList
                 //set textview to associated
     }
+
+
 
 
     private void enableProfileEventType(String eventType){
@@ -106,7 +142,7 @@ public class OrganizerAssociateEventTypesActivity extends AppCompatActivity {
 
         DatabaseReference clubEventTypesRef = db.getReference("users/" + uname + "/eventtypes/" + eventType);
 
-        clubEventTypesRef.setValue("Associated");
+        clubEventTypesRef.setValue(true);
 
         Toast toastUpdate = Toast.makeText(getApplication().getBaseContext(), "Associated with " + eventType, Toast.LENGTH_SHORT);
         toastUpdate.show();
@@ -124,7 +160,7 @@ public class OrganizerAssociateEventTypesActivity extends AppCompatActivity {
 
         DatabaseReference clubEventTypesRef = db.getReference("users/" + uname + "/eventtypes/" + eventType);
 
-        clubEventTypesRef.setValue("Dissociated");
+        clubEventTypesRef.removeValue();
 
         Toast toastUpdate = Toast.makeText(getApplication().getBaseContext(), "Dissociated with " + eventType, Toast.LENGTH_SHORT);
         toastUpdate.show();
