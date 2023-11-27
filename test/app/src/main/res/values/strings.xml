@@ -8,4 +8,12 @@
     <string name="registerRadioParticipant">Participant</string>
     <string name="registerRadioOrganizer">Organizer</string>
     <string name="registerPaswordReqs">Password must be at least 8 characters, have at least 1 uppercase, lowercase, and number</string>
+    <string name="AdditionalInformation">Mandatory information required before registering</string>
+    <string name="SocialMedia">Social Media Link</string>
+    <string name="PhoneNumber">Phone Number</string>
+    <string name="Hours">Work Hours</string>
+    <string name="title_activity_profile_image">ProfileImage</string>
+    <string name="profileImage">Select a Profile Picture</string>
+
+
 </resources>

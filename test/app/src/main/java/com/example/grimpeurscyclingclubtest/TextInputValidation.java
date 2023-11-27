@@ -108,4 +108,26 @@ public class TextInputValidation {
 
         return matcher.find();
     }
+
+    public static boolean validateWorkingHours(String input){
+        if (input == null){
+            return false;
+        }
+
+        Pattern pattern = Pattern.compile("^(?:[01]?\\d|2[0-3])(?:[0-5]\\d){1,2}-(?:[01]?\\d|2[0-3])(?:[0-5]\\d){1,2}$");//0000-2359
+        Matcher matcher = pattern.matcher(input);
+
+        return matcher.find();
+    }
+
+    public static boolean validateSocialMedia(String input){
+        if(input == null){
+            return false;
+        }
+        Pattern pattern = Pattern.compile("https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()!@:%_\\+.~#?&\\/\\/=]*)");
+        Matcher matcher = pattern.matcher(input);
+
+        return matcher.find();
+    }
+
 }

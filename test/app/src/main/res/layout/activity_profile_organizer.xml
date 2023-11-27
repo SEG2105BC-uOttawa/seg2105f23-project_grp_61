@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ProfileOrganizerActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:backgroundTint="#7443CC"
+            android:onClick="onClickBack"
+            android:src="@android:drawable/ic_menu_revert"
+            tools:src="@android:drawable/ic_menu_revert" />
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_logo_00"
+            android:onClick="onClickProfileImage" />
+
+        <TextView
+            android:id="@+id/UserNameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="TextView"
+            android:textSize="20dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+        <EditText
+            android:id="@+id/ContactNameedit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/ContactText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contact Name" />
+
+        <EditText
+            android:id="@+id/SocialMediaedit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="none" />
+
+        <TextView
+            android:id="@+id/SocialMediaText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/SocialMedia" />
+
+        <EditText
+            android:id="@+id/PhoneNumberedit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="none" />
+
+        <TextView
+            android:id="@+id/PhoneNumberText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/PhoneNumber" />
+
+        <EditText
+            android:id="@+id/WorkHoursedit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="none" />
+
+        <TextView
+            android:id="@+id/HoursText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Hours" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="41dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/EditInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onClickEdit"
+                android:text="Edit" />
+
+            <Button
+                android:id="@+id/Save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onClickSaveEdit"
+                android:text="Save" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
