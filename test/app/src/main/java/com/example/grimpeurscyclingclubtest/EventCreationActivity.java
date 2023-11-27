@@ -167,6 +167,21 @@ public class EventCreationActivity extends AppCompatActivity {
 
                 }
             });
+
+            DatabaseReference routeRef = db.getReference("users/" + uname + "/events/" + ename + "/route");
+            routeRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    String route = snapshot.getValue(String.class);
+                    EditText editTextRoute = (EditText) findViewById(R.id.editTextRoute);
+                    editTextRoute.setText(route);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
         }
 
 
@@ -202,12 +217,14 @@ public class EventCreationActivity extends AppCompatActivity {
         EditText eTextTime = (EditText) findViewById(R.id.editTextTime);
         EditText eTextParticipantLimit = (EditText) findViewById(R.id.editTextParticipantLimit);
         EditText eTextRegistrationFee = (EditText) findViewById(R.id.editTextRegistrationFee);
+        EditText eTextRouteInfo = (EditText) findViewById(R.id.editTextRoute);
 
         String eventName = eTextEventName.getText().toString();
         String eventDate = eTextDate.getText().toString();
         String eventTime = eTextTime.getText().toString();
         String participantLimit = eTextParticipantLimit.getText().toString();
         String registrationFee = eTextRegistrationFee.getText().toString();
+        String routeInfo = eTextRouteInfo.getText().toString();
 
         Spinner eventTypeSpinner = (Spinner) findViewById(R.id.eventTypeSpinner);
         String eventType = eventTypeSpinner.getSelectedItem().toString();
@@ -244,6 +261,11 @@ public class EventCreationActivity extends AppCompatActivity {
             Toast toastUpdate = Toast.makeText(getApplication().getBaseContext(), "Registration fee must range from 0-999.99", Toast.LENGTH_SHORT);
             toastUpdate.show();
         }
+        if(!validateString(routeInfo)){
+            validated = false;
+            Toast toastUpdate = Toast.makeText(getApplication().getBaseContext(), "Route info must not be empty", Toast.LENGTH_SHORT);
+            toastUpdate.show();
+        }
 
 
 
@@ -255,6 +277,7 @@ public class EventCreationActivity extends AppCompatActivity {
             eTextTime.setText("");
             eTextParticipantLimit.setText("");
             eTextRegistrationFee.setText("");
+            eTextRouteInfo.setText("");
 
             return false;
 
@@ -266,7 +289,7 @@ public class EventCreationActivity extends AppCompatActivity {
         else{
             // do this the same way mark did d2
             int participantLimitInt = Integer.parseInt(participantLimit);
-            Event event = new Event(eventType, uname, eventName, eventDate, eventTime, participantLimitInt, registrationFee);
+            Event event = new Event(eventType, uname, eventName, eventDate, eventTime, participantLimitInt, registrationFee, routeInfo);
 
 //            //eventRef.setValue(eventName); // set name
 //
@@ -287,6 +310,9 @@ public class EventCreationActivity extends AppCompatActivity {
 
             DatabaseReference eRegFee = db.getReference(eventPath + eventName +  "/fee");
             eRegFee.setValue(event.getRegistrationFee()); // set event fee
+
+            DatabaseReference eRouteInfo = db.getReference(eventPath + eventName +  "/route");
+            eRouteInfo.setValue(event.getRouteInfo()); // set event fee
 
 //            DatabaseReference dbr = db.getReference(eventPath + "/" + event.getEventName());
 //            dbr.setValue(event); // i guess what we did in d2 was just black magic

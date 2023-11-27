@@ -22,7 +22,7 @@ public class Event extends EventType{
 
     //private List<ParticipantAccount> participants;
 
-    public Event(String eventType, String organizer, String eventName, String eventDate, String eventTime, int participantLimit, String registrationFee){
+    public Event(String eventType, String organizer, String eventName, String eventDate, String eventTime, int participantLimit, String registrationFee, String route){
         super(eventType);
 
 
@@ -33,7 +33,7 @@ public class Event extends EventType{
         this.participantLimit = participantLimit;
         this.registrationFee = registrationFee;
 
-        this.route = null;
+        this.route = route;
         //this.participants = new ArrayList<ParticipantAccount>();
     }
 
@@ -47,4 +47,6 @@ public class Event extends EventType{
     public int getParticipantLimit(){return participantLimit;}
 
     public String getRegistrationFee(){return registrationFee;}
+
+    public String  getRouteInfo(){return route;}
 }
