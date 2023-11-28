@@ -2,6 +2,12 @@ package com.example.grimpeurscyclingclubtest;
 
 import static java.lang.Integer.parseInt;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class EventType { // This object will be related to (generalized from?) specifically scheduled events that have info on route and datetime in the future.
 
 //    private Integer ageReq;
@@ -19,6 +25,32 @@ public class EventType { // This object will be related to (generalized from?) s
         this.title = title;
         this.description = description;
     }
+
+    public EventType(String title) {
+        //populate from db
+        this.title = title;
+
+        FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
+        DatabaseReference descRef = db.getReference("eventtype/" + title + "description");
+
+        ValueEventListener descListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                description = dataSnapshot.getValue(String.class);
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+            }
+        };
+        descRef.addValueEventListener(descListener);
+    }
+
 
 //    public EventType(String title, String description) {//String ageReq, String paceReq, String levelReq,
 //        if ( title.equals("") || description.equals("")) {//ageReq.equals("") || paceReq.equals("") || levelReq.equals("") ||

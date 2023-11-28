@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -15,13 +16,16 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class OrganizerActivity extends AppCompatActivity {
+
+
+    String uname;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_organizer);
 
         Bundle bundle = getIntent().getExtras();
-        String uname = bundle.getString("uname");
+        uname = bundle.getString("uname");
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
         DatabaseReference imageRef = db.getReference("users/"+uname+"/ProfileImageId");
@@ -77,4 +81,15 @@ public class OrganizerActivity extends AppCompatActivity {
     }
 
 
+    public void onEventManagementClick(View view){
+        Intent intent = new Intent(getApplicationContext(), EventManagementActivity.class);
+        intent.putExtra("uname", uname);
+        startActivity(intent);
+    }
+
+    public void onAssociateTypesClick(View view){
+        Intent intent = new Intent(getApplicationContext(), OrganizerAssociateEventTypesActivity.class);
+        intent.putExtra("uname", uname);
+        startActivityForResult(intent, 0);
+    }
 }
