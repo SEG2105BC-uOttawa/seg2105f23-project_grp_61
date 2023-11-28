@@ -117,7 +117,7 @@ public class OrganizerAssociateEventTypesActivity extends AppCompatActivity {
         listView1.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                disableProfileEventType(eventTypeList.get(position));
+                disableProfileEventType(associatedEventTypeList.get(position));
                 return false;
             }
         });
