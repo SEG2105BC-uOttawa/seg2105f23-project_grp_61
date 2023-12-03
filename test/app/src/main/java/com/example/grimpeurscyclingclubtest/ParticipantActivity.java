@@ -1,17 +1,22 @@
 package com.example.grimpeurscyclingclubtest;
 
+import static com.example.grimpeurscyclingclubtest.TextInputValidation.validateSkillLevel;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
 
 public class ParticipantActivity extends AppCompatActivity {
 
@@ -25,11 +30,36 @@ public class ParticipantActivity extends AppCompatActivity {
         setContentView(R.layout.activity_participant);
 
         Bundle bundle = getIntent().getExtras();
-        String uname = bundle.getString("uname");
+        uname = bundle.getString("uname");
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
         DatabaseReference roleRef = db.getReference("users/"+uname + "/role");
+        DatabaseReference skillRef = db.getReference("users/" + uname + "/Level");
 
+        skillRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                EditText editTextSkillLevel = (EditText) findViewById(R.id.editTextSkillLevel);
+
+                String level = snapshot.getValue(Long.class).toString();
+
+                editTextSkillLevel.setText(level);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+        Button setSkillButton = (Button) findViewById(R.id.setSkillLvlBTN);
+        setSkillButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onSetSkillLVL(v);
+            }
+        });
 
 
         ValueEventListener roleListener = new ValueEventListener() {
@@ -95,5 +125,16 @@ public class ParticipantActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ParticipantEventSearch.class);
         intent.putExtra("uname", uname);
         startActivity(intent);
+    }
+
+    private void onSetSkillLVL(View view){
+        FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
+        DatabaseReference skillRef = db.getReference("users/"+ uname + "/Level");
+
+        EditText editTextSkillLevel = (EditText) findViewById(R.id.editTextSkillLevel);
+        String level = editTextSkillLevel.getText().toString();
+        if(validateSkillLevel(level)){
+            skillRef.setValue(Integer.valueOf(level));
+        }
     }
 }

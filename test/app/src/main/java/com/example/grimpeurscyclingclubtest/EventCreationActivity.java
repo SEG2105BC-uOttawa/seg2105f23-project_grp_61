@@ -182,6 +182,21 @@ public class EventCreationActivity extends AppCompatActivity {
 
                 }
             });
+
+            DatabaseReference skillRef = db.getReference("users/" + uname + "/events/" + ename + "/skillReq");
+            skillRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    int skillReq = snapshot.getValue(Integer.class);
+                    EditText editTextSkillReq = (EditText) findViewById(R.id.editTextSkillReq);
+                    editTextSkillReq.setText(String.valueOf(skillReq));
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
         }
 
 
@@ -218,6 +233,9 @@ public class EventCreationActivity extends AppCompatActivity {
         EditText eTextParticipantLimit = (EditText) findViewById(R.id.editTextParticipantLimit);
         EditText eTextRegistrationFee = (EditText) findViewById(R.id.editTextRegistrationFee);
         EditText eTextRouteInfo = (EditText) findViewById(R.id.editTextRoute);
+        EditText eTextSkillReq = (EditText) findViewById(R.id.editTextSkillReq);
+
+
 
         String eventName = eTextEventName.getText().toString();
         String eventDate = eTextDate.getText().toString();
@@ -225,6 +243,7 @@ public class EventCreationActivity extends AppCompatActivity {
         String participantLimit = eTextParticipantLimit.getText().toString();
         String registrationFee = eTextRegistrationFee.getText().toString();
         String routeInfo = eTextRouteInfo.getText().toString();
+        String skillReq = eTextSkillReq.getText().toString();
 
         Spinner eventTypeSpinner = (Spinner) findViewById(R.id.eventTypeSpinner);
         String eventType = eventTypeSpinner.getSelectedItem().toString();
@@ -268,7 +287,11 @@ public class EventCreationActivity extends AppCompatActivity {
             Toast toastUpdate = Toast.makeText(getApplication().getBaseContext(), "Route info must not be empty", Toast.LENGTH_SHORT);
             toastUpdate.show();
         }
-
+        if(!validateSkillLevel(skillReq)){
+            validated = false;
+            Toast toastUpdate = Toast.makeText(getApplication().getBaseContext(), "Skill level must be between 1 and 10", Toast.LENGTH_SHORT);
+            toastUpdate.show();
+        }
 
 
         if(!validated){
@@ -291,7 +314,7 @@ public class EventCreationActivity extends AppCompatActivity {
         else{
             // do this the same way mark did d2
             int participantLimitInt = Integer.parseInt(participantLimit);
-            Event event = new Event(eventType, uname, eventName, eventDate, eventTime, participantLimitInt, registrationFee, routeInfo);
+            Event event = new Event(eventType, uname, eventName, eventDate, eventTime, participantLimitInt, registrationFee, routeInfo, Integer.parseInt(skillReq));
 
 //            //eventRef.setValue(eventName); // set name
 //
@@ -315,6 +338,9 @@ public class EventCreationActivity extends AppCompatActivity {
 
             DatabaseReference eRouteInfo = db.getReference(eventPath + eventName +  "/route");
             eRouteInfo.setValue(event.getRouteInfo()); // set event fee
+
+            DatabaseReference eSkillReq = db.getReference(eventPath + eventName +  "/skillReq");
+            eSkillReq.setValue(event.getSkillReq()); // set skill requirement
 
 //            DatabaseReference dbr = db.getReference(eventPath + "/" + event.getEventName());
 //            dbr.setValue(event); // i guess what we did in d2 was just black magic

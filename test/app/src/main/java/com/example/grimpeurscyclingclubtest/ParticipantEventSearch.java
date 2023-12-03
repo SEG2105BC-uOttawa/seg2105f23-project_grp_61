@@ -31,6 +31,8 @@ import java.util.List;
 public class ParticipantEventSearch extends AppCompatActivity {
 
     String uname;
+    String clubName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,11 +66,9 @@ public class ParticipantEventSearch extends AppCompatActivity {
 
 
 
-
         //Adapter adapter;
 
         //probably need to move adapter up here and then change edittext to searchview
-        //todo add onclicklistener and check which sort is selected
 
 
 
@@ -283,22 +283,57 @@ public class ParticipantEventSearch extends AppCompatActivity {
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(sortTypeSpinner.getSelectedItem().toString().equals("Club")){
                     //todo foreward to esads club screen
 
-                    String clubName = parent.getItemAtPosition(position).toString();
+                    clubName = parent.getItemAtPosition(position).toString();
                     Toast toastUpdate = Toast.makeText(getApplication().getBaseContext(), clubName + " to be implemented", Toast.LENGTH_SHORT);
                     toastUpdate.show();
                 }
                 else {
-
                     String ename = parent.getItemAtPosition(position).toString();
-                    Intent intent = new Intent(context, ParticipantEventSearchResultActivity.class);
-                    intent.putExtra("uname", uname);
-                    intent.putExtra("ename", ename);
-                    startActivity(intent);
+
+                    //todo need to get the club name for some reason it works the second time but not thje first
+
+                    userRef.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {//todo custom adapter for image, set onclick for esads club screen
+                            for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                                if (postSnapshot.child("/role").getValue(String.class).equals("organizer")) {//postSnapshot.getKey().toString().equals("admin") || postSnapshot.getKey().toString().equals("participant")
+                                    //get club hosting event
+                                    for (DataSnapshot postSnapshot2 : postSnapshot.child("/events").getChildren()){//DataSnapshot postSnapshot2 : dataSnapshot.child("/events").getChildren()
+                                        if(postSnapshot2.getKey().toString().equals(ename)){
+                                            clubName = postSnapshot.getKey().toString();
+
+                                            Intent intent = new Intent(context, ParticipantEventSearchResultActivity.class);
+                                            intent.putExtra("uname", uname);
+                                            intent.putExtra("ename", ename);
+                                            intent.putExtra("clubName", clubName);
+
+                                            startActivity(intent);
+
+                                        }
+                                    }
+
+                                    //eventList.add(postSnapshot.getKey().toString());
+                                }
+                                //organizerList.add(postSnapshot.getKey().toString());
+
+                            }
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+
                 }
             }
         });

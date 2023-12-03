@@ -146,7 +146,7 @@ public class RegistrationActivity extends AppCompatActivity {
                         newUserSocialMediaRef.setValue(SocialMedia);
                     }
                     newUserAgeRef.setValue(Age);
-                    newUserLevelRef.setValue(Level);
+                    newUserLevelRef.setValue(Integer.parseInt(Level));
 
 
 
