@@ -16,5 +16,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="This is the participant activity." />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Join new events!" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
