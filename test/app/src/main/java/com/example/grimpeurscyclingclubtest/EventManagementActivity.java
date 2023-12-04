@@ -8,8 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,34 +20,38 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EventTypeManagementActivity extends AppCompatActivity {
+public class EventManagementActivity extends AppCompatActivity {
 
+    String uname;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_event_type_management);
+        setContentView(R.layout.activity_event_managment);
+
+        Bundle bundle = getIntent().getExtras();
+        uname = bundle.getString("uname");
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference eventRef = db.getReference("eventtype/");
-        List<String> eventList = new ArrayList<String>();
-        EventTypeManagementActivity context = this;
-        ListView listView = (ListView) findViewById(R.id.eventList);
+        DatabaseReference eventRef = db.getReference("users/" + uname + "/events/");//"users/" + uname +
+        List<String> eventTypeList = new ArrayList<String>();
+        EventManagementActivity context = this;
+        ListView eventTypeListView = (ListView) findViewById(R.id.orgEventList);
 
 
-        eventRef.addValueEventListener(new ValueEventListener() {
+        eventRef.addValueEventListener(new ValueEventListener() {//inflate adapter
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                eventList.clear();
+                eventTypeList.clear();
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                    eventList.add(postSnapshot.getKey().toString());
+                    eventTypeList.add(postSnapshot.getKey().toString());
                 }
 
-                String[] eventArr = new String[eventList.size()];
-                eventArr = eventList.toArray(eventArr);
+                String[] eventArr = new String[eventTypeList.size()];
+                eventArr = eventTypeList.toArray(eventArr);
 
 
                 ArrayAdapter adapter = new ArrayAdapter<String>(context, com.google.android.material.R.layout.support_simple_spinner_dropdown_item, eventArr);
-                listView.setAdapter(adapter);
+                eventTypeListView.setAdapter(adapter);
             }
 
             @Override
@@ -58,30 +62,28 @@ public class EventTypeManagementActivity extends AppCompatActivity {
             }
         });
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        eventTypeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String event = eventList.get(position);
-                Intent intent = new Intent(getApplicationContext(), EventTypeSearchResultActivity.class);
-                intent.putExtra("ename", event);
-                startActivityForResult(intent, 0);
+                String eventName = eventTypeList.get(position);
+                Intent intent = new Intent(getApplicationContext(), EventCreationActivity.class);
+                intent.putExtra("uname", uname);
+                intent.putExtra("ename", eventName);
+                startActivity(intent);
             }
         });
 
-        // make events clickable
+
+        //need to inflate adapter or
+    }
+
+    public void onNewEventClick(View view){
+        //open event creation activity
+        Intent intent = new Intent(getApplicationContext(), EventCreationActivity.class);
+        intent.putExtra("uname", uname);
+        intent.putExtra("ename", "");
+        startActivity(intent);
 
     }
 
-    public void onSearchClick(View view) {
-        EditText eTextSearch = (EditText) findViewById(R.id.eventText);
-        String event = eTextSearch.getText().toString();
-
-        if (event.equals("")) {
-            return;
-        } else {
-            Intent intent = new Intent(getApplicationContext(), EventTypeSearchResultActivity.class);
-            intent.putExtra("ename", event);
-            startActivityForResult(intent, 0);
-        }
-    }
 }

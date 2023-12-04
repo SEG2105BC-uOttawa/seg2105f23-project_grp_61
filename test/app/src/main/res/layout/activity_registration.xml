@@ -35,12 +35,14 @@
                 android:id="@+id/radioButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="OnCheckParticipant"
                 android:text="@string/registerRadioParticipant" />
 
             <RadioButton
                 android:id="@+id/radioButton2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="OnCheckOrganizer"
                 android:text="@string/registerRadioOrganizer" />
         </RadioGroup>
 
@@ -58,11 +60,46 @@
             android:layout_height="wrap_content"
             android:text="@string/registerPaswordReqs" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="67dp" />
+
+        <TextView
+            android:id="@+id/AdditionalInformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/AdditionalInformation"
+            android:textStyle="bold"
+            android:visibility="invisible" />
+
+        <EditText
+            android:id="@+id/SocialMedia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/SocialMedia"
+            android:inputType="text"
+            android:visibility="invisible" />
+
+        <EditText
+            android:id="@+id/PhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/PhoneNumber"
+            android:inputType="text"
+            android:visibility="invisible" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="95dp" />
+
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="OnClickRegister"
             android:text="@string/loginRegisterButton" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

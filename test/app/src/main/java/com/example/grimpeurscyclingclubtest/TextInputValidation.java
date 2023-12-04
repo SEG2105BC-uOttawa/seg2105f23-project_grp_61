@@ -92,4 +92,98 @@ public class TextInputValidation {
 
         return matcher.find();
     }
+
+    /**
+     *
+     * @param phoneNumber string of user phone number input
+     * @return true if the input string matches the regex pattern ^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$
+     */
+    public static boolean validatePhoneNumberWithRegex(String phoneNumber){
+        if (phoneNumber == null){
+            return false;
+        }
+
+        Pattern pattern = Pattern.compile("^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$");
+        Matcher matcher = pattern.matcher(phoneNumber);
+
+        return matcher.find();
+    }
+
+    public static boolean validateWorkingHours(String input){
+        if (input == null){
+            return false;
+        }
+
+        Pattern pattern = Pattern.compile("^(?:[01]?\\d|2[0-3])(?:[0-5]\\d){1,2}-(?:[01]?\\d|2[0-3])(?:[0-5]\\d){1,2}$");//0000-2359
+        Matcher matcher = pattern.matcher(input);
+
+        return matcher.find();
+    }
+
+    public static boolean validateSocialMedia(String input){
+        if(input == null){
+            return false;
+        }
+        Pattern pattern = Pattern.compile("https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()!@:%_\\+.~#?&\\/\\/=]*)");
+        Matcher matcher = pattern.matcher(input);
+
+        return matcher.find();
+    }
+
+
+    public static boolean validateRegistrationFee(String input){
+        if (input == null){
+            return false;
+        }
+
+        Pattern pattern = Pattern.compile("^\\d{1,3}(\\.\\d{1,2})?$");// 0-999.99
+        Matcher matcher = pattern.matcher(input);
+
+        return matcher.find();
+    }
+
+    public static boolean validateParticipantLimit(String input){
+        if (input == null){
+            return false;
+        }
+
+        Pattern pattern = Pattern.compile("^([1-9][0-9]{0,2}|1000)$");//1-1000
+        Matcher matcher = pattern.matcher(input);
+
+        return matcher.find();
+    }
+    public static boolean validate24hrTime(String input){
+        if (input == null){
+            return false;
+        }
+
+        Pattern pattern = Pattern.compile("^(?:[01]?\\d|2[0-3])(?:[0-5]\\d){1,2}$");//0000-2359
+        Matcher matcher = pattern.matcher(input);
+
+        return matcher.find();
+    }
+    public static boolean validateDate(String input){
+        if (input == null){
+            return false;
+        }
+        //matches DD/M/YYYY
+        Pattern pattern = Pattern.compile("(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[13-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})");//0000-2359
+        Matcher matcher = pattern.matcher(input);
+
+        return matcher.find();
+    }
+
+    public static boolean validateSkillLevel(String input){
+        try{
+            int skill = Integer.parseInt(input);
+            if (skill < 11 && skill > 0){
+                return true;
+            }else {
+                return false;
+            }
+        }catch (Exception e){
+            return false;
+        }
+    }
+
 }

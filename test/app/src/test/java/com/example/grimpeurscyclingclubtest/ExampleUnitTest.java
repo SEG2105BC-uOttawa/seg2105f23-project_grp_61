@@ -3,6 +3,7 @@ package com.example.grimpeurscyclingclubtest;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+import static com.example.grimpeurscyclingclubtest.TextInputValidation.*;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -14,4 +15,9 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void validateSkillLevelExpectTrue(){assertEquals(true, validateSkillLevel("10"));}
+    @Test
+    public void validateSkillLevelExpectFalse(){assertEquals(false, validateSkillLevel("ten"));}
 }
