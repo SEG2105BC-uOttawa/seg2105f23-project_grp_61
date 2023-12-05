@@ -30,9 +30,15 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
         DatabaseReference eventRef = db.getReference("eventtype/"+ename);
 
         ValueEventListener eventListener = new ValueEventListener() {
+            boolean finished = false;
             @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if (finished) {
+                    return;
+                }
+
                 // Get Post object and use the values to update the UI
                 EventType event = dataSnapshot.getValue(EventType.class);
                 EditText labelText = (EditText) findViewById(R.id.labelEditText);
@@ -50,6 +56,7 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
 
 
                 }
+                finished = true;
             }
 
             @Override

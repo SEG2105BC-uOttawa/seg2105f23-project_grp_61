@@ -50,8 +50,14 @@ public class ProfileOrganizerActivity extends AppCompatActivity {
         DatabaseReference orgRef = db.getReference("users/" + uname);
 
         userListener = new ValueEventListener() {
+            boolean finished = false;
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if (finished) {
+                    return;
+                }
+
                 OrganizerAccount users = dataSnapshot.getValue(OrganizerAccount.class);
 
                 String DrawableName = users.getProfileImageId();
@@ -65,6 +71,8 @@ public class ProfileOrganizerActivity extends AppCompatActivity {
                 socialEdit.setText(users.getSocialMedia());
                 hoursEdit.setText(users.getWorkHours());
                 contactEdit.setText(users.getContactName());
+
+                finished = true;
             }
 
             @Override

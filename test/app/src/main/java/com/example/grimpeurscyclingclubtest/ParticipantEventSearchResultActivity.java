@@ -223,21 +223,30 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
 
         if (participantsLeft > 0){
             userSkillRef.addValueEventListener(new ValueEventListener() {
+                boolean finished = false;
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                    if (finished) {
+                        return;
+                    }
+
                     participantSkill = snapshot.getValue(Integer.class);
 
                     if(participantSkill < Integer.valueOf(eventSkill)){
                         Toast toastUpdate = Toast.makeText(getApplication().getBaseContext(), "You are not skilled enough", Toast.LENGTH_SHORT);
                         toastUpdate.show();
+                        finished = true;
 
                     }
                     else {
                         eventRef.setValue(true);
                         userRef.setValue(ename);
+                        finished = true;
                         finish();
 
                     }
+
                 }
 
                 @Override
@@ -267,6 +276,7 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
         DatabaseReference userRef = db.getReference("/users/" + uname + "/registeredEvents/" + clubName);
 
         eventRef.addValueEventListener(new ValueEventListener() {
+            boolean finished = false;
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
@@ -274,6 +284,11 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
                         userRef.addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                                if (finished) {
+                                    return;
+                                }
+
                                 if(snapshot.exists()){
                                     if(snapshot.getValue(String.class).equals(ename)){
                                         eventRef.removeValue();
@@ -283,6 +298,7 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
                                     }
                                 }
 
+                                finished = true;
                             }
 
                             @Override

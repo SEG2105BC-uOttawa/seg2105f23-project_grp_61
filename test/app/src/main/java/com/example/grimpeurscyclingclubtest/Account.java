@@ -30,11 +30,17 @@ public class Account {
 
 
         ValueEventListener emailListener = new ValueEventListener() {
+            boolean finished = false;
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
+                if (finished) {
+                    return;
+                }
+
                 email = dataSnapshot.getValue(String.class);
 
+                finished = true;
 
             }
 

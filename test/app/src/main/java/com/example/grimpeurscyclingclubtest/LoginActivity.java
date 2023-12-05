@@ -79,8 +79,14 @@ public class LoginActivity extends AppCompatActivity {
         String path = "users/"+username +"/password";
         DatabaseReference passwordRef = db.getReference(path);
         ValueEventListener passListener = new ValueEventListener() {
+            boolean finished = false;
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if (finished) {
+                    return;
+                }
+
                 String testpass = dataSnapshot.getValue(String.class);
                 // ..
                 if(pass.equals(testpass)){
@@ -88,6 +94,8 @@ public class LoginActivity extends AppCompatActivity {
                     userRouter(username);
 
                 }
+
+                finished = true;
             }
 
             @Override
@@ -106,8 +114,14 @@ public class LoginActivity extends AppCompatActivity {
         DatabaseReference roleRef = db.getReference("users/"+uname + "/role");
 
         ValueEventListener roleListener = new ValueEventListener() {
+            boolean finished = false;
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if (finished) {
+                    return;
+                }
+
                 // Get Post object and use the values to update the UI
                 String role = dataSnapshot.getValue(String.class);
 
@@ -124,6 +138,8 @@ public class LoginActivity extends AppCompatActivity {
                     intent.putExtra("uname", uname);
                     startActivity(intent);
                 }
+
+                finished = true;
 
             }
 
