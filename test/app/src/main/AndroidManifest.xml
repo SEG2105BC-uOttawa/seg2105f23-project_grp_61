@@ -16,6 +16,9 @@
             android:name=".ParticipantEventSearchResultActivity"
             android:exported="false" />
         <activity
+            android:name=".ParticipantClubSearchResultActivity"
+            android:exported="false" />
+        <activity
             android:name=".ParticipantEventSearch"
             android:exported="false" />
         <activity

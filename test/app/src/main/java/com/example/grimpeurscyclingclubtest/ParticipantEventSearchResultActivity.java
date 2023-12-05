@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,8 +15,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import org.w3c.dom.Text;
 
 public class ParticipantEventSearchResultActivity extends AppCompatActivity {
 
@@ -53,7 +50,7 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
 
         ParticipantEventSearchResultActivity context = this;
 
-        TextView textViewName = (TextView) findViewById(R.id.textViewEventName);
+        TextView textViewName = (TextView) findViewById(R.id.textViewOrganizerName);
         textViewName.setText(ename);
 
 
