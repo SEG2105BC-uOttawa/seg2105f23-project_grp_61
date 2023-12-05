@@ -125,8 +125,14 @@ public class RegistrationActivity extends AppCompatActivity {
         DatabaseReference userRef = db.getReference("users/"+username);
 
         ValueEventListener userListener = new ValueEventListener() {
+            boolean finished = false;
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if (finished) {
+                    return;
+                }
+
                 Account account = snapshot.getValue(Account.class);
                 OrganizerAccount orgaccount = snapshot.getValue(OrganizerAccount.class);
                 if (account == null) { // added check if username is taken
@@ -158,6 +164,8 @@ public class RegistrationActivity extends AppCompatActivity {
                         toast[0].show();
                     }
                 }
+
+                finished = true;
             }
 
             @Override

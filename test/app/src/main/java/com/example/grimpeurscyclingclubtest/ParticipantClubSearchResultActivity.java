@@ -59,8 +59,14 @@ public class ParticipantClubSearchResultActivity extends AppCompatActivity {
         ImageView profilePic = (ImageView) findViewById(R.id.imageView2);
 
         ValueEventListener roleListener = new ValueEventListener() {
+            boolean finished = false;
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if (finished) {
+                    return;
+                }
+
                 String DrawableName = dataSnapshot.getValue(String.class);
                 int resID;
                 if(DrawableName == null){
@@ -70,6 +76,8 @@ public class ParticipantClubSearchResultActivity extends AppCompatActivity {
                     resID = getResources().getIdentifier(DrawableName, "drawable", getPackageName());
                 }
                 profilePic.setImageResource(resID);
+
+                finished = true;
 
             }
 
@@ -95,6 +103,9 @@ public class ParticipantClubSearchResultActivity extends AppCompatActivity {
         eventRef.addValueEventListener(new ValueEventListener() {//inflate adapter
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
+
                 eventList.clear();
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                     eventList.add(postSnapshot.getKey().toString());
@@ -117,10 +128,18 @@ public class ParticipantClubSearchResultActivity extends AppCompatActivity {
         });
 
         clubRef.child("/SocialMedia").addValueEventListener(new ValueEventListener() {
+            boolean finished = false;
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if (finished) {
+                    return;
+                }
+
                 TextView SMtextview = (TextView) findViewById(R.id.SMtextview);
                 SMtextview.setText(snapshot.getValue(String.class));
+
+                finished = true;
             }
 
             @Override

@@ -130,19 +130,25 @@ public class ParticipantActivity extends AppCompatActivity {
                             }
                         });
 
-        //FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
-        DatabaseReference roleRef = db.getReference("users/"+uname + "/role");
         DatabaseReference skillRef = db.getReference("users/" + uname + "/Level");
 
         skillRef.addValueEventListener(new ValueEventListener() {
+            boolean finished = false;
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if (finished) {
+                    return;
+                }
+
                 TextView editTextSkillLevel = (TextView) findViewById(R.id.levelView);
 
                 String level = snapshot.getValue(Long.class).toString();
                 seekBar.setProgress(Integer.parseInt(level)-1);
 
                 editTextSkillLevel.setText(level);
+
+                finished = true;
             }
 
             @Override
@@ -150,25 +156,6 @@ public class ParticipantActivity extends AppCompatActivity {
 
             }
         });
-
-        ValueEventListener roleListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // Get Post object and use the values to update the UI
-                String role = dataSnapshot.getValue(String.class);
-                // ..
-
-                AdminAccount userAccount = new AdminAccount(uname);
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-            }
-        };
-        roleRef.addValueEventListener(roleListener);
 
 
         Button button = (Button) findViewById(R.id.button4);
