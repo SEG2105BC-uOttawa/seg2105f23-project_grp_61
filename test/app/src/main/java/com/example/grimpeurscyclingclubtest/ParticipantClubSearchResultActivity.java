@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -52,6 +53,34 @@ public class ParticipantClubSearchResultActivity extends AppCompatActivity {
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
         DatabaseReference eventRef = db.getReference("users/" + clubName + "/events/");
         DatabaseReference clubRef = db.getReference("users/"+ clubName);
+        DatabaseReference imageRef = db.getReference("users/"+clubName+"/ProfileImageId");
+
+
+        ImageView profilePic = (ImageView) findViewById(R.id.imageView2);
+
+        ValueEventListener roleListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String DrawableName = dataSnapshot.getValue(String.class);
+                int resID;
+                if(DrawableName == null){
+                    resID = getResources().getIdentifier("ic_logo_00", "drawable", getPackageName());
+                }
+                else {
+                    resID = getResources().getIdentifier(DrawableName, "drawable", getPackageName());
+                }
+                profilePic.setImageResource(resID);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+            }
+        };
+        imageRef.addValueEventListener(roleListener);
+
         List<String> eventList = new ArrayList<>();
 
         TextView textViewName = (TextView) findViewById(R.id.textViewOrganizerName);
