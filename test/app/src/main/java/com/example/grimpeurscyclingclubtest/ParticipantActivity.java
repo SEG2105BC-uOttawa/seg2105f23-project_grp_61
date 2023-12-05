@@ -58,8 +58,8 @@ public class ParticipantActivity extends AppCompatActivity {
                 clubList.clear();
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
 
-                    eventList.add(postSnapshot.getValue().toString());
-                    clubList.add(postSnapshot.getKey().toString());
+                    eventList.add(postSnapshot.getKey().toString());
+                    clubList.add(postSnapshot.getValue(String.class));
                 }
 
                 String[] eventArr = new String[eventList.size()];
