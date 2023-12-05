@@ -264,7 +264,7 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
         DatabaseReference eventRef = db.getReference("users/" + clubName + "/events/" + ename + "/registeredParticipants/" + uname);
-        DatabaseReference userRef = db.getReference("/users/" + uname + "/registeredEvents/" + clubName);
+        DatabaseReference userRef = db.getReference("/users/" + uname + "/registeredEvents/" + ename);
 
         eventRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -275,7 +275,7 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 if(snapshot.exists()){
-                                    if(snapshot.getValue(String.class).equals(ename)){
+                                    if(snapshot.getValue(String.class).equals(clubName)){
                                         eventRef.removeValue();
                                         userRef.removeValue();
                                         finish();
