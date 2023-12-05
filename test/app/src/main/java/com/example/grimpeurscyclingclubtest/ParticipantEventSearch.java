@@ -305,8 +305,14 @@ public class ParticipantEventSearch extends AppCompatActivity {
                     //todo need to get the club name for some reason it works the second time but not thje first
 
                     userRef.addValueEventListener(new ValueEventListener() {
+                        boolean finished = false;
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {//todo custom adapter for image, set onclick for esads club screen
+
+                            if (finished) {
+                                return;
+                            }
+
                             for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                                 if (postSnapshot.child("/role").getValue(String.class).equals("organizer")) {//postSnapshot.getKey().toString().equals("admin") || postSnapshot.getKey().toString().equals("participant")
                                     //get club hosting event
@@ -318,6 +324,8 @@ public class ParticipantEventSearch extends AppCompatActivity {
                                             intent.putExtra("uname", uname);
                                             intent.putExtra("ename", ename);
                                             intent.putExtra("clubName", clubName);
+
+                                            finished = true;
 
                                             startActivity(intent);
 
