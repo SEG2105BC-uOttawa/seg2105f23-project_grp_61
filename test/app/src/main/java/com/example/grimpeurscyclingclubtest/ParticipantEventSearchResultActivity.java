@@ -263,22 +263,28 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
         eventRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.getValue(Boolean.class)){
-                    userRef.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if(snapshot.getValue(String.class).equals(ename)){
-                                eventRef.removeValue();
-                                userRef.removeValue();
+                if (snapshot.exists()){
+                    if(snapshot.getValue(Boolean.class)){
+                        userRef.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                if(snapshot.exists()){
+                                    if(snapshot.getValue(String.class).equals(ename)){
+                                        eventRef.removeValue();
+                                        userRef.removeValue();
+                                    }
+                                }
+
                             }
-                        }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
 
-                        }
-                    });
+                            }
+                        });
+                    }
                 }
+
             }
 
             @Override
