@@ -25,14 +25,15 @@
             android:textSize="34sp" />
 
         <ListView
-            android:id="@+id/Events"
+            android:id="@+id/eventview2"
             android:layout_width="match_parent"
             android:layout_height="259dp" />
 
-        <ListView
-            android:id="@+id/ReviewListView"
+        <Button
+            android:id="@+id/button7"
             android:layout_width="match_parent"
-            android:layout_height="259dp" />
+            android:layout_height="wrap_content"
+            android:text="Leave A Review" />
 
     </LinearLayout>
 
