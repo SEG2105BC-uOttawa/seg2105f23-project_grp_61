@@ -1,13 +1,15 @@
 package com.example.grimpeurscyclingclubtest;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -15,7 +17,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class ParticipantEventSearchResultActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
+
+public class ParticipantClubSearchResultActivity extends AppCompatActivity {
 
     //todo validate joining event skilllevel and spotsleft
 
@@ -39,19 +44,88 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         uname = bundle.getString("uname");
-        ename = bundle.getString("ename");
         clubName = bundle.getString("clubName");
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
         DatabaseReference eventRef = db.getReference("users/" + clubName + "/events/" + ename);
 
-
+        List<String> eventList = new ArrayList<>();
 
         TextView textViewName = (TextView) findViewById(R.id.textViewOrganizerName);
         textViewName.setText(ename);
 
+        ParticipantClubSearchResultActivity context = this;
 
         Button button = (Button) findViewById(R.id.button6);
+
+        ListView eventListView = (ListView) findViewById(R.id.Events);
+        eventRef.addValueEventListener(new ValueEventListener() {//inflate adapter
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                eventList.clear();
+                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                    eventList.add(postSnapshot.getKey().toString());
+                }
+
+                String[] eventArr = new String[eventList.size()];
+                eventArr = eventList.toArray(eventArr);
+
+
+                ArrayAdapter adapter = new ArrayAdapter<String>(context, com.google.android.material.R.layout.support_simple_spinner_dropdown_item, eventArr);
+                eventListView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                // ...
+            }
+        });
+
+//        searchView.setQuery("",true);
+        //need to filter by eventtype
+//        userRef.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {//todo custom adapter for image, set onclick for esads club screen
+//                eventList.clear();
+//                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+//                    if (postSnapshot.child("/role").getValue(String.class).equals("organizer")) {//postSnapshot.getKey().toString().equals("admin") || postSnapshot.getKey().toString().equals("participant")
+//                        //get events
+//                        for (DataSnapshot postSnapshot2 : postSnapshot.child("/events").getChildren()){//DataSnapshot postSnapshot2 : dataSnapshot.child("/events").getChildren()
+//
+//                            if(postSnapshot2.child("/eventtype").getValue(String.class).equals(eventTypeSortSpinner.getSelectedItem().toString())){// need to have an update listener for event type spinner
+//                                String test = postSnapshot2.getKey().toString();
+//                                eventList.add(test);
+//                            }
+//
+//
+//                        }
+//
+//                        //eventList.add(postSnapshot.getKey().toString());
+//                    }
+//                    //organizerList.add(postSnapshot.getKey().toString());
+//
+//                }
+//
+//                String[] eventArr = new String[eventList.size()];
+//                eventArr = eventList.toArray(eventArr);
+//
+//
+//                ArrayAdapter adapter = new ArrayAdapter<String>(context, com.google.android.material.R.layout.support_simple_spinner_dropdown_item, eventArr);
+//                listView.setAdapter(adapter);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
+//
+//        //
+//
+//        //listView.setAdapter(new ArrayAdapter<String>(context, com.google.android.material.R.layout.support_simple_spinner_dropdown_item, new String[]{"test"}));
+//        break;
 
         eventRef.child("/registeredParticipants/" + uname).addValueEventListener(new ValueEventListener() {
             @Override
@@ -242,6 +316,7 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
             Toast toastUpdate = Toast.makeText(getApplication().getBaseContext(), "No space left", Toast.LENGTH_SHORT);
             toastUpdate.show();
             return false;
+
         }
 
 

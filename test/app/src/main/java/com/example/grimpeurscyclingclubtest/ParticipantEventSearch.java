@@ -291,8 +291,13 @@ public class ParticipantEventSearch extends AppCompatActivity {
                     //todo foreward to esads club screen
 
                     clubName = parent.getItemAtPosition(position).toString();
-                    Toast toastUpdate = Toast.makeText(getApplication().getBaseContext(), clubName + " to be implemented", Toast.LENGTH_SHORT);
-                    toastUpdate.show();
+                    Intent intent = new Intent(context, ParticipantClubSearchResultActivity.class);
+                    intent.putExtra("uname", uname);
+                    intent.putExtra("clubName", clubName);
+
+                    startActivity(intent);
+//                    Toast toastUpdate = Toast.makeText(getApplication().getBaseContext(), clubName + " to be implemented", Toast.LENGTH_SHORT);
+//                    toastUpdate.show();
                 }
                 else {
                     String ename = parent.getItemAtPosition(position).toString();
