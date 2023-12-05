@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 public class EventTypeSearchResultActivity extends AppCompatActivity {
 
     String ename;
-    boolean recentDelete = false;
+    //boolean recentDelete = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +71,7 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
 
     public void onClickDelete(View view) {
 
-        recentDelete = true;
+        //recentDelete = true;
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
         DatabaseReference eventRef = db.getReference("eventtype/"+ename);
@@ -116,10 +116,10 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
 
                     EventType event = new EventType(labelText.getText().toString(), descEdit.getText().toString()); //ageEdit.getText().toString(), paceEdit.getText().toString(), levelEdit.getText().toString()
 
-                    if (recentDelete) {
-                        recentDelete = false;
-                        return;
-                    }
+                    //if (recentDelete) {
+                    //    recentDelete = false;
+                    //    return;
+                    //}
 
                     if (!event.isEmpty()) {
                         eventRef.setValue(event);
