@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="763e4ffd-3768-40a1-9f2f-5726dee9e692" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/.idea/deploymentTargetDropDown.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/app/src/main/java/com/example/grimpeurscyclingclubtest/ParticipantClubSearchResultActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/app/src/main/java/com/example/grimpeurscyclingclubtest/ParticipantClubSearchResultActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/app/src/main/res/layout/activity_participant_club_search_result.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/app/src/main/res/layout/activity_participant_club_search_result.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,17 +27,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/togoo/Desktop/SEG_2105/Project 1/D3V1/seg2105f23-project_grp_61/test"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/togoo/Desktop/SEG_2105/Project 1/D3V1/seg2105f23-project_grp_61/test&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

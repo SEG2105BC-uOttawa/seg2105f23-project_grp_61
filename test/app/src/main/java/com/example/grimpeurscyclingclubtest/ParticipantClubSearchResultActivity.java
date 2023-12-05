@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.common.data.DataBufferSafeParcelable;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -50,7 +51,7 @@ public class ParticipantClubSearchResultActivity extends AppCompatActivity {
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
         DatabaseReference eventRef = db.getReference("users/" + clubName + "/events/");
-
+        DatabaseReference clubRef = db.getReference("users/"+ clubName);
         List<String> eventList = new ArrayList<>();
 
         TextView textViewName = (TextView) findViewById(R.id.textViewOrganizerName);
@@ -86,8 +87,20 @@ public class ParticipantClubSearchResultActivity extends AppCompatActivity {
             }
         });
 
+        clubRef.child("/SocialMedia").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                TextView SMtextview = (TextView) findViewById(R.id.SMtextview);
+                SMtextview.setText(snapshot.getValue(String.class));
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         eventListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ename = eventArr[position];

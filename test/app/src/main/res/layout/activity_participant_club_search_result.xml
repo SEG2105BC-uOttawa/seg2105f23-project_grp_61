@@ -24,6 +24,12 @@
             android:text="TextView"
             android:textSize="34sp" />
 
+        <TextView
+            android:id="@+id/SMtextview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
         <ListView
             android:id="@+id/eventview2"
             android:layout_width="match_parent"
