@@ -217,7 +217,7 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
         //put in if, need to get spotsLeft and skilllevel and make sure not already registered
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
         DatabaseReference eventRef = db.getReference("users/" + clubName + "/events/" + ename + "/registeredParticipants/" + uname);
-        DatabaseReference userRef = db.getReference("/users/" + uname + "/registeredEvents/" + clubName);
+        DatabaseReference userRef = db.getReference("/users/" + uname + "/registeredEvents/" + ename);
         DatabaseReference userSkillRef = db.getReference("/users/" + uname + "/Level");
 
 
@@ -234,7 +234,7 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
                     }
                     else {
                         eventRef.setValue(true);
-                        userRef.setValue(ename);
+                        userRef.setValue(clubName);
                         finish();
 
                     }
