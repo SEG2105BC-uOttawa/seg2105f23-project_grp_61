@@ -231,6 +231,7 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
                     else {
                         eventRef.setValue(true);
                         userRef.setValue(ename);
+                        finish();
                     }
                 }
 
@@ -272,6 +273,7 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
                                     if(snapshot.getValue(String.class).equals(ename)){
                                         eventRef.removeValue();
                                         userRef.removeValue();
+                                        finish();
                                     }
                                 }
 
