@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -195,6 +196,35 @@ public class EventCreationActivity extends AppCompatActivity {
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
 
+                }
+            });
+
+
+            //show participants on organizer events screen
+            DatabaseReference participantsRef = db.getReference("users/" + uname + "/events/" + ename + "/registeredParticipants");
+            ListView participantsListView = (ListView) findViewById(R.id.organizerEventParticipants);
+            List<String> participantList = new ArrayList<>();
+            participantsRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    participantList.clear();
+                    for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                        participantList.add(postSnapshot.getKey().toString());
+                    }
+
+                    String[] participantArr = new String[participantList.size()];
+                    participantArr = participantList.toArray(participantArr);
+
+
+                    ArrayAdapter adapter = new ArrayAdapter<String>(context, com.google.android.material.R.layout.support_simple_spinner_dropdown_item, participantArr);
+                    participantsListView.setAdapter(adapter);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    // Getting Post failed, log a message
+                    //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                    // ...
                 }
             });
         }

@@ -3,6 +3,7 @@ package com.example.grimpeurscyclingclubtest;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +33,8 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
     String eventSkill;
     int participantsLeft;
 
+    ParticipantEventSearchResultActivity context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +48,7 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
         DatabaseReference eventRef = db.getReference("users/" + clubName + "/events/" + ename);
 
-
+        ParticipantEventSearchResultActivity context = this;
 
         TextView textViewName = (TextView) findViewById(R.id.textViewOrganizerName);
         textViewName.setText(ename);
@@ -53,14 +56,16 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
 
         Button button = (Button) findViewById(R.id.button6);
 
-        eventRef.child("/registeredParticipants/" + uname).addValueEventListener(new ValueEventListener() {
+        eventRef.child("/registeredParticipants/" + uname).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
                     button.setText("Unregister for event");
+                    return;
                 }
                 else {
                     button.setText("Register for event");
+                    return;
                 }
             }
 
@@ -69,6 +74,7 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
 
             }
         });
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,13 +86,12 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
                     registerForEvent();
                 }
 
-                registerForEvent();
             }
         });
 
 
         //set event type
-        eventRef.child("/eventtype").addValueEventListener(new ValueEventListener() {
+        eventRef.child("/eventtype").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 TextView textViewEventType = (TextView) findViewById(R.id.textViewEventType);
@@ -100,7 +105,7 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
         });
 
         //set datetime
-        eventRef.child("/date").addValueEventListener(new ValueEventListener() {
+        eventRef.child("/date").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 date = snapshot.getValue(String.class);
@@ -132,9 +137,11 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
         });
 
 
+
+
         //todo make it (participantslimit - getchildrencount) spots left
         //get participantlimit
-        eventRef.child("/participantLimit").addValueEventListener(new ValueEventListener() {
+        eventRef.child("/participantLimit").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 TextView textViewParticipants = (TextView) findViewById(R.id.textViewParticipantsLeft);
@@ -160,7 +167,7 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
             }
         });
 
-        eventRef.child("/fee").addValueEventListener(new ValueEventListener() {
+        eventRef.child("/fee").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 TextView textViewRegFee = (TextView) findViewById(R.id.textViewRegFee);
@@ -173,7 +180,7 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
             }
         });
 
-        eventRef.child("/route").addValueEventListener(new ValueEventListener() {
+        eventRef.child("/route").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 TextView textViewRouteDesc = (TextView) findViewById(R.id.textViewRouteDesc);
@@ -186,7 +193,7 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
             }
         });
 
-        eventRef.child("/skillReq").addValueEventListener(new ValueEventListener() {
+        eventRef.child("/skillReq").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 TextView textViewSkillReq = (TextView) findViewById(R.id.textViewSkillReq);
@@ -228,6 +235,8 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
                     else {
                         eventRef.setValue(true);
                         userRef.setValue(ename);
+                        finish();
+
                     }
                 }
 
@@ -260,22 +269,30 @@ public class ParticipantEventSearchResultActivity extends AppCompatActivity {
         eventRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.getValue(Boolean.class)){
-                    userRef.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if(snapshot.getValue(String.class).equals(ename)){
-                                eventRef.removeValue();
-                                userRef.removeValue();
+                if (snapshot.exists()){
+                    if(snapshot.getValue(Boolean.class)){
+                        userRef.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                if(snapshot.exists()){
+                                    if(snapshot.getValue(String.class).equals(ename)){
+                                        eventRef.removeValue();
+                                        userRef.removeValue();
+                                        finish();
+
+                                    }
+                                }
+
                             }
-                        }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
 
-                        }
-                    });
+                            }
+                        });
+                    }
                 }
+
             }
 
             @Override
