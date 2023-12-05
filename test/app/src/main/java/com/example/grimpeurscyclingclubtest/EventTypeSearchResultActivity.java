@@ -18,7 +18,6 @@ import com.google.firebase.database.ValueEventListener;
 public class EventTypeSearchResultActivity extends AppCompatActivity {
 
     String ename;
-    //boolean recentDelete = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +44,8 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
                     toast.show();
                 } else {
 
-//                    EditText ageEdit = (EditText) findViewById(R.id.ageEditText);
-//                    EditText paceEdit = (EditText) findViewById(R.id.PaceEditText);
-//                    EditText levelEdit = (EditText) findViewById(R.id.levelEditText);
                     EditText descEdit = (EditText) findViewById(R.id.descEditText);
 
-//                    ageEdit.setText(Integer.toString(event.getAgeReq()));
-//                    paceEdit.setText(Double.toString(event.getPaceReq()));
-//                    levelEdit.setText(Integer.toString(event.getLevelReq()));
                     descEdit.setText(event.getDescription());
 
 
@@ -73,6 +66,9 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
 
         //recentDelete = true;
 
+        EditText labelText = (EditText) findViewById(R.id.labelEditText);
+        ename = labelText.getText().toString();
+
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
         DatabaseReference eventRef = db.getReference("eventtype/"+ename);
 
@@ -80,17 +76,10 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(getApplication().getBaseContext(), "Event deleted!", Toast.LENGTH_SHORT);
         toast.show();
 
-        EditText labelText = (EditText) findViewById(R.id.labelEditText);
-//        EditText ageEdit = (EditText) findViewById(R.id.ageEditText);
-//        EditText paceEdit = (EditText) findViewById(R.id.PaceEditText);
-//        EditText levelEdit = (EditText) findViewById(R.id.levelEditText);
-        EditText descEdit = (EditText) findViewById(R.id.descEditText);
 
-        labelText.setText("");
-//        ageEdit.setText("");
-//        paceEdit.setText("");
-//        levelEdit.setText("");
-        descEdit.setText("");
+        finish();
+
+
 
     }
 
@@ -102,27 +91,28 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
         DatabaseReference eventRef = db.getReference("eventtype/"+ename);
 
         EditText labelText = (EditText) findViewById(R.id.labelEditText);
-//        EditText ageEdit = (EditText) findViewById(R.id.ageEditText);
-//        EditText paceEdit = (EditText) findViewById(R.id.PaceEditText);
-//        EditText levelEdit = (EditText) findViewById(R.id.levelEditText);
         EditText descEdit = (EditText) findViewById(R.id.descEditText);
 
+        ename = labelText.getText().toString();
+
         ValueEventListener userListener = new ValueEventListener() {
+            boolean finished = false;
+
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (finished) {
+                    return;
+                }
+                DatabaseReference newEventRef = db.getReference("eventtype/"+ename);
                 Account account = snapshot.getValue(Account.class);
                 if (account == null || ename.equals(labelText.getText().toString())) { // added check if event name is taken
 
 
-                    EventType event = new EventType(labelText.getText().toString(), descEdit.getText().toString()); //ageEdit.getText().toString(), paceEdit.getText().toString(), levelEdit.getText().toString()
-
-                    //if (recentDelete) {
-                    //    recentDelete = false;
-                    //    return;
-                    //}
+                    EventType event = new EventType(labelText.getText().toString(), descEdit.getText().toString());
 
                     if (!event.isEmpty()) {
-                        eventRef.setValue(event);
+                        eventRef.removeValue();
+                        newEventRef.setValue(event);
                     }
 
                     Toast toastUpdate = Toast.makeText(getApplication().getBaseContext(), "Event updated!", Toast.LENGTH_SHORT);
@@ -134,6 +124,7 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
                         toast[0].show();
                     }
                 }
+                finished = true;
             }
 
             @Override
@@ -143,7 +134,7 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
         };
         eventRef.addValueEventListener(userListener);
 
-
+    finish();
 
     }
 }
