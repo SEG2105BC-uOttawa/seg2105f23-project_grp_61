@@ -4,12 +4,20 @@ import static com.example.grimpeurscyclingclubtest.TextInputValidation.validateS
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,31 +25,122 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class ParticipantActivity extends AppCompatActivity {
 
 
     String uname;
+    SeekBar seekBar;
 
-
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_participant);
-
         Bundle bundle = getIntent().getExtras();
         uname = bundle.getString("uname");
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_participant);
+        ListView listView = (ListView) findViewById(R.id.eventList);
+
+        List<String> eventList = new ArrayList<String>();
+        List<String> clubList = new ArrayList<String>();
+        ParticipantActivity context = this;
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
+        DatabaseReference eventRef = db.getReference("users/"+uname + "/registeredEvents");
+
+        eventRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                eventList.clear();
+                clubList.clear();
+                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+
+                    eventList.add(postSnapshot.getValue().toString());
+                    clubList.add(postSnapshot.getKey().toString());
+                }
+
+                String[] eventArr = new String[eventList.size()];
+                eventArr = eventList.toArray(eventArr);
+
+                System.out.println(eventArr.length);
+
+                ArrayAdapter adapter = new ArrayAdapter<String>(context, com.google.android.material.R.layout.support_simple_spinner_dropdown_item, eventArr);
+                ListView listView = (ListView) findViewById(R.id.eventList);
+                listView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String event = eventList.get(position);
+                String clubName = clubList.get(position);
+                Intent intent = new Intent(context, ParticipantEventSearchResultActivity.class);
+                intent.putExtra("uname", uname);
+                intent.putExtra("ename", event);
+                intent.putExtra("clubName", clubName);
+
+                startActivity(intent);
+            }
+        });
+
+        seekBar = (SeekBar)findViewById(R.id.seekbar);
+        TextView editTextSkillLevel = (TextView) findViewById(R.id.levelView);
+
+        seekBar.setOnSeekBarChangeListener(
+                        new SeekBar
+                                .OnSeekBarChangeListener() {
+
+                            // When the progress value has changed
+                            @Override
+                            public void onProgressChanged(
+                                    SeekBar seekBar,
+                                    int progress,
+                                    boolean fromUser)
+                            {
+                                //System.out.println("on progress");
+                                if (fromUser){
+
+                                    editTextSkillLevel.setText(String.valueOf(progress+1));
+
+                                }
+
+                            }
+
+                            @Override
+                            public void onStartTrackingTouch(SeekBar seekBar)
+                            {
+
+                                //System.out.println("start tracking");
+                            }
+
+                            @Override
+                            public void onStopTrackingTouch(SeekBar seekBar)
+                            {
+                                setSkillLVL();
+                                //System.out.println("on stop");
+                            }
+                        });
+
+        //FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
         DatabaseReference roleRef = db.getReference("users/"+uname + "/role");
         DatabaseReference skillRef = db.getReference("users/" + uname + "/Level");
 
         skillRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                EditText editTextSkillLevel = (EditText) findViewById(R.id.editTextSkillLevel);
+                TextView editTextSkillLevel = (TextView) findViewById(R.id.levelView);
 
                 String level = snapshot.getValue(Long.class).toString();
+                seekBar.setProgress(Integer.parseInt(level)-1);
 
                 editTextSkillLevel.setText(level);
             }
@@ -51,16 +150,6 @@ public class ParticipantActivity extends AppCompatActivity {
 
             }
         });
-
-
-        Button setSkillButton = (Button) findViewById(R.id.setSkillLvlBTN);
-        setSkillButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onSetSkillLVL(v);
-            }
-        });
-
 
         ValueEventListener roleListener = new ValueEventListener() {
             @Override
@@ -127,11 +216,11 @@ public class ParticipantActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void onSetSkillLVL(View view){
+    private void setSkillLVL(){
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
         DatabaseReference skillRef = db.getReference("users/"+ uname + "/Level");
 
-        EditText editTextSkillLevel = (EditText) findViewById(R.id.editTextSkillLevel);
+        TextView editTextSkillLevel = (TextView) findViewById(R.id.levelView);
         String level = editTextSkillLevel.getText().toString();
         if(validateSkillLevel(level)){
             skillRef.setValue(Integer.valueOf(level));
