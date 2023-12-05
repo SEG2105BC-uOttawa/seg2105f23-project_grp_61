@@ -78,5 +78,6 @@ public class UserSearchResultActivity extends AppCompatActivity {
         roleText.setText("role: ");
 
         finish();
+
     }
 }
