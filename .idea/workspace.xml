@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="763e4ffd-3768-40a1-9f2f-5726dee9e692" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/test/app/src/main/java/com/example/grimpeurscyclingclubtest/ParticipantClubSearchResultActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/app/src/main/java/com/example/grimpeurscyclingclubtest/ParticipantClubSearchResultActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/app/src/main/res/layout/activity_participant_club_search_result.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/app/src/main/res/layout/activity_participant_club_search_result.xml" afterDir="false" />
-    </list>
+    <list default="true" id="763e4ffd-3768-40a1-9f2f-5726dee9e692" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
