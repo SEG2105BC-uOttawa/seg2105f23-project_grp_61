@@ -29,13 +29,15 @@ public class RegistrationActivity extends AppCompatActivity {
 
     //The two onClick methods below help swap the visibly of the fields information
     public void OnCheckOrganizer(View view){
-        View PhoneNumber = findViewById(R.id.PhoneNumber);
-        View SocialMedia = findViewById(R.id.SocialMedia);
+        EditText PhoneNumber = findViewById(R.id.PhoneNumber);
+        EditText SocialMedia = findViewById(R.id.SocialMedia);
         View TextMandatory = findViewById(R.id.AdditionalInformation);
 
         organizerButton =  findViewById(R.id.radioButton2);
         if (organizerButton.isChecked()){
             //When its organizer these boxes pop up in activity
+            PhoneNumber.setHint("Phone Number");
+            SocialMedia.setHint("Social Media");
             PhoneNumber.setVisibility(View.VISIBLE);
             SocialMedia.setVisibility(View.VISIBLE);
             TextMandatory.setVisibility(View.VISIBLE);
@@ -43,17 +45,20 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     public void OnCheckParticipant(View view){
-        View PhoneNumber =  findViewById(R.id.PhoneNumber);
-        View SocialMedia =  findViewById(R.id.SocialMedia);
+        EditText Level =  findViewById(R.id.PhoneNumber);
+        EditText Age =  findViewById(R.id.SocialMedia);
         View TextMandatory =  findViewById(R.id.AdditionalInformation);
 
         participantButton =  findViewById(R.id.radioButton);
 
         if (participantButton.isChecked()){
             //When its organizer these boxes pop up in activity
-            PhoneNumber.setVisibility(View.INVISIBLE);
-            SocialMedia.setVisibility(View.INVISIBLE);
-            TextMandatory.setVisibility(View.INVISIBLE);
+            Age.setHint("Age");
+            Level.setHint("Level");
+            Level.setVisibility(View.VISIBLE);
+            Age.setVisibility(View.VISIBLE);
+            TextMandatory.setVisibility(View.VISIBLE);
+
         }
     }
 
@@ -63,8 +68,8 @@ public class RegistrationActivity extends AppCompatActivity {
         EditText eTextEmail = (EditText) findViewById(R.id.registerEmailInput);
         EditText eTextPass = (EditText) findViewById(R.id.registerPasswordInput);
         EditText eTextUname = (EditText) findViewById(R.id.registerUnameInput);
-        EditText eTextPhoneNumber = (EditText) findViewById(R.id.PhoneNumber);
-        EditText eTextSocialMedia = (EditText) findViewById(R.id.SocialMedia);
+        EditText eTextPhoneNumber_Level = (EditText) findViewById(R.id.PhoneNumber);
+        EditText eTextSocialMedia_Age = (EditText) findViewById(R.id.SocialMedia);
 
         String email = eTextEmail.getText().toString();
         String pass = eTextPass.getText().toString();
@@ -72,6 +77,8 @@ public class RegistrationActivity extends AppCompatActivity {
         String role = null;
         String SocialMedia = "";
         String PhoneNumber = "";
+        String Age = "";
+        String Level = "";
 
         participantButton =  findViewById(R.id.radioButton);
         organizerButton =  findViewById(R.id.radioButton2);
@@ -81,23 +88,28 @@ public class RegistrationActivity extends AppCompatActivity {
         }
         else if (participantButton.isChecked()){
             role = "participant";
+            Age = eTextSocialMedia_Age.getText().toString();
+            Level = eTextPhoneNumber_Level.getText().toString();
         }
         else if (organizerButton.isChecked()){
             role = "organizer";
-            SocialMedia = eTextSocialMedia.getText().toString();
-            if(!eTextPhoneNumber.getText().toString().equals(""))
-                PhoneNumber = eTextPhoneNumber.getText().toString();
+            SocialMedia = eTextSocialMedia_Age.getText().toString();
+            if(!eTextPhoneNumber_Level.getText().toString().equals(""))
+                PhoneNumber = eTextPhoneNumber_Level.getText().toString();
         }
 
         //makes sures the fields are not empty for organizer
         if(role.equals("organizer") && (SocialMedia.equals("") || PhoneNumber.equals(""))){
             Toast.makeText(this,"There is still unfilled information",Toast.LENGTH_LONG).show();
         }
+        else if(role.equals("participant") && (Age.equals("") || Level.equals(""))){
+            Toast.makeText(this,"There is still unfilled information",Toast.LENGTH_LONG).show();
+        }
         else if(role.equals("organizer") && (validatePhoneNumberWithRegex(PhoneNumber)==false || validateSocialMedia(SocialMedia)==false)){
             Toast.makeText(this,"Unvalidated phone number or social link",Toast.LENGTH_LONG).show();
         }
         else if(validateEmailWithRegex(email)&&validateUsernameWithRegex(username)&&validatePass(pass)&&role != null){
-            register(username.toLowerCase(),pass,email,role,PhoneNumber,SocialMedia);
+            register(username.toLowerCase(),pass,email,role,PhoneNumber,SocialMedia,Age,Level);
         }
 
 
@@ -105,7 +117,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
 
 
-    public void register(String username, String password, String email, String role, String PhoneNumber, String SocialMedia){
+    public void register(String username, String password, String email, String role, String PhoneNumber, String SocialMedia, String Age, String Level){
 
         final Toast[] toast = {Toast.makeText(getApplication().getBaseContext(), "Username taken!", Toast.LENGTH_SHORT)};
 
@@ -113,8 +125,14 @@ public class RegistrationActivity extends AppCompatActivity {
         DatabaseReference userRef = db.getReference("users/"+username);
 
         ValueEventListener userListener = new ValueEventListener() {
+            boolean finished = false;
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if (finished) {
+                    return;
+                }
+
                 Account account = snapshot.getValue(Account.class);
                 OrganizerAccount orgaccount = snapshot.getValue(OrganizerAccount.class);
                 if (account == null) { // added check if username is taken
@@ -123,6 +141,8 @@ public class RegistrationActivity extends AppCompatActivity {
                     DatabaseReference newUserPasswordRef = db.getReference("users/"+username + "/password");
                     DatabaseReference newUserPhoneNumberRef = db.getReference("users/"+username + "/PhoneNumber");
                     DatabaseReference newUserSocialMediaRef = db.getReference("users/"+username + "/SocialMedia");
+                    DatabaseReference newUserAgeRef = db.getReference("users/"+username+"/Age");
+                    DatabaseReference newUserLevelRef = db.getReference("users/"+username+"/Level");
 
                     newUserRoleRef.setValue(role);
                     newUserEmailRef.setValue(email);
@@ -131,6 +151,9 @@ public class RegistrationActivity extends AppCompatActivity {
                         newUserPhoneNumberRef.setValue(PhoneNumber);
                         newUserSocialMediaRef.setValue(SocialMedia);
                     }
+                    newUserAgeRef.setValue(Age);
+                    newUserLevelRef.setValue(Integer.parseInt(Level));
+
 
 
                     Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
@@ -141,6 +164,8 @@ public class RegistrationActivity extends AppCompatActivity {
                         toast[0].show();
                     }
                 }
+
+                finished = true;
             }
 
             @Override

@@ -4,58 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ParticipantActivity">
+    tools:context=".ParticipantEventSearch">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Join new events!" />
-
-        <TextView
-            android:id="@+id/introText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Set your skill level below:" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="horizontal">
 
-            <SeekBar
-                android:id="@+id/seekbar"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="333dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:max="9" />
+                android:text="Sort by:" />
 
-            <TextView
-                android:id="@+id/levelView"
-                android:layout_width="wrap_content"
+            <Spinner
+                android:id="@+id/sortTypeSpinner"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="1" />
+                android:layout_weight="1" />
+
+            <Spinner
+                android:id="@+id/eventTypeSortSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView22"
+        <SearchView
+            android:id="@+id/searchView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Registered events:" />
+            android:queryHint="Press 'x' twice to reset search filters" />
 
         <ListView
-            android:id="@+id/eventList"
+            android:id="@+id/searchableListView"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

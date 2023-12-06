@@ -1,5 +1,6 @@
 package com.example.grimpeurscyclingclubtest;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -75,6 +76,8 @@ public class UserSearchResultActivity extends AppCompatActivity {
         emailText.setText("email: ");
         userText.setText("user: ");
         roleText.setText("role: ");
+
+        finish();
 
     }
 }

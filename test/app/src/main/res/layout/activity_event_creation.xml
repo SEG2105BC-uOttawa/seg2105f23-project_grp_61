@@ -152,11 +152,38 @@
 
             <EditText
                 android:id="@+id/editTextRoute"
+                style="@style/Widget.AppCompat.AutoCompleteTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
+                android:layout_weight="10"
+                android:drawablePadding="@dimen/cardview_default_elevation"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textCapSentences|textMultiLine"
+                android:outlineProvider="none"
+                android:scrollHorizontally="false"
+                android:singleLine="false" />>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Skill Level Requirement (1-10)" />
+
+            <EditText
+                android:id="@+id/editTextSkillReq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="text" />
+                android:inputType="number" />
         </LinearLayout>
 
         <Button
@@ -172,6 +199,17 @@
             android:layout_height="wrap_content"
             android:onClick="onClickDelete"
             android:text="Delete" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enrolled Participants" />
+
+        <ListView
+            android:id="@+id/organizerEventParticipants"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 

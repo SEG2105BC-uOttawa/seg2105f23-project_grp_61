@@ -173,4 +173,17 @@ public class TextInputValidation {
         return matcher.find();
     }
 
+    public static boolean validateSkillLevel(String input){
+        try{
+            int skill = Integer.parseInt(input);
+            if (skill < 11 && skill > 0){
+                return true;
+            }else {
+                return false;
+            }
+        }catch (Exception e){
+            return false;
+        }
+    }
+
 }
