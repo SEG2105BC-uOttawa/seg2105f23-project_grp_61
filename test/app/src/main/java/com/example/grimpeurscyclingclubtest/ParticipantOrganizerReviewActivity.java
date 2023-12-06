@@ -28,7 +28,9 @@ import static com.example.grimpeurscyclingclubtest.TextInputValidation.*;
 public class ParticipantOrganizerReviewActivity extends Activity {
     String uname, clubName;
     EditText reviewRating, reviewText;
-    protected void onCreate(){
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_participant_organizer_review);
         Bundle bundle = getIntent().getExtras();
         uname = bundle.getString("uname");
         clubName = bundle.getString("clubName");

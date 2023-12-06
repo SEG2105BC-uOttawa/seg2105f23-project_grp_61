@@ -93,6 +93,7 @@ public class ParticipantClubSearchResultActivity extends AppCompatActivity {
         imageRef.addValueEventListener(roleListener);
 
         List<String> eventList = new ArrayList<>();
+        List<String> reviewList = new ArrayList<>();
 
         TextView textViewName = (TextView) findViewById(R.id.textViewOrganizerName);
         textViewName.setText(clubName);
@@ -164,10 +165,15 @@ public class ParticipantClubSearchResultActivity extends AppCompatActivity {
 
             }
         });
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reviewButtonOnClick(v);
+            }
+        });
     }
 
         public void reviewButtonOnClick(View view){
-
 
             Intent intent = new Intent(getApplicationContext(), ParticipantOrganizerReviewActivity.class);
             intent.putExtra("uname", uname);

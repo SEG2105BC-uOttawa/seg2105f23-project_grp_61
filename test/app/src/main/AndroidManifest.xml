@@ -63,6 +63,10 @@
             android:name=".RegistrationActivity"
             android:exported="false" />
         <activity
+            android:name=".ParticipantOrganizerReviewActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
