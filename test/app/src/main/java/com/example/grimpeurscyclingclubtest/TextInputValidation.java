@@ -185,5 +185,15 @@ public class TextInputValidation {
             return false;
         }
     }
+    public static boolean validateStars(String input){
+
+        if(input ==  null){
+            return false;
+        }
+
+        Pattern pattern = Pattern.compile("^[1-5]$");//0000-2359
+        Matcher matcher = pattern.matcher(input);
+        return matcher.find();
+    }
 
 }
