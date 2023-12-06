@@ -24,7 +24,7 @@
                 android:text="Title:" />
 
             <EditText
-                android:id="@+id/labelEditText"
+                android:id="@+id/starsEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="10"
@@ -60,7 +60,7 @@
                 android:text="Description:" />
 
             <EditText
-                android:id="@+id/descEditText"
+                android:id="@+id/commentEditText"
                 style="@style/Widget.AppCompat.AutoCompleteTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"

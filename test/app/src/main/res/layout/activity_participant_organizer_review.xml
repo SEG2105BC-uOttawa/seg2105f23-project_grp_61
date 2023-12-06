@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EventSearchResultActivity">
+    tools:context=".ParticipantOrganizerReviewActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
                 android:text="Rate your experience on a scale of 1-5:" />
 
             <EditText
-                android:id="@+id/labelEditText"
+                android:id="@+id/starsEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="10"
@@ -57,10 +57,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Description:" />
+                android:text="Comments:" />
 
             <EditText
-                android:id="@+id/descEditText"
+                android:id="@+id/commentEditText"
                 style="@style/Widget.AppCompat.AutoCompleteTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
@@ -81,20 +81,12 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/eventDeleteBTN"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onClickDelete"
-                android:text="Delete" />
-
-            <Button
                 android:id="@+id/eventUpdateBTN"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="onClickUpdate"
-                android:text="Update/Create" />
+                android:onClick="onClick"
+                android:text="Publish Review" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

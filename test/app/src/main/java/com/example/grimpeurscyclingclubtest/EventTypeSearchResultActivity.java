@@ -41,7 +41,7 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
 
                 // Get Post object and use the values to update the UI
                 EventType event = dataSnapshot.getValue(EventType.class);
-                EditText labelText = (EditText) findViewById(R.id.labelEditText);
+                EditText labelText = (EditText) findViewById(R.id.starsEditText);
                 labelText.setText(ename);
 
 
@@ -50,7 +50,7 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
                     toast.show();
                 } else {
 
-                    EditText descEdit = (EditText) findViewById(R.id.descEditText);
+                    EditText descEdit = (EditText) findViewById(R.id.commentEditText);
 
                     descEdit.setText(event.getDescription());
 
@@ -73,7 +73,7 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
 
         //recentDelete = true;
 
-        EditText labelText = (EditText) findViewById(R.id.labelEditText);
+        EditText labelText = (EditText) findViewById(R.id.starsEditText);
         ename = labelText.getText().toString();
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
@@ -97,8 +97,8 @@ public class EventTypeSearchResultActivity extends AppCompatActivity {
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
         DatabaseReference eventRef = db.getReference("eventtype/"+ename);
 
-        EditText labelText = (EditText) findViewById(R.id.labelEditText);
-        EditText descEdit = (EditText) findViewById(R.id.descEditText);
+        EditText labelText = (EditText) findViewById(R.id.starsEditText);
+        EditText descEdit = (EditText) findViewById(R.id.commentEditText);
 
         ename = labelText.getText().toString();
 
