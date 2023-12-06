@@ -44,7 +44,7 @@ public class ParticipantOrganizerReviewActivity extends Activity {
         boolean validated = true;
         if(!validateStars(String.valueOf(reviewRating.getText()))){
             validated = false;
-            //toast for error messate
+            //toast for error message
             Toast toastUpdate = Toast.makeText(getApplication().getBaseContext(), "Stars must be an integer 1-5", Toast.LENGTH_SHORT);
             toastUpdate.show();
 

@@ -33,6 +33,7 @@ public class ParticipantClubSearchResultActivity extends AppCompatActivity {
     String clubName;
 
 
+
     String date;
     String[] eventArr;
     String time;
@@ -50,6 +51,8 @@ public class ParticipantClubSearchResultActivity extends AppCompatActivity {
         uname = bundle.getString("uname");
         clubName = bundle.getString("clubName");
 
+        View submitButton = (Button) findViewById(R.id.goToReviewButton);
+
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
         DatabaseReference eventRef = db.getReference("users/" + clubName + "/events/");
         DatabaseReference clubRef = db.getReference("users/"+ clubName);
@@ -57,6 +60,9 @@ public class ParticipantClubSearchResultActivity extends AppCompatActivity {
 
 
         ImageView profilePic = (ImageView) findViewById(R.id.imageView2);
+
+
+
 
         ValueEventListener roleListener = new ValueEventListener() {
             boolean finished = false;
@@ -441,4 +447,16 @@ public class ParticipantClubSearchResultActivity extends AppCompatActivity {
 
 
         //need to erase in 2 places  /users/uname/registeredEvents and users/clubname/events/ename/registeredParticipants
+
+    public void reviewButtonOnClick(View view){
+
+
+            Intent intent = new Intent(getApplicationContext(), ParticipantOrganizerReviewActivity.class);
+            intent.putExtra("uname", uname);
+            intent.putExtra("clubName", clubName);
+
+            startActivity(intent);
+
+
     }
+}
