@@ -20,4 +20,10 @@ public class ExampleUnitTest {
     public void validateSkillLevelExpectTrue(){assertEquals(true, validateSkillLevel("10"));}
     @Test
     public void validateSkillLevelExpectFalse(){assertEquals(false, validateSkillLevel("ten"));}
+
+    @Test
+    public void validateStarVerification(){assertEquals(true,validateStars("1"));}
+
+
+
 }
