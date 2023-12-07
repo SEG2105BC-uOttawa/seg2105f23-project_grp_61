@@ -35,6 +35,11 @@
             android:layout_width="match_parent"
             android:layout_height="259dp" />
 
+        <Button
+                android:id="@+id/goToReviewButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Leave A Review"/>
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
@@ -42,15 +47,9 @@
             android:text="Reviews:" />
 
         <ListView
-            android:id="@+id/reviewsView"
-            android:layout_width="match_parent"
-            android:layout_height="206dp" />
-
-        <Button
-            android:id="@+id/goToReviewButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Leave A Review" />
+                android:id="@+id/reviewsview"
+                android:layout_width="match_parent"
+                android:layout_height="206dp" android:scrollIndicators="right"/>
 
     </LinearLayout>
 
