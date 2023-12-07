@@ -13,6 +13,7 @@ import java.util.Objects;
 
 public class OrganizerAccount extends Account{
 
+
     String PhoneNumber;
     String ContactName;
     String SocialMedia;
@@ -24,6 +25,7 @@ public class OrganizerAccount extends Account{
     public OrganizerAccount() {
         ProfileImageId = "ic_logo_00";
     }
+
 
     public OrganizerAccount(String username) {
         super(username);
@@ -149,5 +151,8 @@ public class OrganizerAccount extends Account{
         return ProfileImageId;
     }
 
+
     public String getContactName(){return ContactName;}
+
+
 }

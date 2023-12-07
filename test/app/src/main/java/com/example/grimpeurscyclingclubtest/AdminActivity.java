@@ -29,13 +29,21 @@ public class AdminActivity extends AppCompatActivity {
 
 
         ValueEventListener roleListener = new ValueEventListener() {
+            boolean finished = false;
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if (finished) {
+                    return;
+                }
+
                 // Get Post object and use the values to update the UI
                 String role = dataSnapshot.getValue(String.class);
                 // ..
 
                 AdminAccount userAccount = new AdminAccount(uname);
+
+                finished = true;
 
             }
 
