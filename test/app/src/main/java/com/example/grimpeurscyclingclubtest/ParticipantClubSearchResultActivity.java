@@ -108,7 +108,7 @@ public class ParticipantClubSearchResultActivity extends AppCompatActivity {
         reviewArr = new String[reviewList.size()];
 
         ListView eventListView = (ListView) findViewById(R.id.eventview2);
-        ListView reviewListView = (ListView) findViewById(R.id.reviewsView);
+        ListView reviewListView = (ListView) findViewById(R.id.reviewsview);
         eventRef.addValueEventListener(new ValueEventListener() {//inflate adapter
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

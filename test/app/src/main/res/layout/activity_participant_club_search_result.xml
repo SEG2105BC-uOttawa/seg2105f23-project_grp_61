@@ -31,9 +31,9 @@
             android:text="Events:" />
 
         <ListView
-            android:id="@+id/eventview2"
-            android:layout_width="match_parent"
-            android:layout_height="259dp" />
+                android:id="@+id/eventview2"
+                android:layout_width="match_parent"
+                android:layout_height="259dp" android:scrollIndicators="right"/>
 
         <Button
                 android:id="@+id/goToReviewButton"
