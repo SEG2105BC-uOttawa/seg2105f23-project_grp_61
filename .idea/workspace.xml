@@ -6,9 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="763e4ffd-3768-40a1-9f2f-5726dee9e692" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/test/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/.idea/deploymentTargetDropDown.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/.idea/misc.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/test/app/src/main/java/com/example/grimpeurscyclingclubtest/ParticipantClubSearchResultActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/app/src/main/java/com/example/grimpeurscyclingclubtest/ParticipantClubSearchResultActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/app/src/main/res/layout/activity_participant_club_search_result.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/app/src/main/res/layout/activity_participant_club_search_result.xml" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

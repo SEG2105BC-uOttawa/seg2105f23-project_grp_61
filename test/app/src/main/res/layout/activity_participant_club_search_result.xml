@@ -29,6 +29,20 @@
             android:layout_width="match_parent"
             android:layout_height="259dp" />
 
+<<<<<<< Updated upstream
+=======
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reviews:" />
+
+        <ListView
+            android:id="@+id/reviewsView"
+            android:layout_width="match_parent"
+            android:layout_height="206dp" />
+
+>>>>>>> Stashed changes
         <Button
             android:id="@+id/button7"
             android:layout_width="match_parent"

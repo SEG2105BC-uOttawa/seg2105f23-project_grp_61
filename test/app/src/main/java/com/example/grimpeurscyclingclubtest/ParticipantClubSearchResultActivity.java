@@ -50,6 +50,47 @@ public class ParticipantClubSearchResultActivity extends AppCompatActivity {
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
         DatabaseReference eventRef = db.getReference("users/" + clubName + "/events/");
+<<<<<<< Updated upstream
+=======
+        DatabaseReference clubRef = db.getReference("users/" + clubName);
+        DatabaseReference imageRef = db.getReference("users/" + clubName + "/ProfileImageId");
+        DatabaseReference reviewRef = db.getReference("users/" + clubName + "/review/");
+
+
+        ImageView profilePic = (ImageView) findViewById(R.id.imageView2);
+
+
+        ValueEventListener roleListener = new ValueEventListener() {
+            boolean finished = false;
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if (finished) {
+                    return;
+                }
+
+                String DrawableName = dataSnapshot.getValue(String.class);
+                int resID;
+                if (DrawableName == null) {
+                    resID = getResources().getIdentifier("ic_logo_00", "drawable", getPackageName());
+                } else {
+                    resID = getResources().getIdentifier(DrawableName, "drawable", getPackageName());
+                }
+                profilePic.setImageResource(resID);
+
+                finished = true;
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+            }
+        };
+        imageRef.addValueEventListener(roleListener);
+>>>>>>> Stashed changes
 
         List<String> eventList = new ArrayList<>();
 
@@ -100,6 +141,7 @@ public class ParticipantClubSearchResultActivity extends AppCompatActivity {
 
             }
         });
+<<<<<<< Updated upstream
 
 //        searchView.setQuery("",true);
         //need to filter by eventtype
@@ -380,4 +422,53 @@ public class ParticipantClubSearchResultActivity extends AppCompatActivity {
 
 
         //need to erase in 2 places  /users/uname/registeredEvents and users/clubname/events/ename/registeredParticipants
+=======
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reviewButtonOnClick(v);
+            }
+
+            private void reviewButtonOnClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ParticipantOrganizerReviewActivity.class);
+                intent.putExtra("uname", uname);
+                intent.putExtra("clubName", clubName);
+
+                startActivity(intent);
+            }
+
+        });
+
+        eventArr = new String[eventList.size()];
+
+       ListView reviewListView = (ListView) findViewById(R.id.reviewsView);
+       reviewRef.addValueEventListener(new ValueEventListener() {//inflate adapter
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
+                reviewList.clear();
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    Toast toastUpdate = Toast.makeText(getApplication().getBaseContext(), postSnapshot.getKey().toString(), Toast.LENGTH_SHORT);
+                    toastUpdate.show();
+                    reviewList.add(postSnapshot.getKey());
+                }
+
+
+                eventArr = reviewList.toArray(eventArr);
+
+
+                //ArrayAdapter adapter = new ArrayAdapter<String>(context, com.google.android.material.R.layout.support_simple_spinner_dropdown_item, eventArr);
+                //reviewListView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+
+        });
+
+    }
+>>>>>>> Stashed changes
     }
