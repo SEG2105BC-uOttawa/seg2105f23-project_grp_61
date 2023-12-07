@@ -20,6 +20,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,7 @@ public class ParticipantClubSearchResultActivity extends AppCompatActivity {
 
     String date;
     String[] eventArr;
+    String[] reviewArr;
     String time;
 
     int participantSkill;
@@ -54,6 +56,7 @@ public class ParticipantClubSearchResultActivity extends AppCompatActivity {
 
         FirebaseDatabase db = FirebaseDatabase.getInstance("https://grimpeurscyclingclubtest-default-rtdb.firebaseio.com/");
         DatabaseReference eventRef = db.getReference("users/" + clubName + "/events/");
+        DatabaseReference reviewRef = db.getReference("users/" + clubName + "/review/");
         DatabaseReference clubRef = db.getReference("users/" + clubName);
         DatabaseReference imageRef = db.getReference("users/" + clubName + "/ProfileImageId");
 
@@ -102,8 +105,10 @@ public class ParticipantClubSearchResultActivity extends AppCompatActivity {
 
 //        Button button = (Button) findViewById(R.id.button6);
         eventArr = new String[eventList.size()];
+        reviewArr = new String[reviewList.size()];
 
         ListView eventListView = (ListView) findViewById(R.id.eventview2);
+        ListView reviewListView = (ListView) findViewById(R.id.reviewsView);
         eventRef.addValueEventListener(new ValueEventListener() {//inflate adapter
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -127,6 +132,28 @@ public class ParticipantClubSearchResultActivity extends AppCompatActivity {
                 // Getting Post failed, log a message
                 //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
                 // ...
+            }
+        });
+
+        reviewRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+
+                reviewList.clear();
+                for ( DataSnapshot postSnapshot : snapshot.getChildren()) {
+                    reviewList.add(postSnapshot.getValue().toString() + " - " + postSnapshot.getKey().toString());
+                }
+
+                reviewArr = reviewList.toArray(reviewArr);
+
+                ArrayAdapter adapter = new ArrayAdapter<String>(context, com.google.android.material.R.layout.support_simple_spinner_dropdown_item, reviewArr);
+                reviewListView.setAdapter(adapter);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
             }
         });
 

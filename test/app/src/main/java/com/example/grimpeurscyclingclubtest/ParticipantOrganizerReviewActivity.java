@@ -37,9 +37,9 @@ public class ParticipantOrganizerReviewActivity extends Activity {
         reviewRating = (EditText) findViewById(R.id.starsEditText);
         reviewText= (EditText) findViewById(R.id.commentEditText);
     }
-    protected boolean onCLick(){
+    public boolean onClick(View view){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference reviewRef = database.getReference("/users/"+ clubName + "/reviews/" +uname);
+        DatabaseReference reviewRef = database.getReference("/users/"+ clubName + "/review/" + reviewText.getText().toString());
 
 
         //get the values from the fields;
@@ -60,7 +60,8 @@ public class ParticipantOrganizerReviewActivity extends Activity {
             return false; //YOOOO WE CAN TEST THE VALIDATION CLASS AND THIS THATS MORE CASES
         }
         else{
-            reviewRef.child("/"+String.valueOf(reviewRating.getText())).setValue(reviewText);
+            reviewRef.setValue(reviewRating.getText().toString());
+            finish();
         }
         return validated;
     }
